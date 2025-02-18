@@ -5,14 +5,15 @@ readme
 npm install
 ```
 # Backend
-```
-cd backend
+* cd backend
+```  
     node server.js
-    {port you defined in .env}
+    {It should run the server.js in port you defined in .env}
 ```
 # Frontend
+
+*cd frontend
 ```
-cd frontend
     npm start     
-    {port : 3000}
+    {It should run in port : 3000}
 ```
