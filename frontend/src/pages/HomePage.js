@@ -139,9 +139,9 @@ function HomePage() {
     <div className="homepage-container">
       <header className="header">
         <h1>
-          Code online with <span className="highlight">Code Sphere.</span>
+          Code online with <span className="highlight">CodeSphere.</span>
         </h1>
-        <p>Code Sphere is here to help you write code online.</p>
+        <p>Code Sphere is here to help you Write & Compile your Code online.</p>
         <input
           type="text"
           className="search-bar"
