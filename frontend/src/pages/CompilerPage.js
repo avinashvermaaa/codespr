@@ -66,7 +66,7 @@ return (
             Run Code
           </button>
         </div>
-        <DarkModeToggle />
+        {/* <DarkModeToggle /> */}  
       </div>
     </div>
 
