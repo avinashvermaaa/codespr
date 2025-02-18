@@ -12,7 +12,7 @@ npm install
 ```
 # Frontend
 
-*cd frontend
+* cd frontend
 ```
     npm start     
     {It should run in port : 3000}
