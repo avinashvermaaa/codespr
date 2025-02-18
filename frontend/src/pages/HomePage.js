@@ -38,7 +38,7 @@ function HomePage() {
       category: "PROGRAMMING",
       items: [
         "Java", "Python", "C", "Cpp", "Go", "NodeJS", "JavaScript", "Scala", "PHP", "Ruby", "R", "Perl", "C#",
-        "Kotlin", "Pascal", "Cobol", "Lua", "Fortran", "Assembly", "Python2", "Groovy", "Bash", "Clojure",
+        "Kotlin", "Pascal", "Cobol", "Lua", "Fortran", "Assembly", "Groovy", "Bash", "Clojure",
         "TypeScript", "Prolog", "Rust", "Swift", "Objective-C", "CoffeeScript", "EJS",
       ],
     },
@@ -63,7 +63,8 @@ function HomePage() {
 
   const openCompiler = (language) => {
     // const languagePath = language.toLowerCase().replace("+", "p");
-    const languagePath = language;
+    const languagePath = language.toLowerCase();
+    // const languagePath = language;
     navigate(`/compiler/${languagePath}`);
   };
 
