@@ -1,6 +1,29 @@
 import React, { useState } from "react";
 import "./HomePage.css";
 
+// Language-icon mapping
+const languageIcons = {
+  Python: <i className="fab fa-python" style={{ color: "#306998" }}></i>,
+  HTML: <i className="fab fa-html5" style={{ color: "#E34F26" }}></i>,
+  CPP: <i className="fab fa-code" style={{ color: "#00599C" }}></i>,
+  Java: <i className="fab fa-java" style={{ color: "#5382a1" }}></i>,
+  MySQL: <i className="fas fa-database" style={{ color: "#00758F" }}></i>,
+  JavaScript: <i className="fab fa-js-square" style={{ color: "#F7DF1E" }}></i>,
+  PHP: <i className="fab fa-php" style={{ color: "#8892BF" }}></i>,
+  MongoDB: <i className="fas fa-leaf" style={{ color: "#47A248" }}></i>,
+  NodeJS: <i className="fab fa-node" style={{ color: "#43853D" }}></i>,
+  Ruby: <i className="fas fa-gem" style={{ color: "#CC342D" }}></i>,
+  Bash: <i className="fas fa-terminal" style={{ color: "#4EAA25" }}></i>,
+  SQLite: <i className="fas fa-database" style={{ color: "#003B57" }}></i>,
+  Redis: <i className="fas fa-database" style={{ color: "#DC382D" }}></i>,
+  // Add more as necessary
+};
+
+// Fallback icon if no specific icon is found
+const defaultIcon = (
+  <i className="fas fa-code" style={{ color: "#808080" }}></i>
+);
+
 function HomePage() {
   const languages = [
     {
@@ -97,7 +120,6 @@ function HomePage() {
     },
   ];
 
-  // Default category set to "POPULAR"
   const [selectedCategory, setSelectedCategory] = useState("POPULAR");
 
   const openCompiler = (language) => {
@@ -148,7 +170,7 @@ function HomePage() {
                 className="language-item"
                 onClick={() => openCompiler(item)}
               >
-                {item}
+                {languageIcons[item] || defaultIcon} {item}
               </button>
             ))}
         </div>
