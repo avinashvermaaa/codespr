@@ -65,10 +65,10 @@
 }
 
 .language-item {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 11px;
     cursor: pointer;
     background-color: white;
     text-align: center;
