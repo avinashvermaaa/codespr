@@ -17,7 +17,7 @@ const DarkModeToggle = () => {
         borderRadius: "20%", // Circular button
         width: "43px",
         height: "43px",
-        fontSize: "24px", // Emoji size
+        fontSize: "28px", // Emoji size
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
