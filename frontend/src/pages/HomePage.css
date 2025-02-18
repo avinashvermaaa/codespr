@@ -1,0 +1,65 @@
+.homepage {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.brand-name {
+    color: #007bff;
+}
+
+.search-bar {
+    padding: 10px;
+    margin: 20px auto;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.category {
+    text-align: left;
+}
+
+.category h3 {
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.category a {
+    display: block;
+    margin: 5px 0;
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.category a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 40px;
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
