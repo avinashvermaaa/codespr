@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/LanguagePage";
+import CompilerPage from "./pages/CompilerPage";
+import DarkModeToggle from "./components/DarkModeToggle";
+import { ThemeProvider } from "./context/ThemeContext"; // Import ThemeProvider
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <Router>
+        <DarkModeToggle />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/compiler/cpp"
+            element={<CompilerPage language="C++" />}
+          />
+          <Route
+            path="/compiler/python"
+            element={<CompilerPage language="Python" />}
+          />
+          <Route
+            path="/compiler/java"
+            element={<CompilerPage language="Java" />}
+          />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
