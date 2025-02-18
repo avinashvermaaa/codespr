@@ -12,18 +12,7 @@ function App() {
         <DarkModeToggle />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route
-            path="/compiler/cpp"
-            element={<CompilerPage language="C++" />}
-          />
-          <Route
-            path="/compiler/python"
-            element={<CompilerPage language="Python" />}
-          />
-          <Route
-            path="/compiler/java"
-            element={<CompilerPage language="Java" />}
-          />
+          <Route path="/compiler/:language" element={<CompilerPage />} />
         </Routes>
       </Router>
     </ThemeProvider>

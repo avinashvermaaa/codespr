@@ -1,0 +1,70 @@
+.compiler-page {
+    padding: 20px;
+    text-align: center;
+}
+
+.compiler-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 80vh;
+    /* Ensures the editor and sections use most of the screen height */
+}
+
+.code-editor {
+    width: 60%;
+    /* Left side for the editor */
+    display: flex;
+    flex-direction: column;
+    height: 150%;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 16px;
+    resize: none;
+    /* Prevent resizing for consistency */
+}
+
+textarea,
+.input-box textarea,
+.output-box textarea {
+    height: calc(65%);
+    /* Ensures input and output sections are of equal height */
+}
+
+.input-output-section {
+    padding-right: 19px;
+    width: 30%;
+    /* Right side for input/output */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.input-box,
+.output-box {
+    height: 90%;
+    /* Input and output take half of the right-side height */
+}
+
+.run-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.run-button:hover {
+    background-color: #0056b3;
+}

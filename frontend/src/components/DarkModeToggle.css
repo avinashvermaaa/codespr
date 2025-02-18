@@ -1,0 +1,26 @@
+.dark-mode-toggle {
+    padding: 10px 20px;
+    font-size: 24px;
+    /* Larger size for emoji */
+    border: 2px solid #555;
+    /* Add border */
+    border-radius: 8px;
+    /* Optional: rounded border */
+    cursor: pointer;
+    background-color: #f0f0f0;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+.dark-mode-toggle.dark {
+    background-color: #333;
+    color: #f0f0f0;
+    border: 2px solid #aaa;
+    /* Dark mode border */
+}
+
+.dark-mode-toggle:hover {
+    border-color: #000;
+    /* Change border color on hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}

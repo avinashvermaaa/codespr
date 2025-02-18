@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
 // Language-icon mapping
@@ -16,7 +17,6 @@ const languageIcons = {
   Bash: <i className="fas fa-terminal" style={{ color: "#4EAA25" }}></i>,
   SQLite: <i className="fas fa-database" style={{ color: "#003B57" }}></i>,
   Redis: <i className="fas fa-database" style={{ color: "#DC382D" }}></i>,
-  // Add more as necessary
 };
 
 // Fallback icon if no specific icon is found
@@ -25,106 +25,36 @@ const defaultIcon = (
 );
 
 function HomePage() {
+  const navigate = useNavigate();
   const languages = [
     {
       category: "POPULAR",
       items: [
-        "HTML",
-        "Python",
-        "C++",
-        "Java",
-        "MySQL",
-        "JavaScript",
-        "PHP",
-        "Assembly",
-        "C",
-        "C#",
-        "Lua",
-        "PL/SQL",
-        "NodeJS",
-        "MongoDB",
-        "Groovy",
-        "Ruby",
+        "HTML", "Python", "Cpp", "Java", "MySQL", "JavaScript", "PHP", "Assembly", "C", "C#", "Lua", "PL/SQL",
+        "NodeJS", "MongoDB", "Groovy", "Ruby",
       ],
     },
     {
       category: "PROGRAMMING",
       items: [
-        "Java",
-        "Python",
-        "C",
-        "C++",
-        "Go",
-        "NodeJS",
-        "JavaScript",
-        "Scala",
-        "PHP",
-        "Ruby",
-        "R",
-        "Perl",
-        "C#",
-        "Kotlin",
-        "Pascal",
-        "Cobol",
-        "Lua",
-        "Fortran",
-        "Assembly",
-        "Python2",
-        "Groovy",
-        "Bash",
-        "Clojure",
-        "TypeScript",
-        "Prolog",
-        "Rust",
-        "Swift",
-        "Objective-C",
-        "CoffeeScript",
-        "EJS",
+        "Java", "Python", "C", "Cpp", "Go", "NodeJS", "JavaScript", "Scala", "PHP", "Ruby", "R", "Perl", "C#",
+        "Kotlin", "Pascal", "Cobol", "Lua", "Fortran", "Assembly", "Python2", "Groovy", "Bash", "Clojure",
+        "TypeScript", "Prolog", "Rust", "Swift", "Objective-C", "CoffeeScript", "EJS",
       ],
     },
     {
       category: "WEB",
       items: [
-        "HTML",
-        "Materialize",
-        "Bootstrap",
-        "JQuery",
-        "JavaScript",
-        "CSS",
-        "Foundation",
-        "Bulma",
-        "Uikit",
-        "Semantic UI",
-        "Skeleton",
-        "Milligram",
-        "React (Beta)",
-        "Angular (Beta)",
-        "Vue (Beta)",
-        "Vue3 (Beta)",
+        "HTML", "Materialize", "Bootstrap", "JQuery", "JavaScript", "CSS", "Foundation", "Bulma", "Uikit",
+        "Semantic UI", "Skeleton", "Milligram", "React (Beta)", "Angular (Beta)", "Vue (Beta)", "Vue3 (Beta)",
         "BackboneJS",
       ],
     },
     {
       category: "DATABASES",
       items: [
-        "MySQL",
-        "Oracle",
-        "PostgreSQL",
-        "MongoDB",
-        "SQLite",
-        "Redis",
-        "MariaDB",
-        "PL/SQL",
-        "SQL Server",
-        "MySQL",
-        "Oracle",
-        "PostgreSQL",
-        "MongoDB",
-        "SQLite",
-        "Redis",
-        "MariaDB",
-        "PL/SQL",
-        "SQL Server",
+        "MySQL", "Oracle", "PostgreSQL", "MongoDB", "SQLite", "Redis", "MariaDB", "PL/SQL", "SQL Server",
+        "MySQL", "Oracle", "PostgreSQL", "MongoDB", "SQLite", "Redis", "MariaDB", "PL/SQL", "SQL Server",
       ],
     },
   ];
@@ -132,7 +62,9 @@ function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState("POPULAR");
 
   const openCompiler = (language) => {
-    window.location.href = `/compiler?lang=${language}`;
+    // const languagePath = language.toLowerCase().replace("+", "p");
+    const languagePath = language;
+    navigate(`/compiler/${languagePath}`);
   };
 
   return (
