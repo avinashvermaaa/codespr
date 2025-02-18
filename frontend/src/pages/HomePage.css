@@ -99,3 +99,24 @@
 .footer a:hover {
     text-decoration: underline;
 }
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+    /* Change default text to white */
+}
+
+body.dark-mode .header h1 {
+    color: white;
+    /* Set the entire heading to white */
+}
+
+body.dark-mode .header .highlight {
+    color: #1e90ff;
+    /* Keep "Code Sphere" blue */
+}
+
+body.dark-mode .header p {
+    color: white;
+    /* Ensure the subtitle is white */
+}
