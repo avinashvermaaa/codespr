@@ -50,10 +50,11 @@ function CompilerPage() {
     element.click();
   };
 
-  return (
-    <div className="compiler-page">
-      <div className="header">
-        <h2>{language} Compiler</h2>
+return (
+  <div className="compiler-page">
+    <div className="header">
+      <h2>{language} Compiler</h2>
+      <div className="header-buttons-container">
         <div className="header-buttons">
           <button className="header-button" onClick={renameCode}>
             Rename
@@ -64,42 +65,44 @@ function CompilerPage() {
           <button className="header-button" onClick={runCode}>
             Run Code
           </button>
-          <DarkModeToggle />
         </div>
+        <DarkModeToggle />
+      </div>
+    </div>
+
+    <div className="compiler-container">
+      <div className="code-editor">
+        <h3>Code Editor</h3>
+        <textarea
+          value={code}
+          onChange={(e) => setCode(e.target.value)}
+          placeholder={`Write your ${language} code here...`}
+        />
       </div>
 
-      <div className="compiler-container">
-        <div className="code-editor">
-          <h3>Code Editor</h3>
+      <div className="input-output-section">
+        <div className="input-box">
+          <h3>Input</h3>
           <textarea
-            value={code}
-            onChange={(e) => setCode(e.target.value)}
-            placeholder={`Write your ${language} code here...`}
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Enter input for your program..."
           />
         </div>
 
-        <div className="input-output-section">
-          <div className="input-box">
-            <h3>Input</h3>
-            <textarea
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Enter input for your program..."
-            />
-          </div>
-
-          <div className="output-box">
-            <h3>Output</h3>
-            <textarea
-              value={output}
-              readOnly
-              placeholder="Output will appear here..."
-            />
-          </div>
+        <div className="output-box">
+          <h3>Output</h3>
+          <textarea
+            value={output}
+            readOnly
+            placeholder="Output will appear here..."
+          />
         </div>
       </div>
     </div>
-  );
+  </div>
+);
+
 }
 
 export default CompilerPage;

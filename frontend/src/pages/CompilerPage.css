@@ -3,17 +3,63 @@
     text-align: center;
 }
 
+.compiler-page .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.compiler-page .header h2 {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+}
+
+.compiler-page .header-buttons-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Gap between Dark Mode toggle and buttons */
+}
+
+.compiler-page .header-buttons {
+    display: flex;
+    gap: 10px;
+    /* Space between each button */
+    margin-right: 20px;
+    /* Add more space between buttons and Dark Mode */
+}
+
+.compiler-page .header-button {
+    padding: 10px 25px;
+    /* Increased horizontal padding for better spacing */
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.compiler-page .header-button.run-button {
+    padding: 10px 30px;
+    /* Additional padding for the "Run Code" button */
+}
+
+.compiler-page .header-button:hover {
+    background-color: #0056b3;
+}
+
 .compiler-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     height: 80vh;
-    /* Ensures the editor and sections use most of the screen height */
 }
 
 .code-editor {
     width: 60%;
-    /* Left side for the editor */
     display: flex;
     flex-direction: column;
     height: 150%;
@@ -27,20 +73,17 @@ textarea {
     font-family: monospace;
     font-size: 16px;
     resize: none;
-    /* Prevent resizing for consistency */
 }
 
 textarea,
 .input-box textarea,
 .output-box textarea {
     height: calc(65%);
-    /* Ensures input and output sections are of equal height */
 }
 
 .input-output-section {
     padding-right: 19px;
     width: 30%;
-    /* Right side for input/output */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -50,21 +93,4 @@ textarea,
 .input-box,
 .output-box {
     height: 90%;
-    /* Input and output take half of the right-side height */
-}
-
-.run-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    align-self: flex-start;
-}
-
-.run-button:hover {
-    background-color: #0056b3;
 }
