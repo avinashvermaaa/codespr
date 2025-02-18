@@ -177,11 +177,11 @@ function HomePage() {
       )}
 
       <footer className="footer">
-        <a href="#">LinkedIn</a>
-        <a href="#">Twitter</a>
-        <a href="#">Instagram</a>
-        <a href="#">Mail</a>
-        <a href="#">GitHub</a>
+        <a href="https://www.linkedin.com/">LinkedIn</a>
+        <a href="https://twitter.com/">Twitter</a>
+        <a href="https://www.instagram.com/">Instagram</a>
+        <a href="mailto:example@example.com">Mail</a>
+        <a href="https://github.com">GitHub</a>
       </footer>
     </div>
   );
