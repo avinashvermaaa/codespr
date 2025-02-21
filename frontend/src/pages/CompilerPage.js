@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import DarkModeToggle from "../components/DarkModeToggle";
+// import DarkModeToggle from "../components/DarkModeToggle";
 import "./CompilerPage.css";
 
 // Language/Framework/Database to extension mapping
