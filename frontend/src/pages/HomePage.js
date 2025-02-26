@@ -30,7 +30,7 @@ function HomePage() {
     {
       category: "POPULAR",
       items: [
-        "HTML", "Python", "Cpp", "Java", "MySQL", "JavaScript", "PHP", "Assembly", "C", "C#", "Lua", "PL/SQL",
+        "C", "Python", "Cpp", "Java", "MySQL", "HTML", "JavaScript", "PHP", "Assembly", "C#", "Lua", "PL/SQL",
         "NodeJS", "MongoDB", "Groovy", "Ruby",
       ],
     },
