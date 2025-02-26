@@ -1,6 +1,8 @@
 # CodeSphere :- An Online AI Based Compiler & Coding Platform.
-* https://codespr.netlify.app/
-
+* Website :- https://thcodesphere.netlify.app/
+*  An Online `AI Coding platform` where you can `Write, Debug and Compile your Codes.`
+   At the same time `Collaborate with other Colleagues` in a live project and `Resolve issues & bugs using Integrated AI Features` ( still working on this feature).
+   
 # Install dependencies 
 ```
 npm install
