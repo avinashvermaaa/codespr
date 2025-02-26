@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "./CompilerPage.css";
 
-const BACKEND_URL = "https://spherecode.onrender.com"; // Your deployed backend
+const BACKEND_URL = "https://codespr.onrender.com"; // Your deployed backend
 
 // Language/Framework/Database to extension mapping
 const languageExtensions = {
