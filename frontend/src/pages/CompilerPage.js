@@ -94,7 +94,7 @@ function CompilerPage() {
           />
         </div>
 
-        <div className="input-output-section">
+        <div className="input-output-container">
           <div className="input-box">
             <h3>Input</h3>
             <textarea

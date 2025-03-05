@@ -1,96 +1,153 @@
+/* Compiler Page Styling */
 .compiler-page {
     padding: 20px;
     text-align: center;
 }
 
+/* Header Section */
 .compiler-page .header {
     display: flex;
     justify-content: space-between;
+    /* Spreads items apart */
     align-items: center;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+    /* Ensures responsiveness */
 }
 
+/* Header Title Styling */
 .compiler-page .header h2 {
     flex-grow: 1;
+    /* Allows title to expand */
     text-align: center;
     margin: 0;
 }
 
+/* Container for Header Buttons & Dark Mode Toggle */
 .compiler-page .header-buttons-container {
     display: flex;
     align-items: center;
-    gap: 20px;
-    /* Gap between Dark Mode toggle and buttons */
+    flex-wrap: wrap;
+    /* Wraps buttons on small screens */
+    margin-right: 50px;
 }
 
+/* Header Buttons */
 .compiler-page .header-buttons {
     display: flex;
     gap: 10px;
-    /* Space between each button */
-    margin-right: 35px;
-    /* Add more space between buttons and Dark Mode */
+    /* Space between buttons */
+    flex-wrap: wrap;
+    /* Allows wrapping on smaller screens */
+    margin-right: 0;
 }
 
+/* Individual Header Button */
 .compiler-page .header-button {
-    padding: 10px 25px;
-    /* Increased horizontal padding for better spacing */
+    padding: 10px 15px;
     font-size: 16px;
     background-color: #007bff;
+    /* Primary button color */
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    flex-shrink: 0;
+    /* Prevents shrinking */
 }
 
-.compiler-page .header-button.run-button {
-    padding: 100px 300px;
-    /* Additional padding for the "Run Code" button */
-}
-
+/* Button Hover Effect */
 .compiler-page .header-button:hover {
     background-color: #0056b3;
 }
 
+/* Main Compiler Layout */
 .compiler-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    height: 80vh;
+    height: 82vh;
+    /* Fixed height */
+    flex-wrap: wrap;
+    /* Ensures responsiveness */
 }
 
+/* Code Editor Styling */
 .code-editor {
-    width: 60%;
+    width: 62%;
     display: flex;
     flex-direction: column;
-    height: 150%;
+    height: 82vh;
+    /* Fixed height */
+    min-height: 400px;
+    /* Ensures a minimum size */
 }
 
+/* Textarea (Code Editor, Input, and Output) */
 textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid #007bff;
+    box-shadow: 0 0 5px #007bff;
     border-radius: 5px;
     font-family: monospace;
     font-size: 16px;
     resize: none;
+    /* Prevents resizing */
+    min-height: 150px;
 }
 
+/* Ensuring Input and Output Boxes Have Fixed Heights */
 textarea,
 .input-box textarea,
 .output-box textarea {
-    height: calc(65%);
+    height: 100%;
+    min-height: 100px;
 }
 
-.input-output-section {
-    padding-right: 19px;
-    width: 30%;
+/* Dark Mode Styles */
+.dark-mode textarea,
+.dark-mode .input-box textarea,
+.dark-mode .output-box textarea {
+    background-color: #2c2c2c;
+    color: white;
+    border: 2px solid #007bff;
+    box-shadow: 0 0 5px #007bff;
+}
+
+/* Input & Output Container */
+.input-output-container {
+    width: 1%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    height: auto;
+    flex-grow: 0.8;
 }
 
+/* Input & Output Boxes */
 .input-box,
 .output-box {
-    height: 90%;
+    flex-grow: 1;
+    min-height: 100px;
+}
+
+/* Output Box Specific Styling */
+.output-box {
+    height: 35vh;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .compiler-container {
+        flex-direction: column;
+        /* Stack elements vertically */
+        align-items: center;
+        height: auto;
+    }
+
+    /* Full width for smaller screens */
+    .code-editor,
+    .input-output-container {
+        width: 100%;
+    }
 }
