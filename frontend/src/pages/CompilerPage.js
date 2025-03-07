@@ -86,7 +86,7 @@ function CompilerPage() {
 
       <div className="compiler-container">
         <div className="code-editor">
-          <h3>Code Editor</h3>
+          <h3>Code Editor :- {language}</h3>
           <textarea
             value={code}
             onChange={(e) => setCode(e.target.value)}
