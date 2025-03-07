@@ -60,6 +60,7 @@ function HomePage() {
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("POPULAR");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const openCompiler = (language) => {
     // const languagePath = language.toLowerCase().replace("+", "p");
@@ -67,6 +68,14 @@ function HomePage() {
     // const languagePath = language;
     navigate(`/compiler/${languagePath}`);
   };
+
+  const filteredLanguages = searchQuery
+    ? languages
+        .flatMap((category) => category.items)
+        .filter((lang) =>
+          lang.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+    : languages.find((cat) => cat.category === selectedCategory)?.items || [];
 
   return (
     <div className="homepage-container">
@@ -79,6 +88,8 @@ function HomePage() {
           type="text"
           className="search-bar"
           placeholder="Search by Language/DB/Template etc."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
       </header>
 
@@ -102,21 +113,17 @@ function HomePage() {
         ))}
       </div>
 
-      {selectedCategory && (
-        <div className="category-box">
-          {languages
-            .find((cat) => cat.category === selectedCategory)
-            .items.map((item, idx) => (
-              <button
-                key={idx}
-                className="language-item"
-                onClick={() => openCompiler(item)}
-              >
-                {languageIcons[item] || defaultIcon} {item}
-              </button>
-            ))}
-        </div>
-      )}
+      <div className="category-box">
+        {filteredLanguages.map((item, idx) => (
+          <button
+            key={idx}
+            className="language-item"
+            onClick={() => openCompiler(item)}
+          >
+            {languageIcons[item] || defaultIcon} {item}
+          </button>
+        ))}
+      </div>
 
       <footer className="footer">
         <a href="https://www.linkedin.com/in/avinash-verma-20946b21b/">LinkedIn</a>
