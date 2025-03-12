@@ -5,5 +5,5 @@
 *  `AI Integration to support debugging and code suggestion` ( working on this feature.) 
 
 * `Currently Supporting Languages` :- `C, C++, Python, JavaScript`
-* `I'm Working on feature to supprt other programming Languages.` ( working on this feature.) 
+* `Supprt other programming Languages {Java, HTML, CSS, PHP, Ruby, Database lang.(SQL, MongoDB) and others}` ( working on this feature.) 
   
