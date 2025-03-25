@@ -18,7 +18,7 @@ const languageModes = {
 
 const languageExtensions = {
   html: "html", python: "py", cpp: "cpp", c: "c", java: "java", javascript: "js", sql: "sql", php: "php",
-  assembly: "asm", "c#": "cs", lua: "lua", "sql": "sql", nodejs: "js", mongodb: "json", groovy: "groovy",
+  assembly: "asm", "c#": "cs", lua: "lua", nodejs: "js", mongodb: "json", groovy: "groovy",
   ruby: "rb", go: "go", scala: "scala", r: "r", perl: "pl", kotlin: "kt", pascal: "pas", cobol: "cbl",
   fortran: "f", bash: "sh", clojure: "clj", typescript: "ts", prolog: "pl", rust: "rs", swift: "swift",
   "objective-c": "m", coffeescript: "coffee", ejs: "ejs", materialize: "css", bootstrap: "css", jquery: "js",
