@@ -7,18 +7,15 @@
 /* Header Section */
 .compiler-page .header {
     display: flex;
-    justify-content: space-between;
-    /* Spreads items apart */
+    justify-content: space-between; /* Spreads items apart */
     align-items: center;
     margin-bottom: 20px;
-    flex-wrap: wrap;
-    /* Ensures responsiveness */
+    flex-wrap: wrap; /* Ensures responsiveness */
 }
 
 /* Header Title Styling */
 .compiler-page .header h2 {
-    flex-grow: 1;
-    /* Allows title to expand */
+    flex-grow: 1; /* Allows title to expand */
     text-align: center;
     margin: 0;
 }
@@ -27,38 +24,39 @@
 .compiler-page .header-buttons-container {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    /* Wraps buttons on small screens */
+    flex-wrap: wrap; /* Wraps buttons on small screens */
     margin-right: 50px;
 }
 
 /* Header Buttons */
 .compiler-page .header-buttons {
     display: flex;
-    gap: 10px;
-    /* Space between buttons */
-    flex-wrap: wrap;
-    /* Allows wrapping on smaller screens */
-    margin-right: 0;
+    gap: 10px; /* Space between buttons */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    margin-right: 555px; /* margin from dark-mode-toggle button*/
 }
 
 /* Individual Header Button */
 .compiler-page .header-button {
     padding: 10px 15px;
-    font-size: 16px;
-    background-color: #007bff;
-    /* Primary button color */
+    /* font-size: 16px; */
+    /* background-color: #007bff; */   /* previous version*/
+    background: linear-gradient(135deg, #ff6b6b, #d32f2f); /* Modern gradient */
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    flex-shrink: 0;
-    /* Prevents shrinking */
+    flex-shrink: 0; /* Prevents shrinking */
 }
 
 /* Button Hover Effect */
 .compiler-page .header-button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c); /* Darker on hover */
+            transform: scale(1.05); /* Slight scale effect */
+}
+.compiler-page .header-button:active {
+    transform: scale(0.98);
+    /* Slight shrink effect when clicked */
 }
 
 /* Main Compiler Layout */
@@ -66,10 +64,8 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    height: 82vh;
-    /* Fixed height */
-    flex-wrap: wrap;
-    /* Ensures responsiveness */
+    height: 82vh; /* Fixed height */
+    flex-wrap: wrap; /* Ensures responsiveness */
 }
 
 /* Code Editor Styling */
@@ -77,23 +73,82 @@
     width: 62%;
     display: flex;
     flex-direction: column;
-    height: 82vh;
-    /* Fixed height */
-    min-height: 400px;
-    /* Ensures a minimum size */
+    height: 82vh; /* Fixed height */
+    min-height: 400px; /* Ensures a minimum size */
+    box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+    animation: neon-glow 1.5s infinite alternate;
+
+    @keyframes neon-glow {
+        0% {
+            box-shadow: 0 0 10px red, 0 0 20px red;
+        }
+
+        100% {
+            box-shadow: 0 0 15px red, 0 0 25px red;
+        }
+    }
+    border-radius: 5px;
+    position: relative;
+    color: #fff;
+}
+
+/* CodeMirror Styling */
+.CodeMirror {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 300px; /* Ensures usability on small screens */
+    min-width: 100%;
+    overflow: hidden;
+    text-align: left !important; /* Align text to the left */
+
+    background-color: #2c2c2c !important; /* Full black background */
+    color: white !important; /* Ensures text remains visible */
+    flex-grow: 1; /* Allow it to expand within the container */
+    overflow: auto; /* Enable scrolling if content overflows */
+}
+
+/* Ensure Scrollbars Appear When Needed */
+.CodeMirror-scroll {
+    overflow: auto !important;
+    height: 100%;
+}
+
+/* Ensure text in CodeMirror is visible */
+.cm-s-default {
+    background-color: #1e1e1e !important;
+    color: white !important;
+}
+
+/* Adjust font for better readability */
+.CodeMirror pre {
+    font-size: 16px;
+    font-family: "Fira Code", monospace;
 }
 
 /* Textarea (Code Editor, Input, and Output) */
 textarea {
     width: 100%;
     padding: 10px;
-    border: 2px solid #007bff;
-    box-shadow: 0 0 5px #007bff;
-    border-radius: 5px;
+    /* border: 2px solid #007bff;
+    box-shadow: 0 0 25px #007bff;   previous version*/
+    border: 2px solid red;
+    box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+    animation: neon-glow 1.5s infinite alternate;
+
+    @keyframes neon-glow {
+        0% {
+            box-shadow: 0 0 10px red, 0 0 20px red;
+        }
+
+        100% {
+            box-shadow: 0 0 15px red, 0 0 25px red;
+        }
+    }
     font-family: monospace;
     font-size: 16px;
-    resize: none;
-    /* Prevents resizing */
+    resize: none; /* Prevents resizing */
     min-height: 150px;
 }
 
@@ -101,6 +156,8 @@ textarea {
 textarea,
 .input-box textarea,
 .output-box textarea {
+    color: white;
+    background-color: #2c2c2c;
     height: 100%;
     min-height: 100px;
 }
@@ -111,8 +168,18 @@ textarea,
 .dark-mode .output-box textarea {
     background-color: #2c2c2c;
     color: white;
-    border: 2px solid #007bff;
-    box-shadow: 0 0 5px #007bff;
+    box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+        animation: neon-glow 1.5s infinite alternate;
+    
+        @keyframes neon-glow {
+            0% {
+                box-shadow: 0 0 10px red, 0 0 20px red;
+            }
+    
+            100% {
+                box-shadow: 0 0 15px red, 0 0 25px red;
+            }
+        }
 }
 
 /* Input & Output Container */
@@ -136,18 +203,63 @@ textarea,
     height: 35vh;
 }
 
-/* Responsive Design for Small Screens */
 @media (max-width: 768px) {
     .compiler-container {
-        flex-direction: column;
-        /* Stack elements vertically */
+        flex-direction: column; /* Stack elements vertically */
         align-items: center;
         height: auto;
     }
 
-    /* Full width for smaller screens */
+    /* Ensure Code Editor & Input-Output Containers Align */
     .code-editor,
     .input-output-container {
         width: 100%;
     }
+
+    /* Make Input-Output Containers Consistent */
+    .input-output-container {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        /* Center align */
+        justify-content: center;
+    }
+
+    /* Input and Output Box Styling */
+    .input-box,
+    .output-box {
+        width: 97%;
+        min-height: 120px;
+        font-family: monospace;
+        font-size: 16px;
+        resize: none;
+    }
+}
+
+/* Code Editor Title */
+.code-editor-title {
+    color: black; /* Default text color for light mode */
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-top: 6px;
+}
+
+/* Ensure Visibility in Dark Mode */
+.dark-mode .code-editor-title {
+    color: white; /* White text for dark mode */
+}
+
+.code-mirror {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 300px; /* Ensures usability on small screens */
+    min-width: 100%;
+    overflow: hidden;
+    text-align: left !important; /* Align text to the left */
+    
+    background-color: #2c2c2c !important; /* Full black background */
+    color: white !important; /* Ensures text remains visible */
 }

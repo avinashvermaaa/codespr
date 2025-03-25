@@ -30,7 +30,7 @@ function HomePage() {
     {
       category: "POPULAR",
       items: [
-        "C", "Python", "Cpp", "Java", "MySQL", "HTML", "JavaScript", "PHP", "Assembly", "C#", "Lua", "PL/SQL",
+        "C", "Python", "Cpp", "Java", "MySQL", "HTML", "JavaScript", "PHP", "Assembly", "C#", "Lua", "SQL",
         "NodeJS", "MongoDB", "Groovy", "Ruby",
       ],
     },
@@ -53,8 +53,8 @@ function HomePage() {
     {
       category: "DATABASES",
       items: [
-        "MySQL", "Oracle", "PostgreSQL", "MongoDB", "SQLite", "Redis", "MariaDB", "PL/SQL", "SQL Server",
-        "MySQL", "Oracle", "PostgreSQL", "MongoDB", "SQLite", "Redis", "MariaDB", "PL/SQL", "SQL Server",
+        "MySQL", "Oracle", "PostgreSQL", "MongoDB", "SQLite", "Redis", "MariaDB", "SQL", "SQL Server",
+        "MySQL", "Oracle", "PostgreSQL", "MongoDB", "SQLite", "Redis", "MariaDB", "SQL", "SQL Server",
       ],
     },
   ];

@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import CodeMirror from "@uiw/react-codemirror";
+import { cpp } from "@codemirror/lang-cpp";
+import { python } from "@codemirror/lang-python";
+import { java } from "@codemirror/lang-java";
+import { javascript } from "@codemirror/lang-javascript";
+import { sql } from "@codemirror/lang-sql";
+import { php } from "@codemirror/lang-php";
+import { dracula } from "@uiw/codemirror-theme-dracula";
 import "./CompilerPage.css";
 
 const BACKEND_URL = "https://codespr.onrender.com"; // Your deployed backend
 
-// Language/Framework/Database to extension mapping
+const languageModes = {
+  cpp: cpp(), python: python(), java: java(), javascript: javascript(), sql: sql(), php: php(),
+};
+
 const languageExtensions = {
-  html: "html", python: "py", cpp: "cpp", c: "c", java: "java", javascript: "js", mysql: "sql", php: "php",
-  assembly: "asm", "c#": "cs", lua: "lua", "pl/sql": "sql", nodejs: "js", mongodb: "json", groovy: "groovy",
+  html: "html", python: "py", cpp: "cpp", c: "c", java: "java", javascript: "js", sql: "sql", php: "php",
+  assembly: "asm", "c#": "cs", lua: "lua", "sql": "sql", nodejs: "js", mongodb: "json", groovy: "groovy",
   ruby: "rb", go: "go", scala: "scala", r: "r", perl: "pl", kotlin: "kt", pascal: "pas", cobol: "cbl",
   fortran: "f", bash: "sh", clojure: "clj", typescript: "ts", prolog: "pl", rust: "rs", swift: "swift",
   "objective-c": "m", coffeescript: "coffee", ejs: "ejs", materialize: "css", bootstrap: "css", jquery: "js",
@@ -22,40 +33,32 @@ function CompilerPage() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
 
-  // Determine the correct file extension for the language
   const defaultExtension = languageExtensions[language?.toLowerCase()] || "txt";
   const [fileName, setFileName] = useState(
     `${language}_code.${defaultExtension}`
   );
+  const languageMode = languageModes[language?.toLowerCase()] || cpp();
 
-  // Function to send code to the backend for execution
   const runCode = async () => {
     setOutput("Running...");
-
     try {
       const response = await fetch(`${BACKEND_URL}/compile`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ language, code, input }),
       });
-
       const data = await response.json();
       setOutput(data.output || "Error: No output received.");
     } catch (error) {
-      setOutput(`Error running code: ${error.message}`);
+      setOutput(`Error: ${error.message}`);
     }
   };
 
-  // Rename file
   const renameCode = () => {
-    const newName = prompt(
-      "Enter new file name (without extension):",
-      fileName.replace(`.${defaultExtension}`, "")
-    );
+    const newName = prompt("Enter new file name (without extension):");
     if (newName) setFileName(`${newName}.${defaultExtension}`);
   };
 
-  // Download code
   const downloadCode = () => {
     const element = document.createElement("a");
     const file = new Blob([code], { type: "text/plain" });
@@ -63,34 +66,40 @@ function CompilerPage() {
     element.download = fileName;
     document.body.appendChild(element);
     element.click();
+    document.body.removeChild(element);
   };
 
   return (
     <div className="compiler-page">
       <div className="header">
         <h2>CodeSphere: {language} Compiler</h2>
-        <div className="header-buttons-container">
-          <div className="header-buttons">
-            <button className="header-button" onClick={renameCode}>
-              Rename
-            </button>
-            <button className="header-button" onClick={downloadCode}>
-              Download
-            </button>
-            <button className="header-button" onClick={runCode}>
-              Run Code
-            </button>
-          </div>
+        <div className="header-buttons">
+          <button className="header-button" onClick={renameCode}>
+            Rename
+          </button>
+          <button className="header-button" onClick={downloadCode}>
+            Download
+          </button>
+          <button className="header-button" onClick={runCode}>
+            Run Code
+          </button>
         </div>
       </div>
 
       <div className="compiler-container">
         <div className="code-editor">
-          <h3>Code Editor :- {language}</h3>
-          <textarea
+          <h3 className="code-editor-title">Code Editor :- {language}</h3>
+          <CodeMirror
             value={code}
-            onChange={(e) => setCode(e.target.value)}
+            onChange={(value) => setCode(value)}
             placeholder={`Write your ${language} code here...`}
+            className="code-mirror"
+            theme={dracula}
+            extensions={[languageMode]}
+            style={{
+              height: "100%", // Ensures it fills the editor area
+              overflow: "auto", // Enables scrollbar for overflow content
+            }}
           />
         </div>
 
