@@ -33,7 +33,7 @@
     display: flex;
     gap: 10px; /* Space between buttons */
     flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    margin-right: 555px; /* margin from dark-mode-toggle button*/
+    margin-right: 532px; /* margin from dark-mode-toggle button*/
 }
 
 /* Individual Header Button */
@@ -70,7 +70,7 @@
 
 /* Code Editor Styling */
 .code-editor {
-    width: 62%;
+    width: 64%;
     display: flex;
     flex-direction: column;
     height: 82vh; /* Fixed height */
@@ -184,6 +184,7 @@ textarea,
 
 /* Input & Output Container */
 .input-output-container {
+    padding-right: 20px;
     width: 1%;
     display: flex;
     flex-direction: column;
@@ -218,6 +219,7 @@ textarea,
 
     /* Make Input-Output Containers Consistent */
     .input-output-container {
+        padding-right: 0px;
         display: flex;
         flex-direction: column;
         align-items: left;
