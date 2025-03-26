@@ -1,23 +1,50 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaEnvelope, FaInstagram, FaXTwitter, FaLinkedin, FaGithub, FaSnapchat, FaPython, FaHtml5, FaCode, FaJava, FaDatabase, FaJs, FaPhp, FaLeaf, FaNode, FaGem, FaTerminal } from "react-icons/fa6";
+import { FaEnvelope, FaInstagram, FaXTwitter, FaLinkedin, FaGithub, FaSnapchat, FaPython, FaHtml5, FaCode, FaJava, FaDatabase, FaJs, FaPhp, FaNode, FaGem, FaTerminal, FaC, FaCss3, FaReact, FaAngular, FaVuejs, FaBootstrap, } from "react-icons/fa6";
+import { SiCplusplus, SiMysql, SiMongodb, SiPostgresql, SiMariadb, SiTypescript, SiKotlin, SiLua, SiGo, SiR, SiPerl, SiScala, SiFortran, SiHaskell, SiFsharp, SiClojure, SiDart, SiElixir, SiErlang, SiRust,  SiSwift } from "react-icons/si";
+
 import "./HomePage.css";
 
 // Language-icon mapping using react-icons/fa6
 const languageIcons = {
   Python: <FaPython style={{ color: "#306998" }} />,
   HTML: <FaHtml5 style={{ color: "#E34F26" }} />,
-  CPP: <FaCode style={{ color: "#00599C" }} />,
+  C: <FaC style={{ color: "#00599C" }} />,
+  Cpp: <SiCplusplus style={{ color: "#00599C" }} />,
   Java: <FaJava style={{ color: "#5382a1" }} />,
-  MySQL: <FaDatabase style={{ color: "#00758F" }} />,
+  MySQL: <SiMysql style={{ color: "#00758F" }} />,
   JavaScript: <FaJs style={{ color: "#F7DF1E" }} />,
   PHP: <FaPhp style={{ color: "#8892BF" }} />,
-  MongoDB: <FaLeaf style={{ color: "#47A248" }} />,
+  MongoDB: <SiMongodb style={{ color: "#47A248" }} />,
   NodeJS: <FaNode style={{ color: "#43853D" }} />,
   Ruby: <FaGem style={{ color: "#CC342D" }} />,
   Bash: <FaTerminal style={{ color: "#4EAA25" }} />,
   SQLite: <FaDatabase style={{ color: "#003B57" }} />,
   Redis: <FaDatabase style={{ color: "#DC382D" }} />,
+  Go: <SiGo style={{ color: "#00ADD8" }} />,
+  Rust: <SiRust style={{ color: "#DEA584" }} />,
+  Swift: <SiSwift style={{ color: "#FA7343" }} />,
+  CSS: <FaCss3 style={{ color: "#1572B6" }} />,
+  React: <FaReact style={{ color: "#61DAFB" }} />,
+  Angular: <FaAngular style={{ color: "#DD0031" }} />,
+  Vue: <FaVuejs style={{ color: "#42B883" }} />,
+  Bootstrap: <FaBootstrap style={{ color: "#7952B3" }} />,
+  TypeScript: <SiTypescript style={{ color: "#007ACC" }} />,
+  PostgreSQL: <SiPostgresql style={{ color: "#336791" }} />,
+  MariaDB: <SiMariadb style={{ color: "#003545" }} />,
+  Kotlin: <SiKotlin style={{ color: "#0095D5" }} />,
+  Lua: <SiLua style={{ color: "#000080" }} />,
+  R: <SiR style={{ color: "#276DC3" }} />,
+  Perl: <SiPerl style={{ color: "#39457E" }} />,
+  Scala: <SiScala style={{ color: "#DC322F" }} />,
+  Fortran: <SiFortran style={{ color: "#734F96" }} />,
+  Haskell: <SiHaskell style={{ color: "#5D4F85" }} />,
+  FSharp: <SiFsharp style={{ color: "#378BBA" }} />,
+  Clojure: <SiClojure style={{ color: "#5881D8" }} />,
+  Dart: <SiDart style={{ color: "#0175C2" }} />,
+  Elixir: <SiElixir style={{ color: "#4B275F" }} />,
+  Erlang: <SiErlang style={{ color: "#A90533" }} />,
+  // ObjectiveC: <SiObjectivec style={{ color: "#43853D" }} />,
 };
 
 const defaultIcon = <FaCode style={{ color: "#808080" }} />;
@@ -39,8 +66,8 @@ function HomePage() {
     {
       category: "POPULAR",
       items: [
-        "C", "Python", "Cpp", "Java", "MySQL", "HTML", "JavaScript", "PHP", "Assembly", "C#", "Lua", "SQL",
-        "NodeJS", "MongoDB", "Groovy", "Ruby",
+        "C", "Python", "Cpp", "Java", "MySQL", "HTML", "JavaScript", "TypeScript", "Perl", "Fortran", "PHP", "SQL",
+        "NodeJS", "MongoDB", "Kotlin", "Ruby", "Rust", "Swift", "Bash", "Redis",
       ],
     },
     {
