@@ -1,31 +1,40 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaEnvelope, FaInstagram, FaXTwitter, FaLinkedin, FaGithub, FaSnapchat, FaPython, FaHtml5, FaCode, FaJava, FaDatabase, FaJs, FaPhp, FaLeaf, FaNode, FaGem, FaTerminal } from "react-icons/fa6";
 import "./HomePage.css";
 
-// Language-icon mapping
+// Language-icon mapping using react-icons/fa6
 const languageIcons = {
-  Python: <i className="fab fa-python" style={{ color: "#306998" }}></i>,
-  HTML: <i className="fab fa-html5" style={{ color: "#E34F26" }}></i>,
-  CPP: <i className="fab fa-code" style={{ color: "#00599C" }}></i>,
-  Java: <i className="fab fa-java" style={{ color: "#5382a1" }}></i>,
-  MySQL: <i className="fas fa-database" style={{ color: "#00758F" }}></i>,
-  JavaScript: <i className="fab fa-js-square" style={{ color: "#F7DF1E" }}></i>,
-  PHP: <i className="fab fa-php" style={{ color: "#8892BF" }}></i>,
-  MongoDB: <i className="fas fa-leaf" style={{ color: "#47A248" }}></i>,
-  NodeJS: <i className="fab fa-node" style={{ color: "#43853D" }}></i>,
-  Ruby: <i className="fas fa-gem" style={{ color: "#CC342D" }}></i>,
-  Bash: <i className="fas fa-terminal" style={{ color: "#4EAA25" }}></i>,
-  SQLite: <i className="fas fa-database" style={{ color: "#003B57" }}></i>,
-  Redis: <i className="fas fa-database" style={{ color: "#DC382D" }}></i>,
+  Python: <FaPython style={{ color: "#306998" }} />,
+  HTML: <FaHtml5 style={{ color: "#E34F26" }} />,
+  CPP: <FaCode style={{ color: "#00599C" }} />,
+  Java: <FaJava style={{ color: "#5382a1" }} />,
+  MySQL: <FaDatabase style={{ color: "#00758F" }} />,
+  JavaScript: <FaJs style={{ color: "#F7DF1E" }} />,
+  PHP: <FaPhp style={{ color: "#8892BF" }} />,
+  MongoDB: <FaLeaf style={{ color: "#47A248" }} />,
+  NodeJS: <FaNode style={{ color: "#43853D" }} />,
+  Ruby: <FaGem style={{ color: "#CC342D" }} />,
+  Bash: <FaTerminal style={{ color: "#4EAA25" }} />,
+  SQLite: <FaDatabase style={{ color: "#003B57" }} />,
+  Redis: <FaDatabase style={{ color: "#DC382D" }} />,
 };
 
-// Fallback icon if no specific icon is found
-const defaultIcon = (
-  <i className="fas fa-code" style={{ color: "#808080" }}></i>
-);
+const defaultIcon = <FaCode style={{ color: "#808080" }} />;
 
 function HomePage() {
   const navigate = useNavigate();
+  const [hoveredIcon, setHoveredIcon] = useState(null);
+  
+  const socialIcons = [
+    { component: FaLinkedin, link: "https://www.linkedin.com/in/avinash-verma-20946b21b/" },
+    { component: FaXTwitter, link: "https://x.com/im_ak47_" },
+    { component: FaInstagram, link: "https://www.instagram.com/avinash_vermaa" },
+    { component: FaGithub, link: "https://github.com" },
+    { component: FaEnvelope, link: "mailto:example@example.com" },
+    { component: FaSnapchat, link: "mailto:example@example.com" },
+  ];
+
   const languages = [
     {
       category: "POPULAR",
@@ -100,13 +109,7 @@ function HomePage() {
             className={`category-button ${
               selectedCategory === category.category ? "active" : ""
             }`}
-            onClick={() =>
-              setSelectedCategory(
-                selectedCategory === category.category
-                  ? null
-                  : category.category
-              )
-            }
+            onClick={() => setSelectedCategory(category.category)} // category son't collapse on double click
           >
             {category.category}
           </button>
@@ -125,15 +128,43 @@ function HomePage() {
         ))}
       </div>
 
-      <footer className="footer">
-        <a href="https://www.linkedin.com/in/avinash-verma-20946b21b/">LinkedIn</a>
-        <a href="https://x.com/im_ak47_">Twitter</a>
-        <a href="https://www.instagram.com/avinash_vermaa">Instagram</a>
-        <a href="mailto:example@example.com">Mail</a>
-        <a href="https://github.com">GitHub</a>
+      <footer style={styles.footer}>
+        {socialIcons.map(({ component: Icon, link }, index) => (
+          <a
+            key={index}
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            onMouseEnter={() => setHoveredIcon(index)}
+            onMouseLeave={() => setHoveredIcon(null)}
+          >
+            <Icon
+              style={{
+                ...styles.icon,
+                color: hoveredIcon === index ? "#ffcc00" : "white",
+              }}
+            />
+          </a>
+        ))}
       </footer>
     </div>
   );
 }
+
+const styles = {
+  footer: {
+    display: "flex",
+    justifyContent: "center",
+    gap: "20px",
+    padding: "20px",
+    backgroundColor: "#007bff",
+  },
+  icon: {
+    fontSize: "24px",
+    color: "white",
+    transition: "color 0.3s",
+    cursor: "pointer",
+  },
+};
 
 export default HomePage;
