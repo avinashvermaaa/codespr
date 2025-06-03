@@ -55,10 +55,10 @@ function HomePage() {
   
   const socialIcons = [
     { component: FaLinkedin, link: "https://www.linkedin.com/in/avinash-verma-20946b21b/" },
-    { component: FaXTwitter, link: "https://x.com/im_ak47_" },
+    { component: FaEnvelope, link: "mailto:code6969nation@gmail.com.com" },
     { component: FaInstagram, link: "https://www.instagram.com/avinash_vermaa" },
     { component: FaGithub, link: "https://github.com" },
-    { component: FaEnvelope, link: "mailto:example@example.com" },
+    { component: FaXTwitter, link: "https://x.com" },
     { component: FaSnapchat, link: "mailto:example@example.com" },
   ];
 

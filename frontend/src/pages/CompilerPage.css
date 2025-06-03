@@ -33,7 +33,7 @@
     display: flex;
     gap: 10px; /* Space between buttons */
     flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    margin-right: 532px; /* margin from dark-mode-toggle button*/
+    margin-right: 478px; /* margin from dark-mode-toggle button*/
 }
 
 /* Individual Header Button */
