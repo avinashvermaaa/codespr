@@ -4,6 +4,9 @@
     color: #333;
     text-align: center;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .header h1 {
@@ -68,37 +71,14 @@
     border-radius: 8px;
     width: 60%;
     min-height: 300px;
-    /* Ensure a consistent height */
     background-color: #f8f9fa;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* Fixed columns */
     gap: 15px;
     box-shadow: 0px 4px 12px #007bff;
     transition: all 0.3s ease-in-out;
     align-content: start;
-}
-
-@media screen and (max-width: 1024px) {
-    .category-box {
-        width: 80%;
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .category-box {
-        width: 90%;
-        grid-template-columns: repeat(2, 1fr);
-        padding: 15px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .category-box {
-        width: 95%;
-        grid-template-columns: repeat(1, 1fr);
-    }
+    flex: 1;
 }
 
 /* Language item styling */
@@ -118,53 +98,20 @@
     color: white;
 }
 
-/* Footer styling */
-.footer {
-    padding: 20px;
-    background-color: #007bff;
-    color: white;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.icon {
-    font-size: 24px;
-    color: white;
-    transition: color 0.3s;
-    cursor: pointer;
-}
-
-.footer a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
 /* Dark Mode Styles */
 body.dark-mode {
     background-color: #121212;
     color: white;
 }
 
-body.dark-mode .header h1 {
-    color: white;
-}
-
-body.dark-mode .header .highlight {
-    color: #1e90ff;
-}
-
+body.dark-mode .header h1,
 body.dark-mode .header p {
     color: white;
 }
 
-/* Dark Mode Box Shadows */
+body.dark-mode .highlight {
+    color: #1e90ff;
+}
 
 body.dark-mode .search-bar {
     background-color: #222;
@@ -178,16 +125,11 @@ body.dark-mode .search-bar::placeholder {
 }
 
 body.dark-mode .category-box {
+    background-color: #1e1e1e;
+    border-color: #333;
     box-shadow: 0px 4px 12px #007bff;
 }
 
-/* Dark Mode Category Box */
-body.dark-mode .category-box {
-    background-color: #1e1e1e;
-    border-color: #333;
-}
-
-/* Dark Mode Category Buttons */
 body.dark-mode .category-button {
     background-color: #222;
     color: white;
@@ -198,7 +140,6 @@ body.dark-mode .category-button.active {
     background-color: #007bff;
 }
 
-/* Dark Mode Language Items */
 body.dark-mode .language-item {
     background-color: #222;
     color: white;
@@ -210,7 +151,7 @@ body.dark-mode .language-item:hover {
     color: white;
 }
 
-/* Responsive Design for Small Screens */
+/* Responsive Design */
 @media screen and (max-width: 1024px) {
     .search-bar {
         width: 70%;
@@ -286,40 +227,11 @@ body.dark-mode .language-item:hover {
         font-size: 14px;
         padding: 8px;
     }
-
-    .footer {
-        flex-direction: column;
-        text-align: center;
-    }
 }
 
-/* Make sure the container takes full height */
+/* Root layout reset */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.homepage-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;  /* Ensures full height */
-}
-
-.category-box {
-    flex: 1;  /* Pushes footer down */
-}
-
-/* Fix footer at the bottom */
-.footer {
-    margin-top: auto;
-    padding: 20px;
-    background-color: #007bff;
-    color: white;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
 }
