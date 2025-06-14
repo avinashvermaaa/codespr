@@ -1,19 +1,40 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import CodeMirror from "@uiw/react-codemirror";
+
+//  Language Imports
 import { cpp } from "@codemirror/lang-cpp";
-import { python } from "@codemirror/lang-python";
 import { java } from "@codemirror/lang-java";
+import { python } from "@codemirror/lang-python";
+
+import { html } from '@codemirror/lang-html';
+import { css } from '@codemirror/lang-css';
 import { javascript } from "@codemirror/lang-javascript";
+import { json } from '@codemirror/lang-json';
+import { xml } from '@codemirror/lang-xml';
+import { angular } from '@codemirror/lang-angular'; 
+import { vue } from '@codemirror/lang-vue'; 
+
 import { sql } from "@codemirror/lang-sql";
+import { markdown } from '@codemirror/lang-markdown';
+import { yaml } from '@codemirror/lang-yaml';
+import { go } from '@codemirror/lang-go';
 import { php } from "@codemirror/lang-php";
-import { dracula } from "@uiw/codemirror-theme-dracula";
+import { rust } from '@codemirror/lang-rust';
+
+// Theme
+// import { dracula } from "@uiw/codemirror-theme-dracula"; // old dracula theme
+// import { darcula } from "@uiw/codemirror-theme-darcula"; 
+import { monokai } from '@uiw/codemirror-theme-monokai';
 import "./CompilerPage.css";
+import Chatbot from "./Chatbot"; // OpenAi Chatgpt integrate
 
 const BACKEND_URL = "https://codespr.onrender.com"; // Your deployed backend
 
 const languageModes = {
-  cpp: cpp(), python: python(), java: java(), javascript: javascript(), sql: sql(), php: php(),
+  cpp: cpp(), python: python(), java: java(), javascript: javascript(), html: html(), css: css(), json: json(),
+  xml: xml(), sql: sql(), markdown: markdown(), yaml: yaml(), go: go(), php: php(), rust: rust(), vue: vue(),
+  angular: angular(),
 };
 
 const languageExtensions = {
@@ -34,9 +55,7 @@ function CompilerPage() {
   const [output, setOutput] = useState("");
 
   const defaultExtension = languageExtensions[language?.toLowerCase()] || "txt";
-  const [fileName, setFileName] = useState(
-    `${language}_code.${defaultExtension}`
-  );
+  const [fileName, setFileName] = useState(`${language}_code.${defaultExtension}`);
   const languageMode = languageModes[language?.toLowerCase()] || cpp();
 
   const runCode = async () => {
@@ -74,15 +93,9 @@ function CompilerPage() {
       <div className="header">
         <h2>CodeSphere: {language} Compiler</h2>
         <div className="header-buttons">
-          <button className="header-button" onClick={renameCode}>
-            Rename
-          </button>
-          <button className="header-button" onClick={downloadCode}>
-            Download
-          </button>
-          <button className="header-button" onClick={runCode}>
-            Run Code
-          </button>
+          <button className="header-button" onClick={renameCode}>Rename</button>
+          <button className="header-button" onClick={downloadCode}>Download</button>
+          <button className="header-button" onClick={runCode}>Run Code</button>
         </div>
       </div>
 
@@ -94,7 +107,7 @@ function CompilerPage() {
             onChange={(value) => setCode(value)}
             placeholder={`Write your ${language} code here...`}
             className="code-mirror"
-            theme={dracula}
+            theme={monokai}
             extensions={[languageMode]}
             style={{
               height: "100%", // Ensures it fills the editor area
@@ -123,6 +136,8 @@ function CompilerPage() {
           </div>
         </div>
       </div>
+
+      <Chatbot /> {/*  Added the chatbot at the bottom-right */}
     </div>
   );
 }

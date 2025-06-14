@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaEnvelope, FaInstagram, FaXTwitter, FaLinkedin, FaGithub, FaSnapchat, FaPython, FaHtml5, FaCode, FaJava, FaDatabase, FaJs, FaPhp, FaNode, FaGem, FaTerminal, FaC, FaCss3, FaReact, FaAngular, FaVuejs, FaBootstrap, } from "react-icons/fa6";
-import { SiCplusplus, SiMysql, SiMongodb, SiPostgresql, SiMariadb, SiTypescript, SiKotlin, SiLua, SiGo, SiR, SiPerl, SiScala, SiFortran, SiHaskell, SiFsharp, SiClojure, SiDart, SiElixir, SiErlang, SiRust,  SiSwift } from "react-icons/si";
+import { FaEnvelope, FaInstagram, FaXTwitter, FaLinkedin, FaGithub, FaSnapchat, FaPython, FaHtml5, FaCode, FaJava, FaDatabase, FaJs, FaPhp, FaNode, FaGem, FaTerminal, FaC, FaCss3Alt, FaReact, FaAngular, FaVuejs, FaBootstrap, FaDocker } from "react-icons/fa6";
+import { SiCplusplus, SiMysql, SiSqlite ,SiOracle ,SiMongodb, SiPostgresql, SiMariadb, SiTypescript, SiKotlin, SiLua, SiGo, SiR, SiPerl, SiScala, SiFortran, SiHaskell, SiFsharp, SiClojure, SiDart, SiElixir, SiErlang, SiRust,  SiSwift } from "react-icons/si";
 
 import "./HomePage.css";
 
@@ -19,15 +19,19 @@ const languageIcons = {
   NodeJS: <FaNode style={{ color: "#43853D" }} />,
   Ruby: <FaGem style={{ color: "#CC342D" }} />,
   Bash: <FaTerminal style={{ color: "#4EAA25" }} />,
-  SQLite: <FaDatabase style={{ color: "#003B57" }} />,
+  SQL: <FaDatabase style={{ color: "#003B57" }} />,
+  SQLite: <SiSqlite style={{ color: "#003B57" }} />,
+  Oracle: <SiOracle style={{ color: "DC382D" }} />,
+  SQLServer: <FaDatabase style={{ color: "#003B57" }} />,
   Redis: <FaDatabase style={{ color: "#DC382D" }} />,
   Go: <SiGo style={{ color: "#00ADD8" }} />,
   Rust: <SiRust style={{ color: "#DEA584" }} />,
   Swift: <SiSwift style={{ color: "#FA7343" }} />,
-  CSS: <FaCss3 style={{ color: "#1572B6" }} />,
+  CSS: <FaCss3Alt style={{ color: "#1572B6" }} />,
   React: <FaReact style={{ color: "#61DAFB" }} />,
   Angular: <FaAngular style={{ color: "#DD0031" }} />,
   Vue: <FaVuejs style={{ color: "#42B883" }} />,
+  Vue3: <FaVuejs style={{ color: "#42B883" }} />,
   Bootstrap: <FaBootstrap style={{ color: "#7952B3" }} />,
   TypeScript: <SiTypescript style={{ color: "#007ACC" }} />,
   PostgreSQL: <SiPostgresql style={{ color: "#336791" }} />,
@@ -44,6 +48,7 @@ const languageIcons = {
   Dart: <SiDart style={{ color: "#0175C2" }} />,
   Elixir: <SiElixir style={{ color: "#4B275F" }} />,
   Erlang: <SiErlang style={{ color: "#A90533" }} />,
+  yaml : <FaDocker  style={{ color: "skyblue" }} />, // Using generic code icon for YAML
   // ObjectiveC: <SiObjectivec style={{ color: "#43853D" }} />,
 };
 
@@ -73,24 +78,24 @@ function HomePage() {
     {
       category: "PROGRAMMING",
       items: [
-        "Java", "Python", "C", "Cpp", "Go", "NodeJS", "JavaScript", "Scala", "PHP", "Ruby", "R", "Perl", "C#",
-        "Kotlin", "Pascal", "Cobol", "Lua", "Fortran", "Assembly", "Groovy", "Bash", "Clojure",
-        "TypeScript", "Prolog", "Rust", "Swift", "Objective-C", "CoffeeScript", "EJS",
+        "Java", "Python", "C", "Cpp", "Go", "Rust", "PHP", "JavaScript", "NodeJS", "Scala", "Ruby", "R", 
+        "Kotlin", "Pascal", "Cobol", "Lua", "Fortran", "Assembly", "Groovy", "Bash", "Clojure", "Perl", "C#",
+        "TypeScript", "Prolog", "Swift", "Objective-C", "CoffeeScript", "EJS",
       ],
     },
     {
       category: "WEB",
       items: [
-        "HTML", "Materialize", "Bootstrap", "JQuery", "JavaScript", "CSS", "Foundation", "Bulma", "Uikit",
-        "Semantic UI", "Skeleton", "Milligram", "React (Beta)", "Angular (Beta)", "Vue (Beta)", "Vue3 (Beta)",
-        "BackboneJS",
+        "HTML", "CSS", "JavaScript", "JSON", "XML", "Angular", "Vue", "yaml",  
+        "markdown", "Vue3", "Materialize", "Bootstrap", "JQuery",  "Foundation", "Bulma", "Uikit",
+        "Semantic UI", "Skeleton", "Milligram", "React", "BackboneJS", 
       ],
     },
     {
       category: "DATABASES",
       items: [
-        "MySQL", "Oracle", "PostgreSQL", "MongoDB", "SQLite", "Redis", "MariaDB", "SQL", "SQL Server",
-        "MySQL", "Oracle", "PostgreSQL", "MongoDB", "SQLite", "Redis", "MariaDB", "SQL", "SQL Server",
+        "MySQL", "Oracle", "PostgreSQL", "SQL", "MongoDB", "SQLite", "Redis", "MariaDB",  "SQLServer",
+        "MySQL", "Oracle", "PostgreSQL", "SQL", "MongoDB", "SQLite", "Redis", "MariaDB",  "SQLServer",
       ],
     },
   ];
@@ -136,7 +141,7 @@ function HomePage() {
             className={`category-button ${
               selectedCategory === category.category ? "active" : ""
             }`}
-            onClick={() => setSelectedCategory(category.category)} // category son't collapse on double click
+            onClick={() => setSelectedCategory(category.category)} // category shouldn't collapse on double click
           >
             {category.category}
           </button>
