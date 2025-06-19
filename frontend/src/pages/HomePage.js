@@ -60,7 +60,7 @@ function HomePage() {
   
   const socialIcons = [
     { component: FaLinkedin, link: "https://www.linkedin.com/in/avinash-verma-20946b21b/" },
-    { component: FaEnvelope, link: "mailto:code6969nation@gmail.com.com" },
+    { component: FaEnvelope, link: "mailto:code6969nation@gmail.com" },
     { component: FaInstagram, link: "https://www.instagram.com/avinash_vermaa" },
     { component: FaGithub, link: "https://github.com" },
     { component: FaXTwitter, link: "https://x.com" },
@@ -68,6 +68,12 @@ function HomePage() {
   ];
 
   const languages = [
+    {
+      category: "Working",
+      items: [
+        "Java", "C", "Python", "Cpp", "JavaScript", "PHP", "Rust",
+      ],
+    },
     {
       category: "POPULAR",
       items: [
@@ -100,7 +106,7 @@ function HomePage() {
     },
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState("POPULAR");
+  const [selectedCategory, setSelectedCategory] = useState("Working");
   const [searchQuery, setSearchQuery] = useState("");
 
   const openCompiler = (language) => {
@@ -121,10 +127,14 @@ function HomePage() {
   return (
     <div className="homepage-container">
       <header className="header">
-        <h1>
-          Code online with <span className="highlight">CodeSphere.</span>
-        </h1>
-        <p>Code Sphere is here to help you Write & Compile your Code online.</p>
+          <h1>
+            <span className="saffron">Code</span>{' '}
+            <span className="white">online</span>{' '} 
+            <span className="green">with</span>{' '} 
+            <span className="highlight-blue">CodeSphere.</span>
+          </h1>
+
+        <p>CodeSphere is here to help you Write & Compile your Codes online.</p>
         <input
           type="text"
           className="search-bar"
@@ -151,15 +161,104 @@ function HomePage() {
       <div className="category-box">
         {filteredLanguages.map((item, idx) => (
           <button
-            key={idx}
-            className="language-item"
+          key={idx}
+          className="language-item"
             onClick={() => openCompiler(item)}
           >
             {languageIcons[item] || defaultIcon} {item}
           </button>
         ))}
       </div>
+      
+<h1> Choose from a vast collection of languages</h1>
 
+{/* Marquee Section :- web Animation 1*/}
+<div id="moving-animation">
+    <div className="marque-wrapper">
+        <div className="marque">
+          {/* Dynamically load images from the public/marque folder */}
+            {["angular","bootstrap","coffeescript","css","django","git","github","html","javascript","jquery","json","nodejs","npm","reactjs","redis","typescript","yarn"].map((imgName, index) => (
+              <img
+              key={index}
+              src={`./marque/web/${imgName}.png`} 
+              alt={imgName}
+              className="logo"
+              />
+            ))}
+        </div>
+        {/* for infinite repeat */}
+        <div className="marque">
+            {["angular","bootstrap","coffeescript","css","django","git","github","html","javascript","jquery","json","nodejs","npm","reactjs","redis","typescript","yarn"].map((imgName, index) => (
+              <img
+                key={index}
+                src={`./marque/web/${imgName}.png`} 
+                alt={imgName}
+                className="logo"
+              />
+            ))}
+        </div>
+    </div>
+</div>
+
+{/* Marquee Section :- db Animation 2*/}
+<div id="moving-animation">
+    <div className="marque-wrapper">
+        <div className="marque">
+          {/* Dynamically load images from the public/marque folder */}
+            {["apache","cassandra","docker","graphql","magento","mariadb","mongodb","mysql","neo4j","oracle","postgresql","redis","sql","sqlserver"].map((imgName, index) => (
+              <img
+              key={index}
+              src={`./marque/db/${imgName}.png`} 
+              alt={imgName}
+              className="logo"
+              />
+            ))}
+        </div>
+        {/* for infinite repeat */}
+        <div className="marque">
+            {["apache","cassandra","docker","graphql","magento","mariadb","mongodb","mysql","neo4j","oracle","postgresql","redis","sql","sqlserver"].map((imgName, index) => (
+              <img
+                key={index}
+                src={`./marque/db/${imgName}.png`} 
+                alt={imgName}
+                className="logo"
+              />
+            ))}
+        </div>
+    </div>
+</div>
+
+<h1> Trusted and Used by Global Leaders</h1>
+
+{/* Marquee Section :- Company Animation 3*/}
+<div id="moving-animation">
+    <div className="marque-wrapper">
+        <div className="marque">
+          {/* Dynamically load images from the public/marque folder */}
+            {["aws","fb","google","insta","meta","snap","whs","x","yt"].map((imgName, index) => (
+              <img
+              key={index}
+              src={`./marque/company/${imgName}.png`} 
+              alt={imgName}
+              className="logo"
+              />
+            ))}
+        </div>
+        {/* for infinite repeat */}
+        <div className="marque">
+            {["aws","fb","google","insta","meta","snap","whs","x","yt"].map((imgName, index) => (
+              <img
+                key={index}
+                src={`./marque/company/${imgName}.png`} 
+                alt={imgName}
+                className="logo"
+              />
+            ))}
+        </div>
+    </div>
+</div>
+
+{/* Footer Section */}
       <footer style={styles.footer}>
         {socialIcons.map(({ component: Icon, link }, index) => (
           <a
@@ -173,11 +272,12 @@ function HomePage() {
             <Icon
               style={{
                 ...styles.icon,
-                color: hoveredIcon === index ? "#ffcc00" : "white",
+                color: hoveredIcon === index ? "red" : "#007bff",
               }}
             />
           </a>
         ))}
+        <p style={styles.footerText}>| Made with 💙 in India.</p>
       </footer>
     </div>
   );
@@ -189,14 +289,21 @@ const styles = {
     justifyContent: "center",
     gap: "20px",
     padding: "20px",
-    backgroundColor: "#007bff",
+    backgroundColor: "transparent",
   },
   icon: {
-    fontSize: "24px",
+    fontSize: "36px",
     color: "white",
     transition: "color 0.3s",
     cursor: "pointer",
   },
+  footerText: {
+  margin: 0,
+  alignSelf: "center",
+  fontSize: "16px",
+  color: "white", // or any other color you prefer
+  },
+
 };
 
 export default HomePage;

@@ -5,7 +5,7 @@ export const ThemeContext = createContext();
 
 // Create a provider component
 export const ThemeProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true); // Default to dark mode
 
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => !prevMode);

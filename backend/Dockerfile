@@ -1,22 +1,57 @@
-# Use Node.js 18 as the base image
-FROM node:18
+FROM ubuntu:22.04
 
-# Set working directory inside the container
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PATH="/usr/local/go/bin:/root/.cargo/bin:$PATH"
+
+# Core dependencies
+RUN apt-get update && apt-get install -y \
+  build-essential \
+  g++ \
+  gcc \
+  python3 \
+  python3-pip \
+  curl \
+  php \
+  openjdk-17-jdk \
+  software-properties-common \
+  git \
+  ca-certificates \
+  wget \
+  unzip
+
+# ✅ Install Node.js v18 and npm
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs
+
+# ✅ Install Go
+RUN curl -LO https://golang.org/dl/go1.21.5.linux-amd64.tar.gz && \
+  tar -C /usr/local -xzf go1.21.5.linux-amd64.tar.gz && \
+  rm go1.21.5.linux-amd64.tar.gz
+
+# ✅ Set Go environment variables
+ENV GOPATH=/go
+ENV PATH=$PATH:$GOPATH/bin
+
+# ✅ Install Rust
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
+
+# ✅ Install TypeScript
+RUN npm install -g typescript
+
+# Set working directory
 WORKDIR /app
 
-# Install required dependencies
-RUN apt-get update && apt-get install -y g++-12 build-essential libstdc++-12-dev
+# Copy project files
+COPY . .
 
-# Copy backend folder into the container
-COPY backend /app/
-
-# Install dependencies
+# Install Node.js dependencies
 RUN npm install
 
-# Expose port 5000
+# Install Go dependencies (if needed, for example if you have a `go.mod` file)
+# RUN go mod tidy
+
+# Expose port for the app (5000 is common for Node.js apps)
 EXPOSE 5000
 
-# Start the server
+# Command to run the Node.js server
 CMD ["node", "server.js"]
-
-# Onrender -> Dockerfile Path :- backend/Dockerfile , Docker Build Context Directory :- .

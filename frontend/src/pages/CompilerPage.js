@@ -29,7 +29,7 @@ import { monokai } from '@uiw/codemirror-theme-monokai';
 import "./CompilerPage.css";
 import Chatbot from "./Chatbot"; // OpenAi Chatgpt integrate
 
-const BACKEND_URL = "https://codespr.onrender.com"; // Your deployed backend
+const BACKEND_URL = "https://spherecodes.onrender.com";
 
 const languageModes = {
   cpp: cpp(), python: python(), java: java(), javascript: javascript(), html: html(), css: css(), json: json(),
@@ -44,7 +44,7 @@ const languageExtensions = {
   fortran: "f", bash: "sh", clojure: "clj", typescript: "ts", prolog: "pl", rust: "rs", swift: "swift",
   "objective-c": "m", coffeescript: "coffee", ejs: "ejs", materialize: "css", bootstrap: "css", jquery: "js",
   css: "css", foundation: "css", bulma: "css", uikit: "css", "semantic ui": "css", skeleton: "css",
-  milligram: "css", react: "jsx", angular: "ts", vue: "vue", vue3: "vue", backbonejs: "js", oracle: "sql", 
+  milligram: "css", react: "jsx", angular: "ts", vue: "vue", vue3: "vue", backbonejs: "js", oracle: "sql",
   postgresql: "sql", sqlite: "sql", redis: "rdb", mariadb: "sql", "sql server": "sql",
 };
 
@@ -110,8 +110,8 @@ function CompilerPage() {
             theme={monokai}
             extensions={[languageMode]}
             style={{
-              height: "100%", // Ensures it fills the editor area
-              overflow: "auto", // Enables scrollbar for overflow content
+              height: "100%",
+              overflow: "auto",
             }}
           />
         </div>
