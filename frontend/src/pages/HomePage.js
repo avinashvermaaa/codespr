@@ -21,7 +21,7 @@ const languageIcons = {
   Bash: <FaTerminal style={{ color: "#4EAA25" }} />,
   SQL: <FaDatabase style={{ color: "#003B57" }} />,
   SQLite: <SiSqlite style={{ color: "#003B57" }} />,
-  Oracle: <SiOracle style={{ color: "DC382D" }} />,
+  Oracle: <SiOracle style={{ color: "#DC382D" }} />,
   SQLServer: <FaDatabase style={{ color: "#003B57" }} />,
   Redis: <FaDatabase style={{ color: "#DC382D" }} />,
   Go: <SiGo style={{ color: "#00ADD8" }} />,
@@ -256,7 +256,7 @@ function HomePage() {
 </div>
 
 
-<h1> Trusted and Used by Employees Global Leaders</h1>
+<h1> Trusted and used by employees of global leaders</h1>
 
 {/* Marquee Section :- Company Animation 4*/}
 <div id="moving-animation-db-devops">
@@ -286,8 +286,142 @@ function HomePage() {
     </div>
 </div>
 
-{/* Footer Section */}
-      <footer style={styles.footer}>
+
+<footer class="footer-container">
+  <div class="footer-grid">
+    {/* <!-- Column 1: Codesphere --> */}
+    <div class="footer-column">
+      <h4 class="footer-title">Codesphere</h4>
+      <ul class="footer-list">
+        <li><a href="https://codespr.netlify.app">codespr.netlify.app/</a></li>
+        <li><a href="https://codespr.netlify.app">About</a></li>
+        <li><a href="https://codespr.netlify.app">Use Cases</a></li>
+        <li><a href="https://codespr.netlify.app">Contact</a></li>
+      </ul>
+
+      <h4 class="footer-title">Users</h4>
+      <ul class="footer-list">
+        <li><a href="https://codespr.netlify.app">Status</a></li>
+        <li><a href="https://codespr.netlify.app">Pricing</a></li>
+        <li><a href="https://codespr.netlify.app">Refund Policy</a></li>
+      </ul>
+    </div>
+
+    {/* <!-- Column 2: Languages --> */}
+    <div class="footer-column">
+      <h4 class="footer-title">Languages</h4>
+      <ul class="footer-list two-column">
+        <li><a href="https://codespr.netlify.app">Java</a></li>
+        <li><a href="https://codespr.netlify.app">Python</a></li>
+        <li><a href="https://codespr.netlify.app">C</a></li>
+        <li><a href="https://codespr.netlify.app">C++</a></li>
+        <li><a href="https://codespr.netlify.app">NodeJS</a></li>
+        <li><a href="https://codespr.netlify.app">JavaScript</a></li>
+        <li><a href="https://codespr.netlify.app">Groovy</a></li>
+        <li><a href="https://codespr.netlify.app">JShell</a></li>
+        <li><a href="https://codespr.netlify.app">Haskell</a></li>
+        <li><a href="https://codespr.netlify.app">Tcl</a></li>
+        <li><a href="https://codespr.netlify.app">Lua</a></li>
+        <li><a href="https://codespr.netlify.app">Ada</a></li>
+        <li><a href="https://codespr.netlify.app">CommonLisp</a></li>
+        <li><a href="https://codespr.netlify.app">D</a></li>
+        <li><a href="https://codespr.netlify.app">Elixir</a></li>
+        <li><a href="https://codespr.netlify.app">Erlang</a></li>
+        <li><a href="https://codespr.netlify.app">F#</a></li>
+        <li><a href="https://codespr.netlify.app">Fortran</a></li>
+        <li><a href="https://codespr.netlify.app">Assembly</a></li>
+        <li><a href="https://codespr.netlify.app">Scala</a></li>
+        <li><a href="https://codespr.netlify.app">PHP</a></li>
+        <li><a href="https://codespr.netlify.app">Python2</a></li>
+        <li><a href="https://codespr.netlify.app">C#</a></li>
+        <li><a href="https://codespr.netlify.app">Perl</a></li>
+        <li><a href="https://codespr.netlify.app">Ruby</a></li>
+        <li><a href="https://codespr.netlify.app">Go</a></li>
+        <li><a href="https://codespr.netlify.app">R</a></li>
+        <li><a href="https://codespr.netlify.app">Racket</a></li>
+        <li><a href="https://codespr.netlify.app">OCaml</a></li>
+        <li><a href="https://codespr.netlify.app">Visual Basic</a></li>
+        <li><a href="https://codespr.netlify.app">Basic</a></li>
+        <li><a href="https://codespr.netlify.app">HTML</a></li>
+        <li><a href="https://codespr.netlify.app">Materialize</a></li>
+        <li><a href="https://codespr.netlify.app">Bootstrap</a></li>
+        <li><a href="https://codespr.netlify.app">JQuery</a></li>
+        <li><a href="https://codespr.netlify.app">Foundation</a></li>
+        <li><a href="https://codespr.netlify.app">Bulma</a></li>
+        <li><a href="https://codespr.netlify.app">Uikit</a></li>
+        <li><a href="https://codespr.netlify.app">Semantic UI</a></li>
+        <li><a href="https://codespr.netlify.app">Skeleton</a></li>
+        <li><a href="https://codespr.netlify.app">Milligram</a></li>
+        <li><a href="https://codespr.netlify.app">PaperCSS</a></li>
+        <li><a href="https://codespr.netlify.app">BackboneJS</a></li>
+        <li><a href="https://codespr.netlify.app">React</a></li>
+        <li><a href="https://codespr.netlify.app">Vue</a></li>
+        <li><a href="https://codespr.netlify.app">Angular</a></li>
+        <li><a href="https://codespr.netlify.app">Bash</a></li>
+        <li><a href="https://codespr.netlify.app">Clojure</a></li>
+        <li><a href="https://codespr.netlify.app">TypeScript</a></li>
+        <li><a href="https://codespr.netlify.app">Cobol</a></li>
+        <li><a href="https://codespr.netlify.app">Kotlin</a></li>
+        <li><a href="https://codespr.netlify.app">Pascal</a></li>
+        <li><a href="https://codespr.netlify.app">Prolog</a></li>
+        <li><a href="https://codespr.netlify.app">Rust</a></li>
+        <li><a href="https://codespr.netlify.app">Swift</a></li>
+        <li><a href="https://codespr.netlify.app">Objective-C</a></li>
+        <li><a href="https://codespr.netlify.app">Octave</a></li>
+        <li><a href="https://codespr.netlify.app">Text</a></li>
+        <li><a href="https://codespr.netlify.app">BrainFK</a></li>
+        <li><a href="https://codespr.netlify.app">CoffeeScript</a></li>
+        <li><a href="https://codespr.netlify.app">EJS</a></li>
+        <li><a href="https://codespr.netlify.app">Dart</a></li>
+        <li><a href="https://codespr.netlify.app">Deno</a></li>
+        <li><a href="https://codespr.netlify.app">Bun</a></li>
+        <li><a href="https://codespr.netlify.app">MySQL</a></li>
+        <li><a href="https://codespr.netlify.app">Oracle Db</a></li>
+        <li><a href="https://codespr.netlify.app">PostgreSQL</a></li>
+        <li><a href="https://codespr.netlify.app">MongoDB</a></li>
+        <li><a href="https://codespr.netlify.app">SQLite</a></li>
+        <li><a href="https://codespr.netlify.app">Redis</a></li>
+        <li><a href="https://codespr.netlify.app">MariaDB</a></li>
+        <li><a href="https://codespr.netlify.app">Cassandra</a></li>
+        <li><a href="https://codespr.netlify.app">PL/SQL</a></li>
+        <li><a href="https://codespr.netlify.app">SQL Server</a></li>
+      </ul>
+    </div>
+
+    {/* <!-- Column 3: More --> */}
+    <div class="footer-column">
+      <h4 class="footer-title">More</h4>
+      <ul class="footer-list">
+        <li><a href="https://codespr.netlify.app">Orgs</a></li>
+        <li><a href="https://codespr.netlify.app">API</a></li>
+        <li><a href="https://codespr.netlify.app">Pricing</a></li>
+      </ul>
+
+      <ul class="footer-list">
+        <li><a href="https://codespr.netlify.app">Cheatsheets</a></li>
+        <li><a href="https://codespr.netlify.app">Tutorials</a></li>
+        <li><a href="https://codespr.netlify.app">Tools</a></li>
+        <li><a href="https://codespr.netlify.app">Stats</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 CodeSphere Pvt. Ltd. | <a href="https://codespr.netlify.app">Privacy Policy</a> | <a href="https://codespr.netlify.app">Terms & Conditions</a>
+  </div>
+  
+  </footer>
+
+  <div>
+      <div className="footers"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "40px",
+          padding: "20px",
+          backgroundColor: "transparent",
+        }}
+      >
         {socialIcons.map(({ component: Icon, link }, index) => (
           <a
             key={index}
@@ -299,38 +433,32 @@ function HomePage() {
           >
             <Icon
               style={{
-                ...styles.icon,
-                color: hoveredIcon === index ? "red" : "#007bff",
+                fontSize: "32px",
+                color: hoveredIcon === index ? "red" : "#FF9933",
+                transition: "color 0.3s",
+                cursor: "pointer",
               }}
             />
           </a>
         ))}
-        <p style={styles.footerText}>| Made with 💙 in India.</p>
-      </footer>
+        <p
+          style={{
+            gap: "10px",
+            margin: 0,
+            alignSelf: "center",
+            fontSize: "24px",
+            color: "#FF9933",
+          }}
+        >
+          | Made with 💙 in India.
+        </p>
+      </div>
     </div>
+  
+</div> 
+
+
   );
 }
-
-const styles = {
-  footer: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "20px",
-    padding: "20px",
-    backgroundColor: "transparent",
-  },
-  icon: {
-    fontSize: "36px",
-    color: "white",
-    transition: "color 0.3s",
-    cursor: "pointer",
-  },
-  footerText: {
-  margin: 0,
-  alignSelf: "center",
-  fontSize: "16px",
-  color: "#007bff",
-  },
-};
 
 export default HomePage;
