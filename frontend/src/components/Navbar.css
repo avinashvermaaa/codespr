@@ -1,0 +1,114 @@
+/* Navbar container styles */
+.navbar {
+    background: linear-gradient(45deg, #FF9933, #138808);
+    /* background: linear-gradient(45deg, #007bff, red); */
+    /* background-color: #FF9933; */
+    color: white;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-right: 45px;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: left;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-left : 20px;
+    gap : 10px;
+}
+
+.navbar-logo a {
+    color: white;            
+    text-decoration: none;   
+}
+/* Navbar list styles (horizontal for desktop) */
+.navbar-list {
+    display: flex;
+    gap: 40px;
+    justify-content: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar item styles */
+.navbar-item {
+    display: inline-block;
+    margin-right: 20px;  
+}
+
+/* Navbar link styles */
+.navbar-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-link:hover {
+    background-color: #FF9933;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.navbar-link svg {
+    margin-right: 5px;
+}
+
+/* Hamburger menu for small screens */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  /* Show hamburger icon on small screens */
+  .hamburger {
+    display: flex;
+    margin-right: 25px;
+  }
+
+  /* Hide the navbar links on small screens by default */
+  .navbar-list {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    background: linear-gradient(45deg, #007bff, red);
+    /* background-color: #FF9933; */
+    position: absolute;
+    top: 60px; /* Adjust if needed */
+    left: 0;
+    right: 0;
+  }
+
+  /* Show navbar links when hamburger is clicked */
+  .navbar-list.show {
+    display: flex;
+  }
+
+  /* Adjust navbar link padding and font size for mobile */
+  .navbar-link {
+    font-size: 20px;
+    padding: 10px;
+  }
+}

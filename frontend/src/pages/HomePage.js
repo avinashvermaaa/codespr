@@ -4,6 +4,8 @@ import { FaEnvelope, FaInstagram, FaXTwitter, FaLinkedin, FaGithub, FaSnapchat, 
 import { SiCplusplus, SiMysql, SiSqlite ,SiOracle ,SiMongodb, SiPostgresql, SiMariadb, SiTypescript, SiKotlin, SiLua, SiGo, SiR, SiPerl, SiScala, SiFortran, SiHaskell, SiFsharp, SiClojure, SiDart, SiElixir, SiErlang, SiRust,  SiSwift } from "react-icons/si";
 
 import "./HomePage.css";
+import Navbar from "../components/Navbar";
+// import "./components/Navbar.css";
 
 // Language-icon mapping using react-icons/fa6
 const languageIcons = {
@@ -125,6 +127,7 @@ function HomePage() {
 
   return (
     <div className="homepage-container">
+      <Navbar /> 
       <header className="header">
           <h1>
             <span className="saffron">Code</span>{' '}
@@ -291,9 +294,9 @@ function HomePage() {
   <div class="footer-grid">
     {/* <!-- Column 1: Codesphere --> */}
     <div class="footer-column">
-      <h4 class="footer-title">Codesphere</h4>
+      <h4 class="footer-title">CodeSphere</h4>
       <ul class="footer-list">
-        <li><a href="https://codespr.netlify.app">codespr.netlify.app/</a></li>
+        <li><a href="https://codespr.netlify.app">CodeSphere</a></li>
         <li><a href="https://codespr.netlify.app">About</a></li>
         <li><a href="https://codespr.netlify.app">Use Cases</a></li>
         <li><a href="https://codespr.netlify.app">Contact</a></li>
@@ -417,9 +420,11 @@ function HomePage() {
         style={{
           display: "flex",
           justifyContent: "center",
-          gap: "40px",
+          gap: "35px",
           padding: "20px",
           backgroundColor: "transparent",
+          flexWrap: "wrap",  
+          alignItems: "center",
         }}
       >
         {socialIcons.map(({ component: Icon, link }, index) => (
@@ -434,7 +439,7 @@ function HomePage() {
             <Icon
               style={{
                 fontSize: "32px",
-                color: hoveredIcon === index ? "red" : "#FF9933",
+                color: hoveredIcon === index ? "#138808" : "#FF9933",
                 transition: "color 0.3s",
                 cursor: "pointer",
               }}
@@ -443,14 +448,19 @@ function HomePage() {
         ))}
         <p
           style={{
+            display: "flex",
+            alignItems: "center",
             gap: "10px",
             margin: 0,
-            alignSelf: "center",
             fontSize: "24px",
             color: "#FF9933",
+            flexWrap: "wrap",  
+            justifyContent: "center",  
+            width: "100%",  
+            textAlign: "center",  
           }}
         >
-          | Made with 💙 in India.
+          <span> Made with 💙 in India.</span>
         </p>
       </div>
     </div>

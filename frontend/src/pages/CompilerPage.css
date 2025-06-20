@@ -40,7 +40,8 @@
 .compiler-page .header-button {
     padding: 10px 15px;
     font-size: 16px;
-    background: linear-gradient(45deg, #007bff, red); /* Modern gradient */
+    /* background: linear-gradient(45deg, #007bff, red); */
+    background: linear-gradient(45deg, #FF9933, #138808);
     color: white;
     border: none;
     border-radius: 5px;
@@ -50,12 +51,12 @@
 
 /* Button Hover Effect */
 .compiler-page .header-button:hover {
-    background: linear-gradient(45deg, red,#007bff); /* Darker on hover */
-    transform: scale(1.05); /* Slight scale effect */
+    background: linear-gradient(45deg, #FF9933, #138808);
+    /* background: linear-gradient(45deg, red,#007bff);  */
+    transform: scale(1.05); 
 }
 .compiler-page .header-button:active {
     transform: scale(0.98);
-    /* Slight shrink effect when clicked */
 }
 
 /* Main Compiler Layout */

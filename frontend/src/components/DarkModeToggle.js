@@ -8,12 +8,15 @@ const DarkModeToggle = () => {
     <button
       onClick={toggleDarkMode}
       style={{
-        position: "absolute",
-        top: "25px",
-        right: "10px",
-        backgroundColor: darkMode ? "#333" : "#f0f0f0",
-        color: darkMode ? "#f0f0f0" : "#333",
-        border: darkMode ? "2px solid #aaa" : "2px solid #555",
+        position: "fixed",  // change to fixed for better visibility (absolute)
+        top: "0px",
+        right: "25px",
+        background: "linear-gradient(45deg, #FF9933, #138808)",
+        // background: "linear-gradient(45deg, #007bff, red)",  
+
+        // color: darkMode ? "#f0f0f0" : "#333",
+        // backgroundColor: darkMode ? "#333" : "#f0f0f0",
+        // border: darkMode ? "0px solid #FF9933" : "0px solid #FF9933",
         borderRadius: "20%", // Circular button
         width: "43px",
         height: "43px",
@@ -23,6 +26,7 @@ const DarkModeToggle = () => {
         justifyContent: "center",
         cursor: "pointer",
         transition: "all 0.3s ease-in-out",
+        zIndex: 100, // Ensure it appears above other elements
       }}
       aria-label="Toggle Dark Mode"
     >

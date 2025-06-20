@@ -4,7 +4,7 @@
     /* color: #333; */
     text-align: center;
     box-sizing: border-box;
-    padding: 20px 5vw; /* Responsive horizontal padding */
+    /* padding: 20px 5vw; removed this -> fixed container ->Responsive horizontal padding */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -47,8 +47,8 @@ body.dark-mode .white {
     font-size: 16px;
     width: 50%;
     border-radius: 8px;
-    border: 1px solid #007bff;
-    box-shadow: 0px 4px 8px #007bff;
+    border: 1px solid #FF9933;
+    box-shadow: 0px 4px 8px #FF9933;
     transition: all 0.1s ease-in-out;
     background-color: white;
     color: black;
@@ -66,7 +66,7 @@ body.dark-mode .white {
 .category-button {
     padding: 10px 15px;
     font-size: 16px;
-    border: 1px solid #007bff;
+    border: 1px solid #FF9933;
     border-radius: 8px;
     cursor: pointer;
     background-color: #f8f9fa;
@@ -74,7 +74,7 @@ body.dark-mode .white {
 }
 
 .category-button.active {
-    background-color: #007bff;
+    background-color: #FF9933;
     color: white;
 }
 
@@ -82,7 +82,7 @@ body.dark-mode .white {
 .category-box {
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #007bff;
+    border: 1px solid #FF9933;
     border-radius: 8px;
     width: 60%;
     min-height: 300px;
@@ -91,7 +91,7 @@ body.dark-mode .white {
     /* grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); */
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
-    box-shadow: 0px 4px 12px #007bff;
+    box-shadow: 0px 4px 12px #FF9933;
     transition: all 0.1s ease-in-out;
     align-content: start;
     flex: 1;
@@ -101,7 +101,7 @@ body.dark-mode .white {
 .language-item {
     padding: 12px;
     font-size: 18px;
-    border: 2px solid #007bff;
+    border: 2px solid #FF9933;
     border-radius: 11px;
     cursor: pointer;
     background-color: white;
@@ -110,63 +110,13 @@ body.dark-mode .white {
 }
 
 .language-item:hover {
-    background-color: #007bff;
+    background-color: #FF9933;
     color: white;
 }
 
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #121212;
-    color: white;
-}
 
-body.dark-mode .header h1,
-body.dark-mode .header p {
-    color: white;
-}
 
-body.dark-mode .highlight {
-    color: #1e90ff;
-}
-
-body.dark-mode .search-bar {
-    background-color: #222;
-    color: #007bff;
-    border: 1px solid #007bff;
-    box-shadow: 0px 4px 12px #007bff;
-}
-
-body.dark-mode .search-bar::placeholder {
-    color: #bbb;
-}
-
-body.dark-mode .category-box {
-    background-color: #1e1e1e;
-    border-color: #333;
-    box-shadow: 0px 4px 12px #007bff;
-}
-
-body.dark-mode .category-button {
-    background-color: #222;
-    color: white;
-    border-color: #555;
-}
-
-body.dark-mode .category-button.active {
-    background-color: #007bff;
-}
-
-body.dark-mode .language-item {
-    background-color: #222;
-    color: white;
-    border-color: #444;
-}
-
-body.dark-mode .language-item:hover {
-    background-color: #007bff;
-    color: white;
-}
-
+/* Marque Effect */
 /* Common Styles */
 #moving-animation, 
 #moving-animation-db-devops {
@@ -255,83 +205,6 @@ body.dark-mode .language-item:hover {
     color: white;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 1024px) {
-    .search-bar {
-        width: 70%;
-    }
-
-    .category-box {
-        width: 80%;
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .header h1 {
-        font-size: 28px;
-    }
-
-    .header p {
-        font-size: 16px;
-    }
-
-    .search-bar {
-        width: 90%;
-        padding: 14px;
-        font-size: 14px;
-    }
-
-    .category-buttons {
-        gap: 5px;
-    }
-
-    .category-box {
-        width: 90%;
-        grid-template-columns: repeat(2, 1fr);
-        padding: 15px;
-    }
-
-    .language-item {
-        font-size: 16px;
-        padding: 10px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .header h1 {
-        font-size: 24px;
-    }
-
-    .header p {
-        font-size: 14px;
-    }
-
-    .search-bar {
-        width: 95%;
-        padding: 12px;
-        font-size: 12px;
-    }
-
-    .category-buttons {
-        flex-wrap: wrap;
-    }
-
-    .category-button {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
-
-    .category-box {
-        width: 95%;
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .language-item {
-        font-size: 14px;
-        padding: 8px;
-    }
-}
 
 /* Root layout reset */
 html, body {
@@ -340,7 +213,7 @@ html, body {
     padding: 0;
 }
 
-
+/* Footer Styles */
 .footer-container {
   background-color: transparent; /* dark sky blue */
   padding: 40px 20px;
@@ -438,4 +311,137 @@ html, body {
   .two-column li {
     white-space: normal;
   }
+}
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode .header h1,
+body.dark-mode .header p {
+    color: white;
+}
+
+body.dark-mode .highlight {
+    color: #1e90ff;
+}
+
+body.dark-mode .search-bar {
+    background-color: #222;
+    color: #FF9933;
+    border: 1px solid #FF9933;
+    box-shadow: 0px 4px 12px #FF9933;
+}
+
+body.dark-mode .search-bar::placeholder {
+    color: #bbb;
+}
+
+body.dark-mode .category-box {
+    background-color: #1e1e1e;
+    border-color: #333;
+    box-shadow: 0px 4px 12px #FF9933;
+}
+
+body.dark-mode .category-button {
+    background-color: #222;
+    color: white;
+    border-color: #555;
+}
+
+body.dark-mode .category-button.active {
+    background-color: #FF9933;
+}
+
+body.dark-mode .language-item {
+    background-color: #222;
+    color: white;
+    border-color: #444;
+}
+
+body.dark-mode .language-item:hover {
+    background-color: #FF9933;
+    color: white;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .search-bar {
+        width: 70%;
+    }
+
+    .category-box {
+        width: 80%;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .header p {
+        font-size: 16px;
+    }
+
+    .search-bar {
+        width: 90%;
+        padding: 14px;
+        font-size: 14px;
+    }
+
+    .category-buttons {
+        gap: 5px;
+    }
+
+    .category-box {
+        width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 15px;
+    }
+
+    .language-item {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .header p {
+        font-size: 14px;
+    }
+
+    .search-bar {
+        width: 95%;
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    .category-buttons {
+        flex-wrap: wrap;
+    }
+
+    .category-button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .category-box {
+        width: 95%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .language-item {
+        font-size: 14px;
+        padding: 8px;
+    }
 }
