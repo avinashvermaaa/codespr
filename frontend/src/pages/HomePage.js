@@ -48,8 +48,7 @@ const languageIcons = {
   Dart: <SiDart style={{ color: "#0175C2" }} />,
   Elixir: <SiElixir style={{ color: "#4B275F" }} />,
   Erlang: <SiErlang style={{ color: "#A90533" }} />,
-  yaml : <FaDocker  style={{ color: "skyblue" }} />, // Using generic code icon for YAML
-  // ObjectiveC: <SiObjectivec style={{ color: "#43853D" }} />,
+  yaml : <FaDocker  style={{ color: "skyblue" }} />, 
 };
 
 const defaultIcon = <FaCode style={{ color: "#808080" }} />;
@@ -106,7 +105,7 @@ function HomePage() {
     },
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState("Working");
+  const [selectedCategory, setSelectedCategory] = useState("POPULAR");
   const [searchQuery, setSearchQuery] = useState("");
 
   const openCompiler = (language) => {
@@ -170,14 +169,14 @@ function HomePage() {
         ))}
       </div>
       
-<h1> Choose from a vast collection of languages</h1>
+<h1> Choose from an extensive library of languages</h1>
 
 {/* Marquee Section :- web Animation 1*/}
 <div id="moving-animation">
     <div className="marque-wrapper">
-        <div className="marque">
+        <div className="marque-left">
           {/* Dynamically load images from the public/marque folder */}
-            {["angular","bootstrap","coffeescript","css","django","git","github","html","javascript","jquery","json","nodejs","npm","reactjs","redis","typescript","yarn"].map((imgName, index) => (
+            {["html","css","javascript","reactjs","nodejs","expressjs","nextjs","typescript","angular","bootstrap","coffeescript","django","git","github","npm","redis","yarn"].map((imgName, index) => (
               <img
               key={index}
               src={`./marque/web/${imgName}.png`} 
@@ -187,8 +186,8 @@ function HomePage() {
             ))}
         </div>
         {/* for infinite repeat */}
-        <div className="marque">
-            {["angular","bootstrap","coffeescript","css","django","git","github","html","javascript","jquery","json","nodejs","npm","reactjs","redis","typescript","yarn"].map((imgName, index) => (
+        <div className="marque-left">
+            {["html","css","javascript","reactjs","nodejs","expressjs","nextjs","typescript","angular","bootstrap","coffeescript","django","git","github","npm","redis","yarn"].map((imgName, index) => (
               <img
                 key={index}
                 src={`./marque/web/${imgName}.png`} 
@@ -200,26 +199,54 @@ function HomePage() {
     </div>
 </div>
 
-{/* Marquee Section :- db Animation 2*/}
-<div id="moving-animation">
-    <div className="marque-wrapper">
-        <div className="marque">
+{/* Marquee Section :- db & devops Animation 2*/}
+<div id="moving-animation-db-devops">
+    <div className="marque-wrapper-db-devops">
+        <div className="marque-right">
           {/* Dynamically load images from the public/marque folder */}
-            {["apache","cassandra","docker","graphql","magento","mariadb","mongodb","mysql","neo4j","oracle","postgresql","redis","sql","sqlserver"].map((imgName, index) => (
+            {["aws","gcp","docker","kubernetes","mongodb","apache","cassandra","graphql","magento","mariadb","mysql","neo4j","oracle","postgresql","redis","sql","sqlserver"].map((imgName, index) => (
               <img
               key={index}
               src={`./marque/db/${imgName}.png`} 
+              alt={imgName}
+              className="logo-db-devops"
+              />
+            ))}
+        </div>
+        {/* for infinite repeat */}
+        <div className="marque-right">
+            {["aws","gcp","docker","kubernetes","mongodb","apache","cassandra","graphql","magento","mariadb","mysql","neo4j","oracle","postgresql","redis","sql","sqlserver"].map((imgName, index) => (
+              <img
+                key={index}
+                src={`./marque/db/${imgName}.png`} 
+                alt={imgName}
+                className="logo-db-devops"
+              />
+            ))}
+        </div>
+    </div>
+</div>
+
+{/* Marquee Section :- Progamming Animation 3*/}
+<div id="moving-animation">
+    <div className="marque-wrapper">
+        <div className="marque-left">
+          {/* Dynamically load images from the public/marque folder */}
+            {["java","cpp","python","php","rust","javascript","typescript",].map((imgName, index) => (
+              <img
+              key={index}
+              src={`./marque/prog/${imgName}.png`} 
               alt={imgName}
               className="logo"
               />
             ))}
         </div>
         {/* for infinite repeat */}
-        <div className="marque">
-            {["apache","cassandra","docker","graphql","magento","mariadb","mongodb","mysql","neo4j","oracle","postgresql","redis","sql","sqlserver"].map((imgName, index) => (
+        <div className="marque-left">
+            {["java","cpp","python","php","rust","javascript","typescript",].map((imgName, index) => (
               <img
                 key={index}
-                src={`./marque/db/${imgName}.png`} 
+                src={`./marque/prog/${imgName}.png`} 
                 alt={imgName}
                 className="logo"
               />
@@ -228,30 +255,31 @@ function HomePage() {
     </div>
 </div>
 
-<h1> Trusted and Used by Global Leaders</h1>
 
-{/* Marquee Section :- Company Animation 3*/}
-<div id="moving-animation">
-    <div className="marque-wrapper">
-        <div className="marque">
+<h1> Trusted and Used by Employees Global Leaders</h1>
+
+{/* Marquee Section :- Company Animation 4*/}
+<div id="moving-animation-db-devops">
+    <div className="marque-wrapper-db-devops">
+        <div className="marque-right">
           {/* Dynamically load images from the public/marque folder */}
-            {["aws","fb","google","insta","meta","snap","whs","x","yt"].map((imgName, index) => (
+            {["aws","gcp","fb","google","insta","meta","snap","whs","x","yt"].map((imgName, index) => (
               <img
               key={index}
               src={`./marque/company/${imgName}.png`} 
               alt={imgName}
-              className="logo"
+              className="logo-db-devops"
               />
             ))}
         </div>
         {/* for infinite repeat */}
-        <div className="marque">
-            {["aws","fb","google","insta","meta","snap","whs","x","yt"].map((imgName, index) => (
+        <div className="marque-right">
+            {["aws","gcp","fb","google","insta","meta","snap","whs","x","yt"].map((imgName, index) => (
               <img
                 key={index}
                 src={`./marque/company/${imgName}.png`} 
                 alt={imgName}
-                className="logo"
+                className="logo-db-devops"
               />
             ))}
         </div>
@@ -301,9 +329,8 @@ const styles = {
   margin: 0,
   alignSelf: "center",
   fontSize: "16px",
-  color: "white", // or any other color you prefer
+  color: "#007bff",
   },
-
 };
 
 export default HomePage;
