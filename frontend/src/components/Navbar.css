@@ -93,7 +93,7 @@
     width: 100%;
     flex-direction: column;
     text-align: center;
-    background: linear-gradient(45deg, #007bff, red);
+    background: linear-gradient(45deg, #FF9933, #138808);
     /* background-color: #FF9933; */
     position: absolute;
     top: 60px; /* Adjust if needed */
