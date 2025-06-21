@@ -131,6 +131,7 @@ body.dark-mode .white {
     white-space: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
+    
 }
 
 .marque-wrapper::-webkit-scrollbar,
@@ -151,6 +152,8 @@ body.dark-mode .white {
 .logo,
 .logo-db-devops {
     height: 4vw;
+    min-height: 40px; /* Ensures visibility on small screens */
+
     margin: 0 3rem;
     opacity: 0.8;
     transition: opacity 0.1s, filter 0.1s;
@@ -199,6 +202,29 @@ body.dark-mode .white {
     animation: marquee-left-to-right 20s linear infinite;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .logo,
+    .logo-db-devops {
+        height: 8vw;
+        margin: 0 1rem;
+    }
+
+    .marque,
+    .marque-db-devops,
+    .marque-left,
+    .marque-right {
+        padding: 1.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo,
+    .logo-db-devops {
+        height: 10vw;
+        margin: 0 0.5rem;
+    }
+}
 
 .footer-text{
     font-size: 20px;
