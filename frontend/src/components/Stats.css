@@ -1,0 +1,36 @@
+
+/* Counter effect */
+.stats-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  font-size: 1.5rem;
+  color: white;
+  background: linear-gradient(135deg, #FF9933, #138808);
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  text-align: center;
+}
+
+.stat-number {
+  font-weight: bold;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .stat-box {
+    font-size: 1rem;
+  }
+}

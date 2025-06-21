@@ -6,6 +6,9 @@ import { SiCplusplus, SiMysql, SiSqlite ,SiOracle ,SiMongodb, SiPostgresql, SiMa
 import "./HomePage.css";
 import Navbar from "../components/Navbar";
 // import "./components/Navbar.css";
+import Stats from '../components/Stats'; // Adjust path if needed
+
+
 
 // Language-icon mapping using react-icons/fa6
 const languageIcons = {
@@ -172,7 +175,8 @@ function HomePage() {
         ))}
       </div>
       
-<h1> Choose from an extensive library of languages</h1>
+<Stats />
+<h1 class="trusted-heading"> Choose from an extensive library of languages</h1>
 
 {/* Marquee Section :- web Animation 1*/}
 <div id="moving-animation">
@@ -258,8 +262,7 @@ function HomePage() {
     </div>
 </div>
 
-
-<h1> Trusted and used by employees of global leaders</h1>
+<h1 class="trusted-heading">Trusted and used by employees of global leaders</h1>
 
 {/* Marquee Section :- Company Animation 4*/}
 <div id="moving-animation-db-devops">

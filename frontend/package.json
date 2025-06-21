@@ -1,6 +1,6 @@
 {
   "name": "codespr",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "private": true,
   "dependencies": {
     "@codemirror/lang-angular": "^0.1.4",
@@ -22,9 +22,7 @@
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
-    
     "@testing-library/user-event": "^13.5.0",
-    
     "@uiw/codemirror-theme-darcula": "^4.23.13",
     "@uiw/codemirror-theme-dracula": "^4.23.10",
     "@uiw/codemirror-theme-monokai": "^4.23.13",
@@ -33,8 +31,10 @@
     "codemirror": "^6.0.1",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.0.0",
+    "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
+    "react-intersection-observer": "^9.16.0",
     "react-router-dom": "^7.1.5",
     "react-scripts": "5.0.1",
     "react-simple-code-editor": "^0.14.1",
