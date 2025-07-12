@@ -1,7 +1,7 @@
 /* Navbar container styles */
 .navbar {
-    background: linear-gradient(45deg, #FF9933, #138808);
-    /* background: linear-gradient(45deg, #007bff, red); */
+    /* background: linear-gradient(45deg, #FF9933, #138808); */
+    background: linear-gradient(45deg, #007bff, red);
     /* background-color: #FF9933; */
     color: white;
     padding: 10px 0;
@@ -55,7 +55,7 @@
 }
 
 .navbar-link:hover {
-    background-color: #FF9933;
+    background-color: #007bff;
     color: #fff;
     border-radius: 5px;
 }
@@ -93,7 +93,8 @@
     width: 100%;
     flex-direction: column;
     text-align: center;
-    background: linear-gradient(45deg, #FF9933, #138808);
+    background: linear-gradient(45deg, #007bff, red);
+    /* background: linear-gradient(45deg, #FF9933, #138808); */
     /* background-color: #FF9933; */
     position: absolute;
     top: 60px; /* Adjust if needed */

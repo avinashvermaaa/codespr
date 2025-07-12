@@ -11,8 +11,8 @@ const DarkModeToggle = () => {
         position: "fixed",  // change to fixed for better visibility (absolute)
         top: "0px",
         right: "25px",
-        background: "linear-gradient(45deg, #FF9933, #138808)",
-        // background: "linear-gradient(45deg, #007bff, red)",  
+        // background: "linear-gradient(45deg, #FF9933, #138808)",
+        background: "linear-gradient(45deg, #007bff, red)",  
 
         // color: darkMode ? "#f0f0f0" : "#333",
         // backgroundColor: darkMode ? "#333" : "#f0f0f0",

@@ -440,7 +440,7 @@ function HomePage() {
             <Icon
               style={{
                 fontSize: "32px",
-                color: hoveredIcon === index ? "#138808" : "#FF9933",
+                color: hoveredIcon === index ? "#007bff" : "red",
                 transition: "color 0.3s",
                 cursor: "pointer",
               }}
@@ -454,7 +454,7 @@ function HomePage() {
             gap: "10px",
             margin: 0,
             fontSize: "24px",
-            color: "#FF9933",
+            color: "#007bff",
             flexWrap: "wrap",  
             justifyContent: "center",  
             width: "100%",  
