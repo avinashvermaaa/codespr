@@ -198,15 +198,15 @@ body.dark-mode .white {
 }
 
 .marque-db-devops {
-    animation: marquee-left-to-right 12s linear infinite;
+    animation: marquee-left-to-right 15s linear infinite;
 }
 
 .marque-left {
-    animation: marquee-right-to-left 12s linear infinite;
+    animation: marquee-right-to-left 15s linear infinite;
 }
 
 .marque-right {
-    animation: marquee-left-to-right 20s linear infinite;
+    animation: marquee-left-to-right 15s linear infinite;
 }
 
 /* Responsive Adjustments */

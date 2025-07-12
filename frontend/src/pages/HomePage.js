@@ -5,9 +5,7 @@ import { SiCplusplus, SiMysql, SiSqlite ,SiOracle ,SiMongodb, SiPostgresql, SiMa
 
 import "./HomePage.css";
 import Navbar from "../components/Navbar";
-// import "./components/Navbar.css";
-import Stats from '../components/Stats'; // Adjust path if needed
-
+import Stats from '../components/Stats';
 
 
 // Language-icon mapping using react-icons/fa6
@@ -178,7 +176,7 @@ function HomePage() {
 <Stats />
 <h1 class="trusted-heading"> Choose from an extensive library of languages</h1>
 
-{/* Marquee Section :- web Animation 1*/}
+{/* Animation Section :- web Animation 1*/}
 <div id="moving-animation">
     <div className="marque-wrapper">
         <div className="marque-left">
@@ -186,7 +184,7 @@ function HomePage() {
             {["html","css","javascript","reactjs","nodejs","expressjs","nextjs","typescript","angular","bootstrap","coffeescript","django","git","github","npm","redis","yarn"].map((imgName, index) => (
               <img
               key={index}
-              src={`./marque/web/${imgName}.png`} 
+              src={`./img/web/${imgName}.png`} 
               alt={imgName}
               className="logo"
               />
@@ -197,7 +195,7 @@ function HomePage() {
             {["html","css","javascript","reactjs","nodejs","expressjs","nextjs","typescript","angular","bootstrap","coffeescript","django","git","github","npm","redis","yarn"].map((imgName, index) => (
               <img
                 key={index}
-                src={`./marque/web/${imgName}.png`} 
+                src={`./img/web/${imgName}.png`} 
                 alt={imgName}
                 className="logo"
               />
@@ -206,7 +204,7 @@ function HomePage() {
     </div>
 </div>
 
-{/* Marquee Section :- db & devops Animation 2*/}
+{/* Animation Section :- db & devops Animation 2*/}
 <div id="moving-animation-db-devops">
     <div className="marque-wrapper-db-devops">
         <div className="marque-right">
@@ -214,7 +212,7 @@ function HomePage() {
             {["aws","gcp","docker","kubernetes","mongodb","apache","cassandra","graphql","magento","mariadb","mysql","neo4j","oracle","postgresql","redis","sql","sqlserver"].map((imgName, index) => (
               <img
               key={index}
-              src={`./marque/db/${imgName}.png`} 
+              src={`./img/db/${imgName}.png`} 
               alt={imgName}
               className="logo-db-devops"
               />
@@ -222,10 +220,10 @@ function HomePage() {
         </div>
         {/* for infinite repeat */}
         <div className="marque-right">
-            {["aws","gcp","docker","kubernetes","mongodb","apache","cassandra","graphql","magento","mariadb","mysql","neo4j","oracle","postgresql","redis","sql","sqlserver"].map((imgName, index) => (
+            {["aws","gcp","docker","kubernetes","mongodb","apache","cassandra","graphql","magento","mariadb","mysql","neo4j","docker","oracle","postgresql","redis","sql","sqlserver"].map((imgName, index) => (
               <img
                 key={index}
-                src={`./marque/db/${imgName}.png`} 
+                src={`./img/db/${imgName}.png`} 
                 alt={imgName}
                 className="logo-db-devops"
               />
@@ -234,15 +232,15 @@ function HomePage() {
     </div>
 </div>
 
-{/* Marquee Section :- Progamming Animation 3*/}
+{/* Animation Section :- Progamming Animation 3*/}
 <div id="moving-animation">
     <div className="marque-wrapper">
         <div className="marque-left">
           {/* Dynamically load images from the public/marque folder */}
-            {["java","cpp","python","php","rust","javascript","typescript",].map((imgName, index) => (
+            {["java","cpp","c","python","php","rust","swift","ruby","go","kotlin","javascript","perl","r","csharp","typescript","dart",].map((imgName, index) => (
               <img
               key={index}
-              src={`./marque/prog/${imgName}.png`} 
+              src={`./img/prog/${imgName}.png`} 
               alt={imgName}
               className="logo"
               />
@@ -250,10 +248,10 @@ function HomePage() {
         </div>
         {/* for infinite repeat */}
         <div className="marque-left">
-            {["java","cpp","python","php","rust","javascript","typescript",].map((imgName, index) => (
+            {["java","cpp","c","python","php","rust","swift","ruby","go","kotlin","javascript","perl","r","csharp","typescript","dart",].map((imgName, index) => (
               <img
                 key={index}
-                src={`./marque/prog/${imgName}.png`} 
+                src={`./img/prog/${imgName}.png`} 
                 alt={imgName}
                 className="logo"
               />
@@ -264,7 +262,7 @@ function HomePage() {
 
 <h1 class="trusted-heading">Trusted and used by employees of global leaders</h1>
 
-{/* Marquee Section :- Company Animation 4*/}
+{/* Animation Section :- Company Animation 4*/}
 <div id="moving-animation-db-devops">
     <div className="marque-wrapper-db-devops">
         <div className="marque-right">
@@ -272,7 +270,7 @@ function HomePage() {
             {["aws","gcp","fb","google","insta","meta","snap","whs","x","yt"].map((imgName, index) => (
               <img
               key={index}
-              src={`./marque/company/${imgName}.png`} 
+              src={`./img/company/${imgName}.png`} 
               alt={imgName}
               className="logo-db-devops"
               />
@@ -283,7 +281,7 @@ function HomePage() {
             {["aws","gcp","fb","google","insta","meta","snap","whs","x","yt"].map((imgName, index) => (
               <img
                 key={index}
-                src={`./marque/company/${imgName}.png`} 
+                src={`./img/company/${imgName}.png`} 
                 alt={imgName}
                 className="logo-db-devops"
               />
