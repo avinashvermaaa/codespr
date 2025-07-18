@@ -130,14 +130,20 @@ function HomePage() {
     <div className="homepage-container">
       <Navbar /> 
       <header className="header">
-          <h1>
-            <span className="saffron">Code</span>{' '}
-            <span className="white">online</span>{' '} 
-            <span className="green">with</span>{' '} 
-            <span className="highlight-blue">CodeSphere.</span>
-          </h1>
 
-        <p>CodeSphere is here to help you Write & Compile your Codes online.</p>
+          <h1>
+            <span className="saffron">An</span>{' '}
+            <span className="white">Ai</span>{' '} 
+            <span className="green">Integrated</span>{' '} 
+            <span className="highlight-blue">IDE</span>{' '}
+            <span class ="gradient">for Faster Development.</span>
+          </h1>
+          <div class="banner">
+              <h1 class="banner-text">Code <span class="gradient">online with</span> <span class="gradient"> CodeSphere.</span></h1>
+          </div>
+
+
+        {/* <p>CodeSphere is here to help you Write & Compile your Codes online.</p> */}
         <input
           type="text"
           className="search-bar"
@@ -174,8 +180,9 @@ function HomePage() {
       </div>
       
 <Stats />
-<h1 class="trusted-heading"> Choose from an extensive library of languages</h1>
-
+    <div class="banner">
+        <h2 class="banner-text"><span class="gradient">Choose from an extensive</span> <span class="gradient"> library of languages</span></h2>
+    </div>
 {/* Animation Section :- web Animation 1*/}
 <div id="moving-animation">
     <div className="marque-wrapper">
@@ -260,11 +267,13 @@ function HomePage() {
     </div>
 </div>
 
-<h1 class="trusted-heading">Trusted and used by employees of global leaders</h1>
+  <div class="banner">
+      <h2 class="banner-text"><span class="gradient">Trusted and used by</span> <span class="gradient"> employees of global leaders</span></h2>
+  </div>
 
 {/* Animation Section :- Company Animation 4*/}
 <div id="moving-animation-db-devops">
-    <div className="marque-wrapper-db-devops">
+    <div className="marque-wrapper-company">
         <div className="marque-right">
           {/* Dynamically load images from the public/marque folder */}
             {["aws","gcp","fb","google","insta","meta","snap","whs","x","yt"].map((imgName, index) => (

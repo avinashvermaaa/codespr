@@ -1,164 +1,143 @@
-/* Compiler Page Styling */
+
 .compiler-page {
     padding: 20px;
     text-align: center;
 }
 
-/* Header Section */
+
 .compiler-page .header {
     display: flex;
-    justify-content: space-between; /* Spreads items apart */
+    justify-content: space-between; 
     align-items: center;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Ensures responsiveness */
+    flex-wrap: wrap; 
 }
 
-/* Header Title Styling */
+
 .compiler-page .header h2 {
-    flex-grow: 1; /* Allows title to expand */
+    flex-grow: 1; 
     text-align: center;
     margin: 0;
 }
 
-/* Container for Header Buttons & Dark Mode Toggle */
+
 .compiler-page .header-buttons-container {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* Wraps buttons on small screens */
+    flex-wrap: wrap; 
     margin-right: 50px;
 }
 
-/* Header Buttons */
+
 .compiler-page .header-buttons {
     display: flex;
-    gap: 10px; /* Space between buttons */
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    margin-right: 478px; /* margin from dark-mode-toggle button*/
+    gap: 10px; 
+    flex-wrap: wrap; 
+    margin-right: 55px; 
 }
 
-/* Individual Header Button */
+
 
 .compiler-page .header-button {
     padding: 10px 15px;
     font-size: 16px;
-    background: linear-gradient(45deg, #007bff, red);
-    /* background: linear-gradient(45deg, #FF9933, #138808); */
+    
+    
     color: white;
-    border: none;
+    
     border-radius: 5px;
     cursor: pointer;
-    flex-shrink: 0; /* Prevents shrinking */
+    flex-shrink: 0; 
+
+    background-color: #222;
+    color: white;
+    border-color: #555;
+    box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f;
 }
 
-/* Button Hover Effect */
+
 .compiler-page .header-button:hover {
-    /* background: linear-gradient(45deg, #FF9933, #138808); */
-    background: linear-gradient(45deg, red,#007bff); 
-    transform: scale(1.05); 
+        color: #666;
+    border-color: #333;
+
 }
 .compiler-page .header-button:active {
     transform: scale(0.98);
 }
 
-/* Main Compiler Layout */
+
 .compiler-container {
+    
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
-    height: 82vh; /* Fixed height */
-    flex-wrap: wrap; /* Ensures responsiveness */
+    height: 82vh; 
+    flex-wrap: wrap; 
 }
 
-/* Code Editor Styling */
+
 .code-editor {
     width: 64%;
     display: flex;
     flex-direction: column;
-    height: 82vh; /* Fixed height */
-    min-height: 400px; /* Ensures a minimum size */
-    box-shadow: 0 0 25px red; 
-    /* box-shadow: 0 0 15px #FF9933, 0 0 30px #138808; */
-    /* box-shadow: 0 0 15px #007bff, 0 0 30px red; */
-
-    animation: neon-glow 1.5s infinite alternate;
-
-    @keyframes neon-glow {
-        0% {
-            box-shadow: 0 0 10px #007bff, 0 0 20px #007bff;
-        }
-
-        100% {
-            box-shadow: 0 0 15px #007bff, 0 0 25px #007bff;
-        }
-    }
+    height: 82vh; 
+    min-height: 400px; 
+        
     border-radius: 16px;
-    position: relative;
-    color: #fff;
+    color: white;
+
+    box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f;
 }
 
-/* CodeMirror Styling */
+
 .CodeMirror {
     width: 100%;
     height: 100%;
     max-width: 100%;
     max-height: 100%;
-    min-height: 300px; /* Ensures usability on small screens */
+    min-height: 300px; 
     min-width: 100%;
     overflow: hidden;
-    text-align: left !important; /* Align text to the left */
+    text-align: left !important; 
 
-    background-color: #2c2c2c !important; /* Full black background */
-    color: white !important; /* Ensures text remains visible */
-    flex-grow: 1; /* Allow it to expand within the container */
-    overflow: auto; /* Enable scrolling if content overflows */
+    background-color: #2c2c2c !important; 
+    color: white !important; 
+    flex-grow: 1; 
+    overflow: auto; 
 }
 
-/* Ensure Scrollbars Appear When Needed */
+
 .CodeMirror-scroll {
     overflow: auto !important;
     height: 100%;
 }
 
-/* Ensure text in CodeMirror is visible */
+
 .cm-s-default {
     background-color: #1e1e1e !important;
     color: white !important;
 }
 
-/* Adjust font for better readability */
+
 .CodeMirror pre {
     font-size: 16px;
     font-family: "Fira Code", monospace;
 }
 
-/* Textarea (Code Editor, Input, and Output) */
+
 textarea {
     width: 100%;
     padding: 5px;
     border: none;
     border-radius: 16px;
-    /* 2px solid #007bff; */
-    box-shadow: 0 0 30px red;
-    /* box-shadow: 0 0 15px #FF9933, 0 0 30px #138808; */
-    /* box-shadow: 0 0 25px #007bff; Previous version */
-    animation: neon-glow 1.5s infinite alternate;
-
-    @keyframes neon-glow {
-        0% {
-            box-shadow: 0 0 10px #007bff, 0 0 20px #007bff;
-        }
-
-        100% {
-            box-shadow: 0 0 15px #007bff, 0 0 25px #007bff;
-        }
-    }
     font-family: monospace;
     font-size: 16px;
-    resize: none; /* Prevents resizing */
+    resize: none; 
     min-height: 150px;
+    
 }
 
-/* Ensuring Input and Output Boxes Have Fixed Heights */
+
 textarea,
 .input-box textarea,
 .output-box textarea {
@@ -166,19 +145,26 @@ textarea,
     background-color: #2c2c2c;
     height: 100%;
     min-height: 100px;
+
+            background-color: #222;
+    border-radius: 16px;
+    color: white;
+
+    box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f;
 }
 
-/* Dark Mode Styles */
+
 .dark-mode textarea,
 .dark-mode .input-box textarea,
 .dark-mode .output-box textarea {
     background-color: #2c2c2c;
     color: white;
-    box-shadow: 0 0 30px red;
-    /* box-shadow: 0 0 15px #FF9933, 0 0 30px #138808; */
-    /* box-shadow: 0 0 25px #FF9933; Previous version */
+    
+    
+    
         animation: neon-glow 1.5s infinite alternate;
     
+        
         @keyframes neon-glow {
             0% {
                 box-shadow: 0 0 10px #007bff, 0 0 20px #007bff;
@@ -190,52 +176,54 @@ textarea,
         }
 }
 
-/* Input & Output Container */
+
 .input-output-container {
+    margin-top: 10px;
     padding-right: 10px;
-    width: 1%;
+    
     display: flex;
     flex-direction: column;
     height: auto;
     flex-grow: 0.8;
 }
 
-/* Input & Output Boxes */
+
 .input-box,
 .output-box {
     flex-grow: 1;
     min-height: 100px;
 }
 
-/* Output Box Specific Styling */
+
 .output-box {
-    height: 40vh;
+    margin-top: 10px;
+    height: 61vh;
 }
 
 @media (max-width: 768px) {
     .compiler-container {
-        flex-direction: column; /* Stack elements vertically */
+        flex-direction: column; 
         align-items: center;
         height: auto;
     }
 
-    /* Ensure Code Editor & Input-Output Containers Align */
+    
     .code-editor,
     .input-output-container {
         width: 100%;
     }
 
-    /* Make Input-Output Containers Consistent */
+    
     .input-output-container {
         padding-right: 0px;
         display: flex;
         flex-direction: column;
         align-items: left;
-        /* Center align */
+        
         justify-content: center;
     }
 
-    /* Input and Output Box Styling */
+    
     .input-box,
     .output-box {
         width: 97%;
@@ -246,18 +234,18 @@ textarea,
     }
 }
 
-/* Code Editor Title */
+
 .code-editor-title {
-    color: black; /* Default text color for light mode */
+    color: black; 
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 15px;
     margin-top: 6px;
 }
 
-/* Ensure Visibility in Dark Mode */
+
 .dark-mode .code-editor-title {
-    color: white; /* White text for dark mode */
+    color: white; 
 }
 
 .code-mirror {
@@ -265,11 +253,11 @@ textarea,
     height: 100%;
     max-width: 100%;
     max-height: 100%;
-    min-height: 300px; /* Ensures usability on small screens */
+    min-height: 300px; 
     min-width: 100%;
     overflow: hidden;
-    text-align: left !important; /* Align text to the left */
+    text-align: left !important; 
     
-    background-color: #2c2c2c !important; /* Full black background */
-    color: white !important; /* Ensures text remains visible */
+    background-color: #2c2c2c !important; 
+    color: white !important; 
 }

@@ -91,7 +91,11 @@ function CompilerPage() {
   return (
     <div className="compiler-page">
       <div className="header">
-        <h2>CodeSphere: {language} Compiler</h2>
+        {/* <h2>CodeSphere: {language} Compiler</h2> */}
+          <div class="banner">
+            <h1 class="banner-text"><span class="gradient"> CodeSphere: {language}</span> <span class="gradient"> Compiler</span></h1>
+          </div>
+
         <div className="header-buttons">
           <button className="header-button" onClick={renameCode}>Rename</button>
           <button className="header-button" onClick={downloadCode}>Download</button>
@@ -118,7 +122,7 @@ function CompilerPage() {
 
         <div className="input-output-container">
           <div className="input-box">
-            <h3>Input</h3>
+            {/* <h3>Input</h3> */}
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -127,7 +131,7 @@ function CompilerPage() {
           </div>
 
           <div className="output-box">
-            <h3>Output</h3>
+            {/* <h3>Output</h3> */}
             <textarea
               value={output}
               readOnly

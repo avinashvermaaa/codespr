@@ -1,10 +1,15 @@
 /* Navbar container styles */
 .navbar {
     /* background: linear-gradient(45deg, #FF9933, #138808); */
-    background: linear-gradient(45deg, #007bff, red);
+    /* background: linear-gradient(45deg, #007bff, red); */
+        background-color: #222;
+        background: linear-gradient(135deg,#000,#1f1f1f);
+    color: white;
+    border-color: #444;
+        box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f;
     /* background-color: #FF9933; */
     color: white;
-    padding: 10px 0;
+    padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -55,9 +60,12 @@
 }
 
 .navbar-link:hover {
-    background-color: #007bff;
+    /* background-color: #007bff; */
     color: #fff;
-    border-radius: 5px;
+    /* border-radius: 5px; */
+        color: #666;
+    /* border-color: #333; */
+
 }
 
 .navbar-link svg {
