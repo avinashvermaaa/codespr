@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaEnvelope, FaInstagram, FaXTwitter, FaLinkedin, FaGithub, FaSnapchat, FaPython, FaHtml5, FaCode, FaJava, FaDatabase, FaJs, FaPhp, FaNode, FaGem, FaTerminal, FaC, FaCss3Alt, FaReact, FaAngular, FaVuejs, FaBootstrap, FaDocker } from "react-icons/fa6";
-import { SiCplusplus, SiMysql, SiSqlite ,SiOracle ,SiMongodb, SiPostgresql, SiMariadb, SiTypescript, SiKotlin, SiLua, SiGo, SiR, SiPerl, SiScala, SiFortran, SiHaskell, SiFsharp, SiClojure, SiDart, SiElixir, SiErlang, SiRust,  SiSwift } from "react-icons/si";
+import { FaPython, FaHtml5, FaCode, FaJava, FaDatabase, FaJs, FaPhp, FaNode, FaGem, FaTerminal, FaC, FaCss3Alt, FaReact, FaAngular, FaVuejs, FaBootstrap, FaDocker } from "react-icons/fa6";
+import { SiCplusplus, SiMysql, SiSqlite, SiOracle, SiMongodb, SiPostgresql, SiMariadb, SiTypescript, SiKotlin, SiLua, SiGo, SiR, SiPerl, SiScala, SiFortran, SiHaskell, SiFsharp, SiClojure, SiDart, SiElixir, SiErlang, SiRust, SiSwift } from "react-icons/si";
 
 import "./HomePage.css";
 import Navbar from "../components/Navbar";
 import Stats from '../components/Stats';
+import Footer from './footer/Footer'; // adjust path as needed
+import Mq from './Mq/Mq';
 
 
 // Language-icon mapping using react-icons/fa6
@@ -51,23 +53,13 @@ const languageIcons = {
   Dart: <SiDart style={{ color: "#0175C2" }} />,
   Elixir: <SiElixir style={{ color: "#4B275F" }} />,
   Erlang: <SiErlang style={{ color: "#A90533" }} />,
-  yaml : <FaDocker  style={{ color: "skyblue" }} />, 
+  yaml: <FaDocker style={{ color: "skyblue" }} />,
 };
 
 const defaultIcon = <FaCode style={{ color: "#808080" }} />;
 
 function HomePage() {
   const navigate = useNavigate();
-  const [hoveredIcon, setHoveredIcon] = useState(null);
-  
-  const socialIcons = [
-    { component: FaLinkedin, link: "https://www.linkedin.com/in/avinash-verma-20946b21b/" },
-    { component: FaEnvelope, link: "mailto:code6969nation@gmail.com" },
-    { component: FaInstagram, link: "https://www.instagram.com/avinash_vermaa" },
-    { component: FaGithub, link: "https://github.com" },
-    { component: FaXTwitter, link: "https://x.com" },
-    { component: FaSnapchat, link: "mailto:example@example.com" },
-  ];
 
   const languages = [
     {
@@ -86,7 +78,7 @@ function HomePage() {
     {
       category: "PROGRAMMING",
       items: [
-        "Java", "Python", "C", "Cpp", "Go", "Rust", "PHP", "JavaScript", "NodeJS", "Scala", "Ruby", "R", 
+        "Java", "Python", "C", "Cpp", "Go", "Rust", "PHP", "JavaScript", "NodeJS", "Scala", "Ruby", "R",
         "Kotlin", "Pascal", "Cobol", "Lua", "Fortran", "Assembly", "Groovy", "Bash", "Clojure", "Perl", "C#",
         "TypeScript", "Prolog", "Swift", "Objective-C", "CoffeeScript", "EJS",
       ],
@@ -94,16 +86,16 @@ function HomePage() {
     {
       category: "WEB",
       items: [
-        "HTML", "CSS", "JavaScript", "JSON", "XML", "Angular", "Vue", "yaml",  
-        "markdown", "Vue3", "Materialize", "Bootstrap", "JQuery",  "Foundation", "Bulma", "Uikit",
-        "Semantic UI", "Skeleton", "Milligram", "React", "BackboneJS", 
+        "HTML", "CSS", "JavaScript", "JSON", "XML", "Angular", "Vue", "yaml",
+        "markdown", "Vue3", "Materialize", "Bootstrap", "JQuery", "Foundation", "Bulma", "Uikit",
+        "Semantic UI", "Skeleton", "Milligram", "React", "BackboneJS",
       ],
     },
     {
       category: "DATABASES",
       items: [
-        "MySQL", "Oracle", "PostgreSQL", "SQL", "MongoDB", "SQLite", "Redis", "MariaDB",  "SQLServer",
-        "MySQL", "Oracle", "PostgreSQL", "SQL", "MongoDB", "SQLite", "Redis", "MariaDB",  "SQLServer",
+        "MySQL", "Oracle", "PostgreSQL", "SQL", "MongoDB", "SQLite", "Redis", "MariaDB", "SQLServer",
+        "MySQL", "Oracle", "PostgreSQL", "SQL", "MongoDB", "SQLite", "Redis", "MariaDB", "SQLServer",
       ],
     },
   ];
@@ -120,27 +112,27 @@ function HomePage() {
 
   const filteredLanguages = searchQuery
     ? languages
-        .flatMap((category) => category.items)
-        .filter((lang) =>
-          lang.toLowerCase().includes(searchQuery.toLowerCase())
-        )
+      .flatMap((category) => category.items)
+      .filter((lang) =>
+        lang.toLowerCase().includes(searchQuery.toLowerCase())
+      )
     : languages.find((cat) => cat.category === selectedCategory)?.items || [];
 
   return (
     <div className="homepage-container">
-      <Navbar /> 
+      <Navbar />
       <header className="header">
 
-          <h1>
-            <span className="saffron">An</span>{' '}
-            <span className="white">Ai</span>{' '} 
-            <span className="green">Integrated</span>{' '} 
-            <span className="highlight-blue">IDE</span>{' '}
-            <span class ="gradient">for Faster Development.</span>
-          </h1>
-          <div class="banner">
-              <h1 class="banner-text">Code <span class="gradient">online with</span> <span class="gradient"> CodeSphere.</span></h1>
-          </div>
+        <h1>
+          <span className="saffron">An</span>{' '}
+          <span className="white">Ai</span>{' '}
+          <span className="green">Integrated</span>{' '}
+          <span className="highlight-blue">IDE</span>{' '}
+          <span className="gradient">for Faster Development.</span>
+        </h1>
+        <div className="banner">
+          <h1 className="banner-text">Code <span className="gradient">online with</span> <span className="gradient"> CodeSphere.</span></h1>
+        </div>
 
 
         {/* <p>CodeSphere is here to help you Write & Compile your Codes online.</p> */}
@@ -157,9 +149,8 @@ function HomePage() {
         {languages.map((category, index) => (
           <button
             key={index}
-            className={`category-button ${
-              selectedCategory === category.category ? "active" : ""
-            }`}
+            className={`category-button ${selectedCategory === category.category ? "active" : ""
+              }`}
             onClick={() => setSelectedCategory(category.category)} // category shouldn't collapse on double click
           >
             {category.category}
@@ -170,314 +161,21 @@ function HomePage() {
       <div className="category-box">
         {filteredLanguages.map((item, idx) => (
           <button
-          key={idx}
-          className="language-item"
+            key={idx}
+            className="language-item"
             onClick={() => openCompiler(item)}
           >
             {languageIcons[item] || defaultIcon} {item}
           </button>
         ))}
       </div>
-      
-<Stats />
-    <div class="banner">
-        <h2 class="banner-text"><span class="gradient">Choose from an extensive</span> <span class="gradient"> library of languages</span></h2>
+
+
+
+      <Stats />
+      <Mq />
+      <Footer />
     </div>
-{/* Animation Section :- web Animation 1*/}
-<div id="moving-animation">
-    <div className="marque-wrapper">
-        <div className="marque-left">
-          {/* Dynamically load images from the public/marque folder */}
-            {["html","css","javascript","reactjs","nodejs","expressjs","nextjs","typescript","angular","bootstrap","coffeescript","django","git","github","npm","redis","yarn"].map((imgName, index) => (
-              <img
-              key={index}
-              src={`./img/web/${imgName}.png`} 
-              alt={imgName}
-              className="logo"
-              />
-            ))}
-        </div>
-        {/* for infinite repeat */}
-        <div className="marque-left">
-            {["html","css","javascript","reactjs","nodejs","expressjs","nextjs","typescript","angular","bootstrap","coffeescript","django","git","github","npm","redis","yarn"].map((imgName, index) => (
-              <img
-                key={index}
-                src={`./img/web/${imgName}.png`} 
-                alt={imgName}
-                className="logo"
-              />
-            ))}
-        </div>
-    </div>
-</div>
-
-{/* Animation Section :- db & devops Animation 2*/}
-<div id="moving-animation-db-devops">
-    <div className="marque-wrapper-db-devops">
-        <div className="marque-right">
-          {/* Dynamically load images from the public/marque folder */}
-            {["aws","gcp","docker","kubernetes","mongodb","apache","cassandra","graphql","magento","mariadb","mysql","neo4j","oracle","postgresql","redis","sql","sqlserver"].map((imgName, index) => (
-              <img
-              key={index}
-              src={`./img/db/${imgName}.png`} 
-              alt={imgName}
-              className="logo-db-devops"
-              />
-            ))}
-        </div>
-        {/* for infinite repeat */}
-        <div className="marque-right">
-            {["aws","gcp","docker","kubernetes","mongodb","apache","cassandra","graphql","magento","mariadb","mysql","neo4j","docker","oracle","postgresql","redis","sql","sqlserver"].map((imgName, index) => (
-              <img
-                key={index}
-                src={`./img/db/${imgName}.png`} 
-                alt={imgName}
-                className="logo-db-devops"
-              />
-            ))}
-        </div>
-    </div>
-</div>
-
-{/* Animation Section :- Progamming Animation 3*/}
-<div id="moving-animation">
-    <div className="marque-wrapper">
-        <div className="marque-left">
-          {/* Dynamically load images from the public/marque folder */}
-            {["java","cpp","c","python","php","rust","swift","ruby","go","kotlin","javascript","perl","r","csharp","typescript","dart",].map((imgName, index) => (
-              <img
-              key={index}
-              src={`./img/prog/${imgName}.png`} 
-              alt={imgName}
-              className="logo"
-              />
-            ))}
-        </div>
-        {/* for infinite repeat */}
-        <div className="marque-left">
-            {["java","cpp","c","python","php","rust","swift","ruby","go","kotlin","javascript","perl","r","csharp","typescript","dart",].map((imgName, index) => (
-              <img
-                key={index}
-                src={`./img/prog/${imgName}.png`} 
-                alt={imgName}
-                className="logo"
-              />
-            ))}
-        </div>
-    </div>
-</div>
-
-  <div class="banner">
-      <h2 class="banner-text"><span class="gradient">Trusted and used by</span> <span class="gradient"> employees of global leaders</span></h2>
-  </div>
-
-{/* Animation Section :- Company Animation 4*/}
-<div id="moving-animation-db-devops">
-    <div className="marque-wrapper-company">
-        <div className="marque-right">
-          {/* Dynamically load images from the public/marque folder */}
-            {["aws","gcp","fb","google","insta","meta","snap","whs","x","yt"].map((imgName, index) => (
-              <img
-              key={index}
-              src={`./img/company/${imgName}.png`} 
-              alt={imgName}
-              className="logo-db-devops"
-              />
-            ))}
-        </div>
-        {/* for infinite repeat */}
-        <div className="marque-right">
-            {["aws","gcp","fb","google","insta","meta","snap","whs","x","yt"].map((imgName, index) => (
-              <img
-                key={index}
-                src={`./img/company/${imgName}.png`} 
-                alt={imgName}
-                className="logo-db-devops"
-              />
-            ))}
-        </div>
-    </div>
-</div>
-
-
-<footer class="footer-container">
-  <div class="footer-grid">
-    {/* <!-- Column 1: Codesphere --> */}
-    <div class="footer-column">
-      <h4 class="footer-title">CodeSphere</h4>
-      <ul class="footer-list">
-        <li><a href="https://codespr.netlify.app">CodeSphere</a></li>
-        <li><a href="https://codespr.netlify.app">About</a></li>
-        <li><a href="https://codespr.netlify.app">Use Cases</a></li>
-        <li><a href="https://codespr.netlify.app">Contact</a></li>
-      </ul>
-
-      <h4 class="footer-title">Users</h4>
-      <ul class="footer-list">
-        <li><a href="https://codespr.netlify.app">Status</a></li>
-        <li><a href="https://codespr.netlify.app">Pricing</a></li>
-        <li><a href="https://codespr.netlify.app">Refund Policy</a></li>
-      </ul>
-    </div>
-
-    {/* <!-- Column 2: Languages --> */}
-    <div class="footer-column">
-      <h4 class="footer-title">Languages</h4>
-      <ul class="footer-list two-column">
-        <li><a href="https://codespr.netlify.app">Java</a></li>
-        <li><a href="https://codespr.netlify.app">Python</a></li>
-        <li><a href="https://codespr.netlify.app">C</a></li>
-        <li><a href="https://codespr.netlify.app">C++</a></li>
-        <li><a href="https://codespr.netlify.app">NodeJS</a></li>
-        <li><a href="https://codespr.netlify.app">JavaScript</a></li>
-        <li><a href="https://codespr.netlify.app">Groovy</a></li>
-        <li><a href="https://codespr.netlify.app">JShell</a></li>
-        <li><a href="https://codespr.netlify.app">Haskell</a></li>
-        <li><a href="https://codespr.netlify.app">Tcl</a></li>
-        <li><a href="https://codespr.netlify.app">Lua</a></li>
-        <li><a href="https://codespr.netlify.app">Ada</a></li>
-        <li><a href="https://codespr.netlify.app">CommonLisp</a></li>
-        <li><a href="https://codespr.netlify.app">D</a></li>
-        <li><a href="https://codespr.netlify.app">Elixir</a></li>
-        <li><a href="https://codespr.netlify.app">Erlang</a></li>
-        <li><a href="https://codespr.netlify.app">F#</a></li>
-        <li><a href="https://codespr.netlify.app">Fortran</a></li>
-        <li><a href="https://codespr.netlify.app">Assembly</a></li>
-        <li><a href="https://codespr.netlify.app">Scala</a></li>
-        <li><a href="https://codespr.netlify.app">PHP</a></li>
-        <li><a href="https://codespr.netlify.app">Python2</a></li>
-        <li><a href="https://codespr.netlify.app">C#</a></li>
-        <li><a href="https://codespr.netlify.app">Perl</a></li>
-        <li><a href="https://codespr.netlify.app">Ruby</a></li>
-        <li><a href="https://codespr.netlify.app">Go</a></li>
-        <li><a href="https://codespr.netlify.app">R</a></li>
-        <li><a href="https://codespr.netlify.app">Racket</a></li>
-        <li><a href="https://codespr.netlify.app">OCaml</a></li>
-        <li><a href="https://codespr.netlify.app">Visual Basic</a></li>
-        <li><a href="https://codespr.netlify.app">Basic</a></li>
-        <li><a href="https://codespr.netlify.app">HTML</a></li>
-        <li><a href="https://codespr.netlify.app">Materialize</a></li>
-        <li><a href="https://codespr.netlify.app">Bootstrap</a></li>
-        <li><a href="https://codespr.netlify.app">JQuery</a></li>
-        <li><a href="https://codespr.netlify.app">Foundation</a></li>
-        <li><a href="https://codespr.netlify.app">Bulma</a></li>
-        <li><a href="https://codespr.netlify.app">Uikit</a></li>
-        <li><a href="https://codespr.netlify.app">Semantic UI</a></li>
-        <li><a href="https://codespr.netlify.app">Skeleton</a></li>
-        <li><a href="https://codespr.netlify.app">Milligram</a></li>
-        <li><a href="https://codespr.netlify.app">PaperCSS</a></li>
-        <li><a href="https://codespr.netlify.app">BackboneJS</a></li>
-        <li><a href="https://codespr.netlify.app">React</a></li>
-        <li><a href="https://codespr.netlify.app">Vue</a></li>
-        <li><a href="https://codespr.netlify.app">Angular</a></li>
-        <li><a href="https://codespr.netlify.app">Bash</a></li>
-        <li><a href="https://codespr.netlify.app">Clojure</a></li>
-        <li><a href="https://codespr.netlify.app">TypeScript</a></li>
-        <li><a href="https://codespr.netlify.app">Cobol</a></li>
-        <li><a href="https://codespr.netlify.app">Kotlin</a></li>
-        <li><a href="https://codespr.netlify.app">Pascal</a></li>
-        <li><a href="https://codespr.netlify.app">Prolog</a></li>
-        <li><a href="https://codespr.netlify.app">Rust</a></li>
-        <li><a href="https://codespr.netlify.app">Swift</a></li>
-        <li><a href="https://codespr.netlify.app">Objective-C</a></li>
-        <li><a href="https://codespr.netlify.app">Octave</a></li>
-        <li><a href="https://codespr.netlify.app">Text</a></li>
-        <li><a href="https://codespr.netlify.app">BrainFK</a></li>
-        <li><a href="https://codespr.netlify.app">CoffeeScript</a></li>
-        <li><a href="https://codespr.netlify.app">EJS</a></li>
-        <li><a href="https://codespr.netlify.app">Dart</a></li>
-        <li><a href="https://codespr.netlify.app">Deno</a></li>
-        <li><a href="https://codespr.netlify.app">Bun</a></li>
-        <li><a href="https://codespr.netlify.app">MySQL</a></li>
-        <li><a href="https://codespr.netlify.app">Oracle Db</a></li>
-        <li><a href="https://codespr.netlify.app">PostgreSQL</a></li>
-        <li><a href="https://codespr.netlify.app">MongoDB</a></li>
-        <li><a href="https://codespr.netlify.app">SQLite</a></li>
-        <li><a href="https://codespr.netlify.app">Redis</a></li>
-        <li><a href="https://codespr.netlify.app">MariaDB</a></li>
-        <li><a href="https://codespr.netlify.app">Cassandra</a></li>
-        <li><a href="https://codespr.netlify.app">PL/SQL</a></li>
-        <li><a href="https://codespr.netlify.app">SQL Server</a></li>
-      </ul>
-    </div>
-
-    {/* <!-- Column 3: More --> */}
-    <div class="footer-column">
-      <h4 class="footer-title">More</h4>
-      <ul class="footer-list">
-        <li><a href="https://codespr.netlify.app">Orgs</a></li>
-        <li><a href="https://codespr.netlify.app">API</a></li>
-        <li><a href="https://codespr.netlify.app">Pricing</a></li>
-      </ul>
-
-      <ul class="footer-list">
-        <li><a href="https://codespr.netlify.app">Cheatsheets</a></li>
-        <li><a href="https://codespr.netlify.app">Tutorials</a></li>
-        <li><a href="https://codespr.netlify.app">Tools</a></li>
-        <li><a href="https://codespr.netlify.app">Stats</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    © 2025 CodeSphere Pvt. Ltd. | <a href="https://codespr.netlify.app">Privacy Policy</a> | <a href="https://codespr.netlify.app">Terms & Conditions</a>
-  </div>
-  
-  </footer>
-
-  <div>
-      <div className="footers"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "35px",
-          padding: "20px",
-          backgroundColor: "transparent",
-          flexWrap: "wrap",  
-          alignItems: "center",
-        }}
-      >
-        {socialIcons.map(({ component: Icon, link }, index) => (
-          <a
-            key={index}
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            onMouseEnter={() => setHoveredIcon(index)}
-            onMouseLeave={() => setHoveredIcon(null)}
-          >
-            <Icon
-              style={{
-                fontSize: "32px",
-                color: hoveredIcon === index ? "#007bff" : "red",
-                transition: "color 0.3s",
-                cursor: "pointer",
-              }}
-            />
-          </a>
-        ))}
-        <p
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            margin: 0,
-            fontSize: "24px",
-            color: "#007bff",
-            flexWrap: "wrap",  
-            justifyContent: "center",  
-            width: "100%",  
-            textAlign: "center",  
-          }}
-        >
-          <span> Made with 💙 in India.</span>
-        </p>
-      </div>
-    </div>
-  
-</div> 
-
-
   );
 }
 

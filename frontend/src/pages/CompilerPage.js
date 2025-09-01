@@ -12,8 +12,8 @@ import { css } from '@codemirror/lang-css';
 import { javascript } from "@codemirror/lang-javascript";
 import { json } from '@codemirror/lang-json';
 import { xml } from '@codemirror/lang-xml';
-import { angular } from '@codemirror/lang-angular'; 
-import { vue } from '@codemirror/lang-vue'; 
+import { angular } from '@codemirror/lang-angular';
+import { vue } from '@codemirror/lang-vue';
 
 import { sql } from "@codemirror/lang-sql";
 import { markdown } from '@codemirror/lang-markdown';
@@ -92,9 +92,9 @@ function CompilerPage() {
     <div className="compiler-page">
       <div className="header">
         {/* <h2>CodeSphere: {language} Compiler</h2> */}
-          <div class="banner">
-            <h1 class="banner-text"><span class="gradient"> CodeSphere: {language}</span> <span class="gradient"> Compiler</span></h1>
-          </div>
+        <div class="banner">
+          <h1 class="banner-text"><span class="gradient"> CodeSphere: {language}</span> <span class="gradient"> Compiler</span></h1>
+        </div>
 
         <div className="header-buttons">
           <button className="header-button" onClick={renameCode}>Rename</button>
