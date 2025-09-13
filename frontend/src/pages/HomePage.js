@@ -6,11 +6,10 @@ import { SiCplusplus, SiMysql, SiSqlite, SiOracle, SiMongodb, SiPostgresql, SiMa
 import "./HomePage.css";
 import Navbar from "../components/Navbar";
 import Stats from '../components/Stats';
-import Footer from './footer/Footer'; // adjust path as needed
+import Footer from './footer/Footer'; 
 import Mq from './Mq/Mq';
 
-
-// Language-icon mapping using react-icons/fa6
+// Language Icon Mapping
 const languageIcons = {
   Python: <FaPython style={{ color: "#306998" }} />,
   HTML: <FaHtml5 style={{ color: "#E34F26" }} />,
@@ -65,7 +64,7 @@ function HomePage() {
     {
       category: "Working",
       items: [
-        "Java", "C", "Python", "Cpp", "JavaScript", "PHP", "Rust",
+        "Java", "C", "Python", "Cpp", "JavaScript", "PHP", "Rust","R","SQL",
       ],
     },
     {
@@ -104,9 +103,7 @@ function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const openCompiler = (language) => {
-    // const languagePath = language.toLowerCase().replace("+", "p");
     const languagePath = language.toLowerCase();
-    // const languagePath = language;
     navigate(`/compiler/${languagePath}`);
   };
 
@@ -135,7 +132,6 @@ function HomePage() {
         </div>
 
 
-        {/* <p>CodeSphere is here to help you Write & Compile your Codes online.</p> */}
         <input
           type="text"
           className="search-bar"
@@ -151,7 +147,7 @@ function HomePage() {
             key={index}
             className={`category-button ${selectedCategory === category.category ? "active" : ""
               }`}
-            onClick={() => setSelectedCategory(category.category)} // category shouldn't collapse on double click
+            onClick={() => setSelectedCategory(category.category)} 
           >
             {category.category}
           </button>
