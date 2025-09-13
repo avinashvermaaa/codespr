@@ -35,6 +35,12 @@ const languageModes = {
   cpp: cpp(), python: python(), java: java(), javascript: javascript(), html: html(), css: css(), json: json(),
   xml: xml(), sql: sql(), markdown: markdown(), yaml: yaml(), go: go(), php: php(), rust: rust(), vue: vue(),
   angular: angular(),
+  // R language mode (using python mode as fallback since no dedicated R mode exists)
+  r: python(), // R has similar syntax patterns to Python for basic highlighting
+  // SQL variants
+  postgresql: sql(),
+  mysql: sql(),
+  sqlite: sql(),
 };
 
 const languageExtensions = {
