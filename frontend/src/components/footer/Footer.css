@@ -1,80 +1,7 @@
-/* .footer-container {
-  background: #222;
-  color: #fff;
-  padding: 20px;
-}
-
-.footer-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.footer-column {
-  flex: 1;
-  min-width: 200px;
-  margin: 10px;
-}
-
-.footer-title {
-  font-size: 1.2em;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
-.footer-list {
-  list-style: none;
-  padding: 0;
-  display: block;
-}
-
-.footer-list a {
-  color: #bbb;
-  text-decoration: none;
-  display: block;
-  padding: 5px 0;
-}
-
-.footer-list a:hover {
-  color: #fff;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  padding-top: 10px;
-  border-top: 1px solid #444;
-  font-size: 14px;
-}
-
-@media (max-width: 768px) {
-  .footer-grid {
-    flex-direction: column;
-  }
-
-  .footer-list {
-    display: none;
-  }
-
-  .footer-list.active {
-    display: block;
-  }
-
-  .footer-column {
-    border-top: 1px solid #444;
-    padding-top: 10px;
-  }
-}
-
-
- */
-
-
 .footer-text{
     font-size: 20px;
     color: white;
 }
-
 
 /* Root layout reset */
 html, body {
@@ -89,7 +16,8 @@ html, body {
   padding: 40px 20px;
   font-family: Arial, sans-serif;
   color: white; /* light gray text */
-  border-top: 1px solid #1c5d9b; /* slightly darker border */
+  margin-top: 10px;
+  border-top: 0px solid #1c5d9b; /* slightly darker border */
 }
 
 .footer-grid {
@@ -108,10 +36,10 @@ html, body {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 10px;
-  /* color: #138808; lighter gray/white for titles */
-  /* color: red; lighter gray/white for titles */
+  /* color: white; */
     background: linear-gradient(90deg, #007bff, red);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 1rem 0;
 }
@@ -136,6 +64,7 @@ html, body {
   /* color: white; footer texts on hover */
       background: linear-gradient(90deg, #007bff, red);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   /* margin: 1rem 0; */
   text-decoration: none;
@@ -161,6 +90,7 @@ html, body {
   /* color: #cfd8dc; */
       background: linear-gradient(90deg, #007bff, red);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

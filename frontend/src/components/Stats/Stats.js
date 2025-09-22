@@ -14,9 +14,9 @@ const Stats = () => {
       <div className="stats-grid">
         <div className="stat-box">
           <span className="stat-number">
-            {inView && <CountUp end={69} duration={2} />}+
+            {inView && <CountUp end={1324} duration={2} separator="," />}k+
           </span>
-          <p>Languages</p>
+          <p>Visitors</p>
         </div>
         <div className="stat-box">
           <span className="stat-number">
@@ -26,9 +26,9 @@ const Stats = () => {
         </div>
         <div className="stat-box">
           <span className="stat-number">
-            {inView && <CountUp end={1324} duration={2} separator="," />}k+
+            {inView && <CountUp end={69} duration={2} />}+
           </span>
-          <p>Visitors</p>
+          <p>Languages</p>
         </div>
       </div>
     </div>

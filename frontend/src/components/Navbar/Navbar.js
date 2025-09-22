@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -9,11 +10,16 @@ const Navbar = () => {
     setMenuOpen(!isMenuOpen);
   };
 
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
+
   return (
     <nav className="navbar">
       <div className="navbar-logo">
         <img src="/logo.png" alt="Logo" className="logo-image" />
-        <a href="/">CODESPHERE</a>
+        <Link to="/" className="navbar-brand">CODESPHERE</Link>
       </div>
       
       {/* Hamburger icon for small screens */}
@@ -26,16 +32,16 @@ const Navbar = () => {
       {/* Navbar links */}
       <ul className={`navbar-list ${isMenuOpen ? 'show' : ''}`}>
         <li className="navbar-item">
-          <a href="/" className="navbar-link">Home</a>
+          <a href="#home" className="navbar-link" onClick={handleLinkClick}>Home</a>
         </li>
         <li className="navbar-item">
-          <a href="/" className="navbar-link">Compiler</a>
+          <a href="#compiler" className="navbar-link" onClick={handleLinkClick}>Compiler</a>
         </li>
         <li className="navbar-item">
-          <a href="/" className="navbar-link">Collection</a>
+          <a href="#collection" className="navbar-link" onClick={handleLinkClick}>Collection</a>
         </li>
         <li className="navbar-item">
-          <a href="/" className="navbar-link">Connect</a>
+          <a href="#connect" className="navbar-link" onClick={handleLinkClick}>Connect</a>
         </li>
       </ul>
     </nav>

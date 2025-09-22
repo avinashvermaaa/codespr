@@ -59,6 +59,15 @@
     filter: grayscale(0);
 }
 
+/* Pause on Hover */
+/* .marque:hover,
+.marque-db-devops:hover,
+.marque-left:hover,
+.marque-right:hover {
+    animation-play-state: paused;
+} */
+
+
 /* Keyframes */
 @keyframes marquee-right-to-left {
     0% {

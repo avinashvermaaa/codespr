@@ -4,10 +4,12 @@ import { FaPython, FaHtml5, FaCode, FaJava, FaDatabase, FaJs, FaPhp, FaNode, FaG
 import { SiCplusplus, SiMysql, SiSqlite, SiOracle, SiMongodb, SiPostgresql, SiMariadb, SiTypescript, SiKotlin, SiLua, SiGo, SiR, SiPerl, SiScala, SiFortran, SiHaskell, SiFsharp, SiClojure, SiDart, SiElixir, SiErlang, SiRust, SiSwift } from "react-icons/si";
 
 import "./HomePage.css";
-import Navbar from "../components/Navbar";
-import Stats from '../components/Stats';
-import Footer from './footer/Footer'; 
-import Mq from './Mq/Mq';
+import Navbar from "../../components/Navbar/Navbar";
+import Stats from '../../components/Stats/Stats';
+import Footer from '../../components/footer/Footer'; 
+import Mq from '../../components/Mq/Mq';
+
+import LaserFlow from '../../components/Laserflow/LaserFlow';
 
 // Language Icon Mapping
 const languageIcons = {
@@ -116,7 +118,7 @@ function HomePage() {
     : languages.find((cat) => cat.category === selectedCategory)?.items || [];
 
   return (
-    <div className="homepage-container">
+    <div className="homepage-container" id="home">
       <Navbar />
       <header className="header">
 
@@ -133,6 +135,7 @@ function HomePage() {
 
 
         <input
+          id="compiler"
           type="text"
           className="search-bar"
           placeholder="Search by Language/DB/Template etc."
@@ -154,6 +157,8 @@ function HomePage() {
         ))}
       </div>
 
+        <LaserFlow horizontalBeamOffset={0.435} verticalBeamOffset={0.2} color="#c0b0b9ff" />
+
       <div className="category-box">
         {filteredLanguages.map((item, idx) => (
           <button
@@ -169,8 +174,8 @@ function HomePage() {
 
 
       <Stats />
-      <Mq />
-      <Footer />
+      <Mq id="collection"/>
+      <Footer id="connect" />
     </div>
   );
 }

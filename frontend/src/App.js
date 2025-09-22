@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import CompilerPage from "./pages/CompilerPage";
+import HomePage from "./pages/HomePage/HomePage";
+import CompilerPage from "./pages/CompilerPage/CompilerPage";
 // import DarkModeToggle from "./components/DarkModeToggle";
 import { ThemeProvider } from "./context/ThemeContext"; // Import ThemeProvider
 

@@ -27,20 +27,16 @@ import { rust } from '@codemirror/lang-rust';
 // import { darcula } from "@uiw/codemirror-theme-darcula"; 
 import { monokai } from '@uiw/codemirror-theme-monokai';
 import "./CompilerPage.css";
-import Chatbot from "./Chatbot"; // OpenAi Chatgpt integrate
+import Chatbot from "../../components/Chatbot/Chatbot"; // OpenAi Chatgpt integrate
 
 const BACKEND_URL = "https://spherecodes.onrender.com";
 
 const languageModes = {
   cpp: cpp(), python: python(), java: java(), javascript: javascript(), html: html(), css: css(), json: json(),
   xml: xml(), sql: sql(), markdown: markdown(), yaml: yaml(), go: go(), php: php(), rust: rust(), vue: vue(),
-  angular: angular(),
-  // R language mode (using python mode as fallback since no dedicated R mode exists)
-  r: python(), // R has similar syntax patterns to Python for basic highlighting
+  angular: angular(), r: python(),
   // SQL variants
-  postgresql: sql(),
-  mysql: sql(),
-  sqlite: sql(),
+  postgresql: sql(), mysql: sql(), sqlite: sql(),
 };
 
 const languageExtensions = {

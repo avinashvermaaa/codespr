@@ -1,9 +1,9 @@
 import React from 'react';
 import "./Mq.css";
 
-const Mq = () => {
+const Mq = ({id}) => {
     return (
-        <>
+        <div id = {id}>
             {/* Banner Heading */}
             <div className="banner">
                 <h2 className="banner-text">
@@ -112,40 +112,7 @@ const Mq = () => {
                 </div>
             </div>
 
-            {/* Banner Heading */}
-            <div className="banner">
-                <h2 className="banner-text">
-                    <span className="gradient">Trusted and used by</span>{' '}
-                    <span className="gradient">employees of global leaders</span>
-                </h2>
-            </div>
-
-            {/* Animation Section 4: Company Logos */}
-            <div id="moving-animation-db-devops">
-                <div className="marque-wrapper-company">
-                    <div className="marque-right">
-                        {["aws", "gcp", "fb", "google", "insta", "meta", "snap", "whs", "x", "yt"].map((imgName, index) => (
-                            <img
-                                key={index}
-                                src={`./img/company/${imgName}.png`}
-                                alt={imgName}
-                                className="logo-db-devops"
-                            />
-                        ))}
-                    </div>
-                    <div className="marque-right">
-                        {["aws", "gcp", "fb", "google", "insta", "meta", "snap", "whs", "x", "yt"].map((imgName, index) => (
-                            <img
-                                key={index}
-                                src={`./img/company/${imgName}.png`}
-                                alt={imgName}
-                                className="logo-db-devops"
-                            />
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </>
+        </div>
     );
 };
 
