@@ -96,7 +96,7 @@ function CompilerPage() {
     Split(['.code-editor', '.input-output-container'], {
       sizes: [70, 30],         // Percent-based initial sizes
       minSize: 100,            // Minimum px for each panel
-      gutterSize: 1.5,
+      gutterSize: 2.5,
       cursor: 'col-resize',
       direction:'horizontal'
     });
@@ -104,7 +104,7 @@ function CompilerPage() {
     Split(['.input-box', '.output-box'], {
     sizes: [30, 70],
     minSize: 100,
-    gutterSize: 1.5,
+    gutterSize: 2.5,
     cursor: 'row-resize',
     direction: 'vertical'
   });
