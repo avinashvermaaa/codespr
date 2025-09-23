@@ -102,10 +102,13 @@ html, body {
   padding-left: 0;
   margin-bottom: 20px;
   list-style: none;
+  text-align: left;
+  justify-items: start; /* makes grid items align to the left */
 }
 
 .two-column li {
   white-space: nowrap;
+  text-align: left;
 }
 
 /* Responsive behavior */
