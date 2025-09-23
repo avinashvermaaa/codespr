@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Split from 'split.js';
+
 import { useParams } from "react-router-dom";
 import CodeMirror from "@uiw/react-codemirror";
 
@@ -89,6 +91,25 @@ function CompilerPage() {
     element.click();
     document.body.removeChild(element);
   };
+
+  useEffect(() => {
+    Split(['.code-editor', '.input-output-container'], {
+      sizes: [70, 30],         // Percent-based initial sizes
+      minSize: 100,            // Minimum px for each panel
+      gutterSize: 1.5,
+      cursor: 'col-resize',
+      direction:'horizontal'
+    });
+
+    Split(['.input-box', '.output-box'], {
+    sizes: [30, 70],
+    minSize: 100,
+    gutterSize: 1.5,
+    cursor: 'row-resize',
+    direction: 'vertical'
+  });
+  }, []);
+
 
   return (
     <div className="compiler-page">
