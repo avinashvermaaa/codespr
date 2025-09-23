@@ -95,13 +95,12 @@ function HomePage() {
     {
       category: "DATABASES",
       items: [
-        "MySQL", "Oracle", "PostgreSQL", "SQL", "MongoDB", "SQLite", "Redis", "MariaDB", "SQLServer",
-        "MySQL", "Oracle", "PostgreSQL", "SQL", "MongoDB", "SQLite", "Redis", "MariaDB", "SQLServer",
+        "MySQL", "Oracle", "PostgreSQL", "SQL", "MongoDB", "SQLite", "Redis", "MariaDB", "SQLServer"
       ],
     },
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState("POPULAR");
+  const [selectedCategory, setSelectedCategory] = useState("Working");
   const [searchQuery, setSearchQuery] = useState("");
 
   const openCompiler = (language) => {
@@ -166,7 +165,7 @@ function HomePage() {
             className="language-item"
             onClick={() => openCompiler(item)}
           >
-            {languageIcons[item] || defaultIcon} {item}
+            {item} {languageIcons[item] || defaultIcon}
           </button>
         ))}
       </div>
