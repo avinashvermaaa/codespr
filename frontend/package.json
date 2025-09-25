@@ -1,6 +1,6 @@
 {
-  "name": "codespr",
-  "version": "7.0.0",
+  "name": "codesphere",
+  "version": "8.0.0",
   "private": true,
   "dependencies": {
     "@codemirror/lang-angular": "^0.1.4",

@@ -12,7 +12,7 @@ html, body {
 
 /* Footer Styles */
 .footer-container {
-  background-color: transparent; /* dark sky blue */
+  background-color: black; /* dark sky blue */
   padding: 40px 20px;
   font-family: Arial, sans-serif;
   color: white; /* light gray text */
@@ -24,24 +24,19 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 40px;
 }
 
-.footer-column {
-  flex: 1 1 300px;
-  min-width: 200px;
-}
+
 
 .footer-title {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 10px;
   /* color: white; */
-    background: linear-gradient(90deg, #007bff, red);
+    /* background: linear-gradient(90deg, #007bff, red);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin: 1rem 0;
+  -webkit-text-fill-color: transparent; */
 }
 
 .footer-list {
@@ -72,6 +67,7 @@ html, body {
 
 /* privacy policy*/
 .footer-bottom {
+  background-color: black;
   text-align: center;
   font-size: 0.9rem;
   color: #78909c; /* darker gray for footer bottom */
@@ -103,7 +99,7 @@ html, body {
   margin-bottom: 20px;
   list-style: none;
   text-align: left;
-  justify-items: start; /* makes grid items align to the left */
+  justify-items: start;
 }
 
 .two-column li {
@@ -111,26 +107,7 @@ html, body {
   text-align: left;
 }
 
-/* Responsive behavior */
-@media (max-width: 768px) {
-  .footer-grid {
-    flex-direction: column;
-  }
-
-  .two-column {
-    display: block;
-    column-count: 1;
-    gap: initial;
-  }
-
-  .two-column li {
-    white-space: normal;
-  }
-}
-
-
-
-/* Responsive Design */
+/* 🔻 MERGED MEDIA QUERIES 🔻 */
 @media screen and (max-width: 1024px) {
     .search-bar {
         width: 70%;
@@ -167,10 +144,65 @@ html, body {
         padding: 15px;
     }
 
-    .language-item {
-        font-size: 16px;
-        padding: 10px;
-    }
+  .language-item {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .footer-column {
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  .footer-title {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 8px 0;
+  }
+
+  .footer-list {
+    display: none;
+    margin: 0;
+    padding: 0 0 10px;
+  }
+
+  .footer-list.active {
+    display: block;
+  }
+
+  .footer-list li {
+    margin-bottom: 5px;
+  }
+
+  .two-column {
+    display: block;
+    column-count: 1;
+    gap: initial;
+    justify-items: normal;
+  }
+
+  .two-column li {
+    white-space: normal;
+    text-align: center;
+  }
+    .two-column {
+    display: none; 
+  }
+
+  .two-column.active {
+    display: block; /* show when toggled */
+  }
+
+  .two-column li {
+    white-space: normal;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -210,4 +242,30 @@ html, body {
         padding: 8px;
     }
 }
+@media screen and (max-width: 768px) {
+  .footer-column {
+    margin: 0; /* remove extra space between columns */
+  }
 
+  .footer-title {
+    margin: 0.4rem 0;
+    padding: 6px 0; /* slightly tighter */
+    font-size: 1rem; /* optional: reduce font size a bit */
+  }
+
+  .footer-list,
+  .two-column {
+    padding: 0 0 0px;
+    margin: 0;
+  }
+
+  .footer-list li,
+  .two-column li {
+    margin-bottom: 0px; /* tighter spacing between items */
+  }
+
+  /* Optional: reduce footer overall padding */
+  .footer-container {
+    padding: 0px 0px;
+  }
+}

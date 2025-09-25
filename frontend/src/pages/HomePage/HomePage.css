@@ -22,7 +22,7 @@
 
 .white {
     color: white;
-    background-color: #1E1E1E;
+    background-color: black;
     border-radius: 4px;
 }
 
@@ -177,7 +177,7 @@ body.dark-mode .highlight {
 }
 
 body.dark-mode .search-bar {
-    background-color: #222;
+    background-color: black;
     border-radius: 16px;
     color: white;
 
@@ -185,7 +185,7 @@ body.dark-mode .search-bar {
 }
 
 body.dark-mode .search-bar::active {
-    background-color: #222;
+    background-color: black;
     box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f;
 
 }
@@ -195,15 +195,15 @@ body.dark-mode .search-bar::placeholder {
 }
 
 body.dark-mode .category-box {
-    background-color: #1e1e1e;
+    background-color: black;
     border-radius: 16px;
-    box-shadow: 20px -20px 60px #272626,
-        -20px 20px 60px #383535;
+    box-shadow: 5px -5px 20px #e2dede,
+        -5px 5px 20px #dddada;
 
 }
 
 body.dark-mode .category-button {
-    background-color: #222;
+    background-color: black;
     color: white;
     border-color: #555;
     box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f;
@@ -221,7 +221,7 @@ body.dark-mode .category-button.active {
 }
 
 body.dark-mode .language-item {
-    background-color: #222;
+    background-color: black;
     color: white;
     border-color: #444;
     box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f;

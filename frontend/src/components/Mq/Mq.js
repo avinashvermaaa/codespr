@@ -67,7 +67,7 @@ const Mq = ({id}) => {
                         {[
                             "aws", "gcp", "docker", "kubernetes", "mongodb", "apache",
                             "cassandra", "graphql", "magento", "mariadb", "mysql", "neo4j",
-                            "docker", "oracle", "postgresql", "redis", "sql", "sqlserver"
+                            "oracle", "postgresql", "redis", "sql", "sqlserver"
                         ].map((imgName, index) => (
                             <img
                                 key={index}
@@ -85,8 +85,8 @@ const Mq = ({id}) => {
                 <div className="marque-wrapper">
                     <div className="marque-left">
                         {[
-                            "java", "cpp", "c", "python", "php", "rust", "swift", "ruby",
-                            "go", "kotlin", "javascript", "perl", "r", "csharp", "typescript", "dart"
+                            "java", "cpp", "c", "python", "go", "php","rust", "swift", "ruby",
+                            "kotlin", "javascript", "perl", "r", "csharp", "typescript", "dart","go2"
                         ].map((imgName, index) => (
                             <img
                                 key={index}
@@ -98,8 +98,8 @@ const Mq = ({id}) => {
                     </div>
                     <div className="marque-left">
                         {[
-                            "java", "cpp", "c", "python", "php", "rust", "swift", "ruby",
-                            "go", "kotlin", "javascript", "perl", "r", "csharp", "typescript", "dart"
+                            "java", "cpp", "c", "python", "go", "php","rust", "swift", "ruby",
+                            "kotlin", "javascript", "perl", "r", "csharp", "typescript", "dart","go2"
                         ].map((imgName, index) => (
                             <img
                                 key={index}

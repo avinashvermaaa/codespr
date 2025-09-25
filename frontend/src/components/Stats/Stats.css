@@ -15,16 +15,15 @@
 
 .stat-box {
   font-size: 1.3rem;
-  /* background: linear-gradient(135deg, #141312, #bfebbb); */
   /* background: linear-gradient(135deg, #007bff, red); */
-  background: linear-gradient(135deg, #141312, #222);
+  background: linear-gradient(135deg, #141312, black);
   padding: 1.2rem;
   min-width: 150px;
   text-align: center;
   color: white;
 
   border-radius: 16px;
-  box-shadow: inset 4px 4px 12px #000, inset -2px -2px 8px #d8ccd6;
+  box-shadow: inset 4px 4px 12px #000, inset -2px -2px 8px white;
 }
 
 .stat-number {

@@ -93,22 +93,27 @@ function CompilerPage() {
   };
 
   useEffect(() => {
-    Split(['.code-editor', '.input-output-container'], {
-      sizes: [70, 30],         // Percent-based initial sizes
-      minSize: 100,            // Minimum px for each panel
-      gutterSize: 2.5,
-      cursor: 'col-resize',
-      direction:'horizontal'
-    });
+    const isLargeScreen = window.innerWidth >= 1280;
 
-    Split(['.input-box', '.output-box'], {
-    sizes: [30, 70],
-    minSize: 100,
-    gutterSize: 2.5,
-    cursor: 'row-resize',
-    direction: 'vertical'
-  });
-  }, []);
+    if(isLargeScreen){
+      
+      Split(['.code-editor', '.input-output-container'], {
+        sizes: [70, 30],         // Percent-based initial sizes
+        minSize: 100,            // Minimum px for each panel
+        gutterSize: 2.5,
+        cursor: 'col-resize',
+        direction:'horizontal'
+      });
+  
+      Split(['.input-box', '.output-box'], {
+      sizes: [30, 70],
+      minSize: 100,
+      gutterSize: 2.5,
+      cursor: 'row-resize',
+      direction: 'vertical'
+    });
+  }
+}, []);
 
 
   return (

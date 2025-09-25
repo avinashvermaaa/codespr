@@ -36,8 +36,10 @@ str
 const Footer = ({id}) => {
   const [openSections, setOpenSections] = useState({
     codesphere: false,
+    users: false,
     languages: false,
     more: false,
+    cheatsheets: false,
   });
 
   const [hoveredIcon, setHoveredIcon] = useState(null);
@@ -55,7 +57,7 @@ const Footer = ({id}) => {
         <div className="footer-grid">
           {/* Codesphere Section */}
           <div className="footer-column">
-            <h4 className="footer-title" onClick={() => toggleSection('codesphere')}>CodeSphere</h4>
+            <h4 className="footer-title" onClick={() => toggleSection('codesphere')}>CodeSphere {openSections.codesphere ? '▼' : '▶'}</h4>
             <ul className={`footer-list ${openSections.codesphere ? 'active' : ''}`}>
               <li><a href="https://codespr.netlify.app">CodeSphere</a></li>
               <li><a href="https://codespr.netlify.app">About</a></li>
@@ -63,7 +65,7 @@ const Footer = ({id}) => {
               <li><a href="https://codespr.netlify.app">Contact</a></li>
             </ul>
 
-            <h4 className="footer-title" onClick={() => toggleSection('users')}>Users</h4>
+            <h4 className="footer-title" onClick={() => toggleSection('users')}>Users {openSections.users ? '▼' : '▶'}</h4>
             <ul className={`footer-list ${openSections.users ? 'active' : ''}`}>
               <li><a href="https://codespr.netlify.app">Status</a></li>
               <li><a href="https://codespr.netlify.app">Pricing</a></li>
@@ -74,7 +76,7 @@ const Footer = ({id}) => {
 
           {/* Languages Section */}
           <div className="footer-column">
-            <h4 className="footer-title" onClick={() => toggleSection('languages')}>Languages</h4>
+            <h4 className="footer-title" onClick={() => toggleSection('languages')}>Languages {openSections.languages ? '▼' : '▶'}</h4>
             <ul className={`footer-list two-column ${openSections.languages ? 'active' : ''}`}>
               
               {Languages.map((tool, idx) => (
@@ -88,14 +90,14 @@ const Footer = ({id}) => {
 
           {/* More Section */}
           <div className="footer-column">
-            <h4 className="footer-title" onClick={() => toggleSection('more')}>More</h4>
+            <h4 className="footer-title" onClick={() => toggleSection('more')}>More {openSections.more ? '▼' : '▶'}</h4>
             <ul className={`footer-list ${openSections.more ? 'active' : ''}`}>
               <li><a href="https://codespr.netlify.app">Orgs</a></li>
               <li><a href="https://codespr.netlify.app">API</a></li>
               <li><a href="https://codespr.netlify.app">Pricing</a></li>
             </ul>
 
-            <h4 className="footer-title" onClick={() => toggleSection('cheatsheets')}>Cheatsheets</h4>
+            <h4 className="footer-title" onClick={() => toggleSection('cheatsheets')}>Cheatsheets {openSections.cheatsheets ? '▼' : '▶'}</h4>
             <ul className={`footer-list ${openSections.cheatsheets ? 'active' : ''}`}>
               <li><a href="https://codespr.netlify.app">Cheatsheets</a></li>
               <li><a href="https://codespr.netlify.app">Tutorials</a></li>
@@ -119,7 +121,7 @@ const Footer = ({id}) => {
           justifyContent: "center",
           gap: "35px",
           padding: "20px",
-          backgroundColor: "transparent",
+          backgroundColor: "black",
           flexWrap: "wrap",
           alignItems: "center",
         }}

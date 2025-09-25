@@ -15,8 +15,14 @@
     overflow-y: hidden;
     /* background-color: #222; */
     border-color: #444;
+    box-shadow: inset 4px 4px 12px rgb(153, 133, 133), inset -4px -4px 12px rgb(153, 141, 141);
     /* box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f; */
-    box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #000;
+    /* box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #000; */
+    
+}
+
+.marque-wrapper-db-devops{
+    /* box-shadow: inset 4px 4px 12px white, inset -4px -4px 12px white; */
 
 }
 
