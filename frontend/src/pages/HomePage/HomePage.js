@@ -123,7 +123,7 @@ function HomePage() {
 
         <h1>
           <span className="saffron">An</span>{' '}
-          <span className="white">Ai</span>{' '}
+          <span className="white">AI</span>{' '}
           <span className="green">Integrated</span>{' '}
           <span className="highlight-blue">IDE</span>{' '}
           <span className="gradient">for Faster Development.</span>

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import './Footer.css'; 
-import { FaLinkedin, FaEnvelope, FaInstagram, FaGithub, FaXTwitter } from 'react-icons/fa6';
+import { FaLinkedin, FaEnvelope, FaInstagram} from 'react-icons/fa6';
+// import { FaGithub, FaXTwitter } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 
   const socialIcons = [
     { component: FaLinkedin, link: "https://www.linkedin.com/in/avinash-verma-20946b21b/" },
-    { component: FaEnvelope, link: "mailto:code6969nation@gmail.com" },
-    { component: FaInstagram, link: "https://www.instagram.com/avinash_vermaa" },
-    { component: FaGithub, link: "https://github.com" },
-    { component: FaXTwitter, link: "https://x.com" },
+    { component: FaEnvelope, link: "mailto:corporate4avinash@gmail.com" },
+    { component: FaInstagram, link: "https://www.instagram.com/avinash_vermaa" }
+    // { component: FaGithub, link: "https://github.com" },
+    // { component: FaXTwitter, link: "https://x.com" },
   ];
 
 const Languages = [
@@ -27,9 +28,7 @@ const Languages = [
 const slugify = (str) =>
 str
   .toLowerCase()
-  // Remove spaces
   .replace(/\s+/g, '')          
-  // Remove non-alphanumerics
   .replace(/[^a-z0-9]/g, '');   
 
 
