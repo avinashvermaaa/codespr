@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaPython, FaHtml5, FaCode, FaJava, FaDatabase, FaJs, FaPhp, FaNode, FaGem, FaTerminal, FaC, FaCss3Alt, FaReact, FaAngular, FaVuejs, FaBootstrap, FaDocker } from "react-icons/fa6";
 import { SiCplusplus, SiMysql, SiSqlite, SiOracle, SiMongodb, SiPostgresql, SiMariadb, SiTypescript, SiKotlin, SiLua, SiGo, SiR, SiPerl, SiScala, SiFortran, SiHaskell, SiFsharp, SiClojure, SiDart, SiElixir, SiErlang, SiRust, SiSwift } from "react-icons/si";
@@ -10,6 +10,8 @@ import Footer from '../../components/footer/Footer';
 import Mq from '../../components/Mq/Mq';
 
 import LaserFlow from '../../components/Laserflow/LaserFlow';
+
+const BACKEND_URL = process.env.BACKEND_URL || "https://idebackend-kmhn.onrender.com";
 
 // Language Icon Mapping
 const languageIcons = {
@@ -61,6 +63,18 @@ const defaultIcon = <FaCode style={{ color: "#808080" }} />;
 
 function HomePage() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const logVisit = async () => {
+      try {
+        await fetch(`${BACKEND_URL}/logs`, { method: "GET" });
+      } catch (error) {
+        console.error("⚠️ Logging failed:", error);
+      }
+    };
+
+    logVisit();
+  }, []);
 
   const languages = [
     {
