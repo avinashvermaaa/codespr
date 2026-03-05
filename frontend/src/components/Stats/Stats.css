@@ -15,8 +15,8 @@
 
 .stat-box {
   font-size: 1.3rem;
-  /* background: linear-gradient(135deg, #007bff, red); */
-  background: linear-gradient(135deg, #141312, black);
+  background: linear-gradient(135deg, #007bff, red);
+  /* background: linear-gradient(135deg, #141312, black); */
   padding: 1.2rem;
   min-width: 150px;
   text-align: center;

@@ -53,8 +53,9 @@
 
 
 .compiler-page .header-button:hover {
-    color: #666;
+    color: white;
     border-color: #333;
+    background: linear-gradient(90deg, #007bff, red);
 
 }
 
@@ -206,9 +207,6 @@ textarea,
         font-size: 16px;
         resize: none;
     }
-    .gutter, .gutter.gutter-horizontal, .gutter.gutter-vertical {
-        display : none;
-    }
 }
 
 
@@ -242,7 +240,8 @@ textarea,
 }
 
 .gutter {
-  background-color: #e7e5e5;
+background: linear-gradient(169deg, #007bff, red);
+  /* background-color: #e7e5e5; */
 }
 
 .gutter.gutter-horizontal {

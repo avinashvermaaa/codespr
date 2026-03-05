@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy} from "react";
 import { useNavigate } from "react-router-dom";
 import { FaPython, FaHtml5, FaCode, FaJava, FaDatabase, FaJs, FaPhp, FaNode, FaGem, FaTerminal, FaC, FaCss3Alt, FaReact, FaAngular, FaVuejs, FaBootstrap, FaDocker } from "react-icons/fa6";
 import { SiCplusplus, SiMysql, SiSqlite, SiOracle, SiMongodb, SiPostgresql, SiMariadb, SiTypescript, SiKotlin, SiLua, SiGo, SiR, SiPerl, SiScala, SiFortran, SiHaskell, SiFsharp, SiClojure, SiDart, SiElixir, SiErlang, SiRust, SiSwift } from "react-icons/si";
 
 import "./HomePage.css";
 import Navbar from "../../components/Navbar/Navbar";
-import Stats from '../../components/Stats/Stats';
-import Footer from '../../components/footer/Footer'; 
-import Mq from '../../components/Mq/Mq';
-
 import LaserFlow from '../../components/Laserflow/LaserFlow';
+import LazySection from "../../components/LazySection/LazySection";
+
+const Stats = lazy(() => import('../../components/Stats/Stats'));
+const Mq = lazy(() => import('../../components/Mq/Mq'));
+const Footer = lazy(() => import('../../components/footer/Footer'));
 
 const BACKEND_URL = process.env.BACKEND_URL || "https://idebackend-kmhn.onrender.com";
 
@@ -63,7 +64,6 @@ const defaultIcon = <FaCode style={{ color: "#808080" }} />;
 
 function HomePage() {
   const navigate = useNavigate();
-
   useEffect(() => {
     const logVisit = async () => {
       try {
@@ -186,9 +186,18 @@ function HomePage() {
 
 
 
-      <Stats />
-      <Mq id="collection"/>
-      <Footer id="connect" />
+      <LazySection height="300px">
+        <Stats />
+      </LazySection>
+
+      <LazySection height="200px">
+        <Mq id="collection" />
+      </LazySection>
+
+      <LazySection height="150px">
+        <Footer id="connect" />
+      </LazySection>
+
     </div>
   );
 }

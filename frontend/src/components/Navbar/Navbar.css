@@ -1,9 +1,9 @@
 /* Navbar container styles */
 .navbar {
     /* background: linear-gradient(45deg, #FF9933, #138808); */
-    /* background: linear-gradient(45deg, #007bff, red); */
-        background-color: #222;
-        background: linear-gradient(135deg,#000,#1f1f1f);
+    background: linear-gradient(45deg, #007bff, red);
+        /* background-color: #222; */
+        /* background: linear-gradient(135deg,#000,#1f1f1f); */
     color: white;
     border-color: #444;
         box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f;
@@ -55,16 +55,17 @@
     color: white;
     text-decoration: none;
     font-size: 18px;
-    padding: 5px 15px;
+    /* padding: 5px 15px; */
     transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar-link:hover {
-    /* background-color: #007bff; */
-    color: #fff;
-    /* border-radius: 5px; */
-        color: #666;
-    /* border-color: #333; */
+    background: linear-gradient(90deg, #007bff, red);
+    padding: 5px 15px;
+    /* color: black; */
+    border-radius: 5px;
+        /* color: #666; */
+    border-color: #333;
 
 }
 

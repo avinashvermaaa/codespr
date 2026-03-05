@@ -108,7 +108,7 @@
 }
 
 .category-button:hover {
-    /* background: linear-gradient(90deg, #007bff, red); */
+    background: linear-gradient(90deg, #007bff, red);
     color: white;
 }
 
@@ -146,7 +146,7 @@
 }
 
 .language-item:hover {
-    /* background: linear-gradient(90deg, #007bff, red); */
+    background: linear-gradient(90deg, #007bff, red);
     color: white;
 }
 
@@ -211,13 +211,15 @@ body.dark-mode .category-button {
 }
 
 body.dark-mode .category-button:hover {
-    color: #666;
+    color: white;
     border-color: #333;
+    background: linear-gradient(90deg, #007bff, red);
 }
 
 body.dark-mode .category-button.active {
-    color: #666;
+    color: white;
     box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f;
+    background: linear-gradient(90deg, #007bff, red);
 }
 
 body.dark-mode .language-item {
@@ -229,13 +231,13 @@ body.dark-mode .language-item {
 }
 
 body.dark-mode .language-item:hover {
-    color: #666;
-    border-color: #333;
+    /* color: #666; */
+    /* border-color: #333; */
 
 }
 
 body.dark-mode .language-item:active {
-    color: #666;
+    color: white;
     box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f;
 }
 
