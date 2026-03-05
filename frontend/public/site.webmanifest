@@ -1,1 +1,68 @@
-{"name":"","short_name":"","icons":[{"src":"/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],"theme_color":"#ffffff","background_color":"#ffffff","display":"standalone"}
+{
+    "name": "CodeSphere Online Compiler & IDE",
+    "short_name": "CodeSphere",
+    "description": "CodeSphere is a powerful online compiler and IDE to write, compile, run and debug code in C, C++, Python, Java, JavaScript, PHP, Rust, R and SQL directly from your browser.",
+    "lang": "en",
+    "dir": "ltr",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "any",
+    "theme_color": "#0f172a",
+    "background_color": "#ffffff",
+    "categories": [
+        "developer",
+        "education",
+        "productivity"
+    ],
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/logo.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "label": "CodeSphere Online Compiler Editor"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Python Compiler",
+            "short_name": "Python",
+            "description": "Run Python code online",
+            "url": "/compiler/python",
+            "icons": [
+                {
+                    "src": "/logo.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "C++ Compiler",
+            "short_name": "C++",
+            "description": "Compile and run C++ code",
+            "url": "/compiler/cpp",
+            "icons": [
+                {
+                    "src": "/logo.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        }
+    ]
+}

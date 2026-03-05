@@ -1,17 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeSphere</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div id="root"></div> <!-- This is where React mounts the app -->
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, max-image-preview:large">
+  <meta name="bingbot" content="index, follow">
+  <meta name="description"
+    content="CodeSphere Online Compiler | IDE lets you write, compile, run and debug code in C, C++, Python, Java, JavaScript, PHP, Rust, R and SQL instantly in your browser.">
+  <meta name="keywords"
+    content="online compiler, online IDE, run code online, C compiler online, Python compiler online, JavaScript IDE, CodeSphere, debug code online">
+  <meta name="author" content="CodeSphere">
+  <link rel="canonical" href="https://codespr.netlify.app/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="CodeSphere Online Compiler & IDE">
+  <meta property="og:description"
+    content="Write, compile, run and debug C, C++, Python, Java, JavaScript, PHP, Rust, R and SQL directly in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://codespr.netlify.app">
+  <meta property="og:image" content="https://codespr.netlify.app/logo.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CodeSphere Online Compiler">
+  <meta name="twitter:description" content="Run C, C++, Python, JavaScript, Java, PHP, Rust and SQL online instantly.">
+  <meta name="twitter:image" content="https://codespr.netlify.app/logo.png">
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Fonts / Icons -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Hreflang for multi-language SEO -->
+  <link rel="alternate" hreflang="en" href="https://codespr.netlify.app/">
+
+  <!-- Title -->
+  <title>CodeSphere IDE | Compiler Run C, C++, Python, JavaScript, Java, PHP, Rust, R & SQL Online</title>
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CodeSphere Online Compiler & IDE",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "description": "Online Compiler & IDE to compile and run C, C++, Python, JavaScript, Java, PHP, Rust, R and SQL.",
+      "url": "https://codespr.netlify.app"
+    }
+    </script>
+
+  <!-- Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://codespr.netlify.app/"
+        },
+        <!-- {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Compiler",
+          "item": "https://codespr.netlify.app/compiler"
+        } -->
+      ]
+    }
+    </script>
+
+</head>
+
+<body>
+  <div id="root"></div> <!-- This is where React mounts the app -->
+</body>
+
 </html>
