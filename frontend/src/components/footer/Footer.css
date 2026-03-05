@@ -1,13 +1,14 @@
-.footer-text{
-    font-size: 20px;
-    color: white;
+.footer-text {
+  font-size: 20px;
+  color: white;
 }
 
 /* Root layout reset */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* Footer Styles */
@@ -26,14 +27,12 @@ html, body {
   justify-content: space-between;
 }
 
-
-
 .footer-title {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 10px;
   /* color: white; */
-    background: linear-gradient(90deg, #007bff, red);
+  background: linear-gradient(90deg, #007bff, red);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -57,7 +56,7 @@ html, body {
 
 .footer-list a:hover {
   /* color: white; footer texts on hover */
-      background: linear-gradient(90deg, #007bff, red);
+  background: linear-gradient(90deg, #007bff, red);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -84,7 +83,7 @@ html, body {
 
 .footer-bottom a:hover {
   /* color: #cfd8dc; */
-      background: linear-gradient(90deg, #007bff, red);
+  background: linear-gradient(90deg, #007bff, red);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -109,40 +108,40 @@ html, body {
 
 /* 🔻 MERGED MEDIA QUERIES 🔻 */
 @media screen and (max-width: 1024px) {
-    .search-bar {
-        width: 70%;
-    }
+  .search-bar {
+    width: 70%;
+  }
 
-    .category-box {
-        width: 80%;
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .category-box {
+    width: 80%;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .header h1 {
-        font-size: 28px;
-    }
+  .header h1 {
+    font-size: 28px;
+  }
 
-    .header p {
-        font-size: 16px;
-    }
+  .header p {
+    font-size: 16px;
+  }
 
-    .search-bar {
-        width: 90%;
-        padding: 14px;
-        font-size: 14px;
-    }
+  .search-bar {
+    width: 90%;
+    padding: 14px;
+    font-size: 14px;
+  }
 
-    .category-buttons {
-        gap: 5px;
-    }
+  .category-buttons {
+    gap: 5px;
+  }
 
-    .category-box {
-        width: 90%;
-        grid-template-columns: repeat(2, 1fr);
-        padding: 15px;
-    }
+  .category-box {
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 15px;
+  }
 
   .language-item {
     font-size: 16px;
@@ -191,8 +190,8 @@ html, body {
     white-space: normal;
     text-align: center;
   }
-    .two-column {
-    display: none; 
+  .two-column {
+    display: none;
   }
 
   .two-column.active {
@@ -206,41 +205,41 @@ html, body {
 }
 
 @media screen and (max-width: 480px) {
-    h2{
-        font-size: 12px;
-    }
-    .header h1 {
-        font-size: 24px;
-    }
+  h2 {
+    font-size: 12px;
+  }
+  .header h1 {
+    font-size: 24px;
+  }
 
-    .header p {
-        font-size: 14px;
-    }
+  .header p {
+    font-size: 14px;
+  }
 
-    .search-bar {
-        width: 95%;
-        padding: 12px;
-        font-size: 12px;
-    }
+  .search-bar {
+    width: 95%;
+    padding: 12px;
+    font-size: 12px;
+  }
 
-    .category-buttons {
-        flex-wrap: wrap;
-    }
+  .category-buttons {
+    flex-wrap: wrap;
+  }
 
-    .category-button {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
+  .category-button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
 
-    .category-box {
-        width: 95%;
-        grid-template-columns: repeat(1, 1fr);
-    }
+  .category-box {
+    width: 95%;
+    grid-template-columns: repeat(1, 1fr);
+  }
 
-    .language-item {
-        font-size: 14px;
-        padding: 8px;
-    }
+  .language-item {
+    font-size: 14px;
+    padding: 8px;
+  }
 }
 @media screen and (max-width: 768px) {
   .footer-column {

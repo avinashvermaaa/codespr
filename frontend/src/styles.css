@@ -1,15 +1,14 @@
 /* Default light mode styles */
 body {
-    background-color: #ffffff;
-    color: #1e1e1e;
+  background-color: #ffffff;
+  color: #1e1e1e;
 }
 
 /* Dark mode styles */
 body.dark-mode {
-    background-color: black;
-    color: #ffffff;
+  background-color: black;
+  color: #ffffff;
 }
-
 
 /* Custom Scrollbar for WebKit Browsers (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {

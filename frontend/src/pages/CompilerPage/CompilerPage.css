@@ -1,253 +1,242 @@
 .compiler-page {
-    padding: 20px;
-    text-align: center;
+  padding: 20px;
+  text-align: center;
 }
-
 
 .compiler-page .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
-
 
 .compiler-page .header h2 {
-    flex-grow: 1;
-    text-align: center;
-    margin: 0;
+  flex-grow: 1;
+  text-align: center;
+  margin: 0;
 }
-
 
 .compiler-page .header-buttons-container {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-right: 50px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-right: 50px;
 }
-
 
 .compiler-page .header-buttons {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-right: 55px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-right: 55px;
 }
-
-
 
 .compiler-page .header-button {
-    padding: 10px 15px;
-    font-size: 16px;
+  padding: 10px 15px;
+  font-size: 16px;
 
-    border-radius: 5px;
-    cursor: pointer;
-    flex-shrink: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-shrink: 0;
 
-    background-color: #222;
-    color: white;
-    border-color: #555;
-    box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f;
+  background-color: #222;
+  color: white;
+  border-color: #555;
+  box-shadow:
+    inset 4px 4px 12px #000,
+    inset -4px -4px 12px #1f1f1f;
 }
 
-
 .compiler-page .header-button:hover {
-    color: white;
-    border-color: #333;
-    background: linear-gradient(90deg, #007bff, red);
-
+  color: white;
+  border-color: #333;
+  background: linear-gradient(90deg, #007bff, red);
 }
 
 .compiler-page .header-button:active {
-    transform: scale(0.98);
+  transform: scale(0.98);
 }
-
 
 .compiler-container {
-
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch;
-    height: 82vh;
-    flex-wrap: nowrap;    
-    flex-direction: row;
-    border: 2px solid gray;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  height: 82vh;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  border: 2px solid gray;
 }
-
 
 .code-editor {
-    width: 64%;
-    display: flex;
-    flex-direction: column;
-    height: 83vh;
-    min-height: 400px;
+  width: 64%;
+  display: flex;
+  flex-direction: column;
+  height: 83vh;
+  min-height: 400px;
 
-    /* border-radius: 16px; */
-    color: white;
+  /* border-radius: 16px; */
+  color: white;
 
-    box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f;
+  box-shadow:
+    inset 4px 4px 12px #000,
+    inset -4px -4px 12px #1f1f1f;
 }
-
-
 
 .CodeMirror-scroll {
-    overflow: auto !important;
-    height: 100%;
+  overflow: auto !important;
+  height: 100%;
 }
-
 
 .CodeMirror pre {
-    font-size: 16px;
-    font-family: "Fira Code", monospace;
+  font-size: 16px;
+  font-family: 'Fira Code', monospace;
 }
-
 
 textarea {
-    width: 100%;
-    padding: 5px;
-    border: none;
-    /* border-radius: 16px; */
-    font-family: monospace;
-    font-size: 16px;
-    resize: none;
-    min-height: 150px;
+  width: 100%;
+  padding: 5px;
+  border: none;
+  /* border-radius: 16px; */
+  font-family: monospace;
+  font-size: 16px;
+  resize: none;
+  min-height: 150px;
 }
-
 
 textarea,
 .input-box textarea,
 .output-box textarea {
-    height: 100%;
-    min-height: 100px;
+  height: 100%;
+  min-height: 100px;
 
-    background-color: #171819;
-    /* border-radius: 16px; */
-    color: white;
+  background-color: #171819;
+  /* border-radius: 16px; */
+  color: white;
 
-    box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f;
+  box-shadow:
+    inset 4px 4px 12px #000,
+    inset -4px -4px 12px #1f1f1f;
 }
-
 
 .dark-mode textarea,
 .dark-mode .input-box textarea,
 .dark-mode .output-box textarea {
-    background-color: #171819;
-    color: white;
+  background-color: #171819;
+  color: white;
 
+  animation: neon-glow 1.5s infinite alternate;
 
-
-    animation: neon-glow 1.5s infinite alternate;
-
-
-    @keyframes neon-glow {
-        0% {
-            box-shadow: 0 0 10px #007bff, 0 0 20px #007bff;
-        }
-
-        100% {
-            box-shadow: 0 0 15px #007bff, 0 0 25px #007bff;
-        }
+  @keyframes neon-glow {
+    0% {
+      box-shadow:
+        0 0 10px #007bff,
+        0 0 20px #007bff;
     }
-}
 
+    100% {
+      box-shadow:
+        0 0 15px #007bff,
+        0 0 25px #007bff;
+    }
+  }
+}
 
 .input-output-container {
-    /* margin-top: 10px; */
-    padding-right: 10px;
+  /* margin-top: 10px; */
+  padding-right: 10px;
 
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    flex-grow: 0.8;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  flex-grow: 0.8;
 }
-
 
 .input-box,
 .output-box {
-    flex-grow: 1;
-    min-height: 100px;
+  flex-grow: 1;
+  min-height: 100px;
 }
 
-
 .output-box {
-    margin-top: 10px;
-    height: 61vh;
+  margin-top: 10px;
+  height: 61vh;
 }
 
 @media (max-width: 768px) {
-    .compiler-container {
-        flex-direction: column;
-        height: auto;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
+  .compiler-container {
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 
-    .code-editor,
-    .input-output-container {
-        width: 100%;
-    }
-    
-    .input-output-container {
-        margin-top: 15px;
-        padding-right: 0px;
-        display: flex;
-        flex-direction: column;
-        align-items: left;
+  .code-editor,
+  .input-output-container {
+    width: 100%;
+  }
 
-        justify-content: center;
-    }
+  .input-output-container {
+    margin-top: 15px;
+    padding-right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
 
-    .input-box,
-    .output-box {
-        width: 97%;
-        min-height: 120px;
-        font-family: monospace;
-        font-size: 16px;
-        resize: none;
-    }
+    justify-content: center;
+  }
+
+  .input-box,
+  .output-box {
+    width: 97%;
+    min-height: 120px;
+    font-family: monospace;
+    font-size: 16px;
+    resize: none;
+  }
 }
-
 
 .code-editor-title {
-    color: #171819;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    margin-top: 6px;
+  color: #171819;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 6px;
 }
 
-
 .dark-mode .code-editor-title {
-    color: white;
+  color: white;
 }
 
 .code-mirror {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    min-height: 300px;
-    min-width: 100%;
-    overflow: hidden;
-    text-align: left !important;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 300px;
+  min-width: 100%;
+  overflow: hidden;
+  text-align: left !important;
 
-    background-color: #171819 !important;
+  background-color: #171819 !important;
 
-    color: white !important;
-    font-size: 17px;
+  color: white !important;
+  font-size: 17px;
 }
 
 .gutter {
-background: linear-gradient(169deg, #007bff, red);
-  /* background-color: #e7e5e5; */
+  background: linear-gradient(169deg, #007bff, red);
+  width: 3px; /* increased from 10px to 20px for better drag area */
+  /* optional: add min-width for safety */
+  min-width: 3px;
 }
 
 .gutter.gutter-horizontal {
   cursor: col-resize;
+  height: 100%; /* ensures horizontal gutter stretches fully */
 }
 
 .gutter.gutter-vertical {
   cursor: row-resize;
+  width: 100%; /* ensures vertical gutter stretches fully */
 }

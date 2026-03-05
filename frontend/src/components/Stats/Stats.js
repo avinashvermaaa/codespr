@@ -5,7 +5,7 @@ import './Stats.css';
 
 const Stats = () => {
   const [ref, inView] = useInView({
-    triggerOnce: false,       // everytime when inview
+    triggerOnce: false, // everytime when inview
     threshold: 0.3,
   });
 

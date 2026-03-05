@@ -14,14 +14,15 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
-
   return (
     <nav className="navbar">
       <div className="navbar-logo">
         <img src="/logo.png" alt="Logo" className="logo-image" />
-        <Link to="/" className="navbar-brand">CODESPHERE</Link>
+        <Link to="/" className="navbar-brand">
+          CODESPHERE
+        </Link>
       </div>
-      
+
       {/* Hamburger icon for small screens */}
       <div className="hamburger" onClick={toggleMenu}>
         <div></div>
@@ -32,16 +33,28 @@ const Navbar = () => {
       {/* Navbar links */}
       <ul className={`navbar-list ${isMenuOpen ? 'show' : ''}`}>
         <li className="navbar-item">
-          <a href="#home" className="navbar-link" onClick={handleLinkClick}>Home</a>
+          <a href="#home" className="navbar-link" onClick={handleLinkClick}>
+            Home
+          </a>
         </li>
         <li className="navbar-item">
-          <a href="#compiler" className="navbar-link" onClick={handleLinkClick}>Compiler</a>
+          <a href="#compiler" className="navbar-link" onClick={handleLinkClick}>
+            Compiler
+          </a>
         </li>
         <li className="navbar-item">
-          <a href="#collection" className="navbar-link" onClick={handleLinkClick}>Collection</a>
+          <a
+            href="#collection"
+            className="navbar-link"
+            onClick={handleLinkClick}
+          >
+            Collection
+          </a>
         </li>
         <li className="navbar-item">
-          <a href="#connect" className="navbar-link" onClick={handleLinkClick}>Connect</a>
+          <a href="#connect" className="navbar-link" onClick={handleLinkClick}>
+            Connect
+          </a>
         </li>
       </ul>
     </nav>

@@ -5,27 +5,34 @@ import './Chatbot.css';
 function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { sender: "bot", text: "Hello! Ask me anything about code." }
+    { sender: 'bot', text: 'Hello! Ask me anything about code.' },
   ]);
-  const [userInput, setUserInput] = useState("");
+  const [userInput, setUserInput] = useState('');
 
   const sendMessage = async () => {
     if (!userInput.trim()) return;
 
-    const userMessage = { sender: "user", text: userInput };
-    setMessages(prev => [...prev, userMessage]);
-    setUserInput("");
+    const userMessage = { sender: 'user', text: userInput };
+    setMessages((prev) => [...prev, userMessage]);
+    setUserInput('');
 
     try {
-      const response = await axios.post("http://localhost:5000/chat", { // or your backend domain
-        message: userInput
+      const response = await axios.post('http://localhost:5000/chat', {
+        // or your backend domain
+        message: userInput,
       });
 
       const botReply = response.data.response;
-      setMessages(prev => [...prev, { sender: "bot", text: botReply }]);
+      setMessages((prev) => [...prev, { sender: 'bot', text: botReply }]);
     } catch (error) {
-      console.error("Chatbot backend error:", error.message);
-      setMessages(prev => [...prev, { sender: "bot", text: " Oops! monthly limit reached. Try again after sometime" }]);
+      console.error('Chatbot backend error:', error.message);
+      setMessages((prev) => [
+        ...prev,
+        {
+          sender: 'bot',
+          text: ' Oops! monthly limit reached. Try again after sometime',
+        },
+      ]);
     }
   };
 
@@ -56,7 +63,7 @@ function Chatbot() {
               value={userInput}
               placeholder="Ask about code, errors, etc..."
               onChange={(e) => setUserInput(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+              onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
             />
             <button onClick={sendMessage}>Send</button>
           </div>

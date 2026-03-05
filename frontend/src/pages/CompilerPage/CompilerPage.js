@@ -1,90 +1,153 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import Split from 'split.js';
 
-import { useParams } from "react-router-dom";
-import CodeMirror from "@uiw/react-codemirror";
+import { useParams } from 'react-router-dom';
+import CodeMirror from '@uiw/react-codemirror';
 
 //  Language Imports
-import { cpp } from "@codemirror/lang-cpp";
-import { java } from "@codemirror/lang-java";
-import { python } from "@codemirror/lang-python";
+import { cpp } from '@codemirror/lang-cpp';
+import { java } from '@codemirror/lang-java';
+import { python } from '@codemirror/lang-python';
 
 import { html } from '@codemirror/lang-html';
 import { css } from '@codemirror/lang-css';
-import { javascript } from "@codemirror/lang-javascript";
+import { javascript } from '@codemirror/lang-javascript';
 import { json } from '@codemirror/lang-json';
 import { xml } from '@codemirror/lang-xml';
 import { angular } from '@codemirror/lang-angular';
 import { vue } from '@codemirror/lang-vue';
 
-import { sql } from "@codemirror/lang-sql";
+import { sql } from '@codemirror/lang-sql';
 import { markdown } from '@codemirror/lang-markdown';
 import { yaml } from '@codemirror/lang-yaml';
 import { go } from '@codemirror/lang-go';
-import { php } from "@codemirror/lang-php";
+import { php } from '@codemirror/lang-php';
 import { rust } from '@codemirror/lang-rust';
 
 // Theme
 // import { dracula } from "@uiw/codemirror-theme-dracula"; // old dracula theme
-// import { darcula } from "@uiw/codemirror-theme-darcula"; 
+// import { darcula } from "@uiw/codemirror-theme-darcula";
 import { monokai } from '@uiw/codemirror-theme-monokai';
-import "./CompilerPage.css";
-import Chatbot from "../../components/Chatbot/Chatbot"; // OpenAi Chatgpt integrate
+import './CompilerPage.css';
+import Chatbot from '../../components/Chatbot/Chatbot'; // OpenAi Chatgpt integrate
 
-const BACKEND_URL = "https://idebackend-kmhn.onrender.com";
+const BACKEND_URL = 'https://idebackend-kmhn.onrender.com';
 
 const languageModes = {
-  cpp: cpp(), python: python(), java: java(), javascript: javascript(), html: html(), css: css(), json: json(),
-  xml: xml(), sql: sql(), markdown: markdown(), yaml: yaml(), go: go(), php: php(), rust: rust(), vue: vue(),
-  angular: angular(), r: python(),
+  cpp: cpp(),
+  python: python(),
+  java: java(),
+  javascript: javascript(),
+  html: html(),
+  css: css(),
+  json: json(),
+  xml: xml(),
+  sql: sql(),
+  markdown: markdown(),
+  yaml: yaml(),
+  go: go(),
+  php: php(),
+  rust: rust(),
+  vue: vue(),
+  angular: angular(),
+  r: python(),
   // SQL variants
-  postgresql: sql(), mysql: sql(), sqlite: sql(),
+  postgresql: sql(),
+  mysql: sql(),
+  sqlite: sql(),
 };
 
 const languageExtensions = {
-  html: "html", python: "py", cpp: "cpp", c: "c", java: "java", javascript: "js", sql: "sql", php: "php",
-  assembly: "asm", "c#": "cs", lua: "lua", nodejs: "js", mongodb: "json", groovy: "groovy",
-  ruby: "rb", go: "go", scala: "scala", r: "r", perl: "pl", kotlin: "kt", pascal: "pas", cobol: "cbl",
-  fortran: "f", bash: "sh", clojure: "clj", typescript: "ts", prolog: "pl", rust: "rs", swift: "swift",
-  "objective-c": "m", coffeescript: "coffee", ejs: "ejs", materialize: "css", bootstrap: "css", jquery: "js",
-  css: "css", foundation: "css", bulma: "css", uikit: "css", "semantic ui": "css", skeleton: "css",
-  milligram: "css", react: "jsx", angular: "ts", vue: "vue", vue3: "vue", backbonejs: "js", oracle: "sql",
-  postgresql: "sql", sqlite: "sql", redis: "rdb", mariadb: "sql", "sql server": "sql",
+  html: 'html',
+  python: 'py',
+  cpp: 'cpp',
+  c: 'c',
+  java: 'java',
+  javascript: 'js',
+  sql: 'sql',
+  php: 'php',
+  assembly: 'asm',
+  'c#': 'cs',
+  lua: 'lua',
+  nodejs: 'js',
+  mongodb: 'json',
+  groovy: 'groovy',
+  ruby: 'rb',
+  go: 'go',
+  scala: 'scala',
+  r: 'r',
+  perl: 'pl',
+  kotlin: 'kt',
+  pascal: 'pas',
+  cobol: 'cbl',
+  fortran: 'f',
+  bash: 'sh',
+  clojure: 'clj',
+  typescript: 'ts',
+  prolog: 'pl',
+  rust: 'rs',
+  swift: 'swift',
+  'objective-c': 'm',
+  coffeescript: 'coffee',
+  ejs: 'ejs',
+  materialize: 'css',
+  bootstrap: 'css',
+  jquery: 'js',
+  css: 'css',
+  foundation: 'css',
+  bulma: 'css',
+  uikit: 'css',
+  'semantic ui': 'css',
+  skeleton: 'css',
+  milligram: 'css',
+  react: 'jsx',
+  angular: 'ts',
+  vue: 'vue',
+  vue3: 'vue',
+  backbonejs: 'js',
+  oracle: 'sql',
+  postgresql: 'sql',
+  sqlite: 'sql',
+  redis: 'rdb',
+  mariadb: 'sql',
+  'sql server': 'sql',
 };
 
 function CompilerPage() {
   const { language } = useParams();
-  const [code, setCode] = useState("");
-  const [input, setInput] = useState("");
-  const [output, setOutput] = useState("");
+  const [code, setCode] = useState('');
+  const [input, setInput] = useState('');
+  const [output, setOutput] = useState('');
 
-  const defaultExtension = languageExtensions[language?.toLowerCase()] || "txt";
-  const [fileName, setFileName] = useState(`${language}_code.${defaultExtension}`);
+  const defaultExtension = languageExtensions[language?.toLowerCase()] || 'txt';
+  const [fileName, setFileName] = useState(
+    `${language}_code.${defaultExtension}`,
+  );
   const languageMode = languageModes[language?.toLowerCase()] || cpp();
 
   const runCode = async () => {
-    setOutput("Running...");
+    setOutput('Running...');
     try {
       const response = await fetch(`${BACKEND_URL}/compile`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ language, code, input }),
       });
       const data = await response.json();
-      setOutput(data.output || "Error: No output received.");
+      setOutput(data.output || 'Error: No output received.');
     } catch (error) {
       setOutput(`Error: ${error.message}`);
     }
   };
 
   const renameCode = () => {
-    const newName = prompt("Enter new file name (without extension):");
+    const newName = prompt('Enter new file name (without extension):');
     if (newName) setFileName(`${newName}.${defaultExtension}`);
   };
 
   const downloadCode = () => {
-    const element = document.createElement("a");
-    const file = new Blob([code], { type: "text/plain" });
+    const element = document.createElement('a');
+    const file = new Blob([code], { type: 'text/plain' });
     element.href = URL.createObjectURL(file);
     element.download = fileName;
     document.body.appendChild(element);
@@ -95,42 +158,48 @@ function CompilerPage() {
   useEffect(() => {
     const isLargeScreen = window.innerWidth >= 1280;
 
-    if(isLargeScreen){
-      
+    if (isLargeScreen) {
       Split(['.code-editor', '.input-output-container'], {
-        sizes: [70, 30],         // Percent-based initial sizes
-        minSize: 100,            // Minimum px for each panel
+        sizes: [70, 30], // Percent-based initial sizes
+        minSize: 100, // Minimum px for each panel
         gutterSize: 2.5,
         cursor: 'col-resize',
-        direction:'horizontal'
+        direction: 'horizontal',
       });
-  
-      Split(['.input-box', '.output-box'], {
-      sizes: [30, 70],
-      minSize: 100,
-      gutterSize: 2.5,
-      cursor: 'row-resize',
-      direction: 'vertical'
-    });
-  }
-}, []);
 
+      Split(['.input-box', '.output-box'], {
+        sizes: [30, 70],
+        minSize: 100,
+        gutterSize: 2.5,
+        cursor: 'row-resize',
+        direction: 'vertical',
+      });
+    }
+  }, []);
 
   return (
     <div className="compiler-page">
       <div className="header">
         {/* <h2>CodeSphere: {language} Compiler</h2> */}
-        <div class="banner">
-          <h1 class="banner-text"><span class="gradient"> CodeSphere: {language}</span> <span class="gradient"> Compiler</span></h1>
+        <div className="banner">
+          <h1 className="banner-text">
+            <span className="gradient"> CodeSphere: {language}</span>{' '}
+            <span className="gradient"> Compiler</span>
+          </h1>
         </div>
 
         <div className="header-buttons">
-          <button className="header-button" onClick={renameCode}>Rename</button>
-          <button className="header-button" onClick={downloadCode}>Download</button>
-          <button className="header-button" onClick={runCode}>Run Code</button>
+          <button className="header-button" onClick={renameCode}>
+            Rename
+          </button>
+          <button className="header-button" onClick={downloadCode}>
+            Download
+          </button>
+          <button className="header-button" onClick={runCode}>
+            Run Code
+          </button>
         </div>
       </div>
-
       <div className="compiler-container">
         <div className="code-editor">
           <h3 className="code-editor-title">Code Editor :- {language}</h3>
@@ -142,8 +211,8 @@ function CompilerPage() {
             theme={monokai}
             extensions={[languageMode]}
             style={{
-              height: "100%",
-              overflow: "auto",
+              height: '100%',
+              overflow: 'auto',
             }}
           />
         </div>
@@ -168,7 +237,6 @@ function CompilerPage() {
           </div>
         </div>
       </div>
-
       <Chatbot /> {/*  Added the chatbot at the bottom-right */}
     </div>
   );

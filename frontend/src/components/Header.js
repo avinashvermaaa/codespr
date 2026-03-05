@@ -1,6 +1,6 @@
 // (Header with dark mode toggle)
-import React from "react";
-import DarkModeToggle from "./DarkModeToggle";
+import React from 'react';
+import DarkModeToggle from './DarkModeToggle';
 
 const Header = () => {
   return (

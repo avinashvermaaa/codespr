@@ -2,28 +2,28 @@
 /* Common Styles */
 #moving-animation,
 #moving-animation-db-devops {
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
 }
 
 .marque-wrapper,
 .marque-wrapper--db-devops {
-    display: flex;
-    white-space: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    /* background-color: #222; */
-    border-color: #444;
-    box-shadow: inset 4px 4px 12px rgb(153, 133, 133), inset -4px -4px 12px rgb(153, 141, 141);
-    /* box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f; */
-    /* box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #000; */
-    
+  display: flex;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* background-color: #222; */
+  border-color: #444;
+  box-shadow:
+    inset 4px 4px 12px rgb(153, 133, 133),
+    inset -4px -4px 12px rgb(153, 141, 141);
+  /* box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f; */
+  /* box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #000; */
 }
 
-.marque-wrapper-db-devops{
-    /* box-shadow: inset 4px 4px 12px white, inset -4px -4px 12px white; */
-
+.marque-wrapper-db-devops {
+  /* box-shadow: inset 4px 4px 12px white, inset -4px -4px 12px white; */
 }
 
 /* .marque-wrapper-company{
@@ -34,35 +34,37 @@
 
 .marque-wrapper::-webkit-scrollbar,
 .marque-wrapper--db-devops::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .marque,
 .marque-db-devops,
 .marque-left,
 .marque-right {
-    display: inline-flex;
-    align-items: center;
-    padding: 3rem 0;
-    width: max-content;
+  display: inline-flex;
+  align-items: center;
+  padding: 3rem 0;
+  width: max-content;
 }
 
 .logo,
 .logo-db-devops {
-    height: 4vw;
-    min-height: 40px;
-    /* Ensures visibility on small screens */
+  height: 4vw;
+  min-height: 40px;
+  /* Ensures visibility on small screens */
 
-    margin: 0 3rem;
-    opacity: 0.8;
-    transition: opacity 0.1s, filter 0.1s;
-    cursor: pointer;
+  margin: 0 3rem;
+  opacity: 0.8;
+  transition:
+    opacity 0.1s,
+    filter 0.1s;
+  cursor: pointer;
 }
 
 .logo:hover,
 .logo-db-devops:hover {
-    opacity: 1;
-    filter: grayscale(0);
+  opacity: 1;
+  filter: grayscale(0);
 }
 
 /* Pause on Hover */
@@ -73,75 +75,72 @@
     animation-play-state: paused;
 } */
 
-
 /* Keyframes */
 @keyframes marquee-right-to-left {
-    0% {
-        transform: translateX(0%);
-    }
+  0% {
+    transform: translateX(0%);
+  }
 
-    100% {
-        transform: translateX(-100%);
-    }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes marquee-left-to-right {
-    0% {
-        transform: translateX(-100%);
-    }
+  0% {
+    transform: translateX(-100%);
+  }
 
-    100% {
-        transform: translateX(0%);
-    }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 /* Animation Classes */
 .marque {
-    animation: marquee-right-to-left 20s linear infinite;
+  animation: marquee-right-to-left 20s linear infinite;
 }
 
 .marque-db-devops {
-    animation: marquee-left-to-right 15s linear infinite;
+  animation: marquee-left-to-right 15s linear infinite;
 }
 
 .marque-left {
-    animation: marquee-right-to-left 15s linear infinite;
+  animation: marquee-right-to-left 15s linear infinite;
 }
 
 .marque-right {
-    animation: marquee-left-to-right 15s linear infinite;
+  animation: marquee-left-to-right 15s linear infinite;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+  .logo,
+  .logo-db-devops {
+    height: 8vw;
+    margin: 0 1rem;
+  }
 
-    .logo,
-    .logo-db-devops {
-        height: 8vw;
-        margin: 0 1rem;
-    }
+  .marque,
+  .marque-db-devops,
+  .marque-left,
+  .marque-right {
+    padding: 1.5rem 0;
+  }
 
-    .marque,
-    .marque-db-devops,
-    .marque-left,
-    .marque-right {
-        padding: 1.5rem 0;
-    }
-
-    .gradient {
-        font-size: 1.5rem;
-    }
+  .gradient {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
+  .logo,
+  .logo-db-devops {
+    height: 10vw;
+    margin: 0 0.5rem;
+  }
 
-    .logo,
-    .logo-db-devops {
-        height: 10vw;
-        margin: 0 0.5rem;
-    }
-
-    .gradient {
-        font-size: 1.5rem;
-    }
+  .gradient {
+    font-size: 1.5rem;
+  }
 }

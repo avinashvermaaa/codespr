@@ -1,8 +1,8 @@
 .laser-flow-container {
   margin-top: 8.1rem;
   width: 83%;
-  height: 145%; 
-  position: absolute; 
+  height: 145%;
+  position: absolute;
   pointer-events: none;
 }
 

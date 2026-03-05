@@ -1,6 +1,6 @@
-import React, { Suspense } from "react";
-import { useInView } from "react-intersection-observer";
-import "./LazySection.css";
+import React, { Suspense } from 'react';
+import { useInView } from 'react-intersection-observer';
+import './LazySection.css';
 
 function Loader() {
   return (
@@ -11,19 +11,15 @@ function Loader() {
   );
 }
 
-function LazySection({ children, height = "200px" }) {
+function LazySection({ children, height = '200px' }) {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    rootMargin: "150px"
+    rootMargin: '150px',
   });
 
   return (
     <div ref={ref} style={{ minHeight: height }}>
-      {inView && (
-        <Suspense fallback={<Loader />}>
-          {children}
-        </Suspense>
-      )}
+      {inView && <Suspense fallback={<Loader />}>{children}</Suspense>}
     </div>
   );
 }
