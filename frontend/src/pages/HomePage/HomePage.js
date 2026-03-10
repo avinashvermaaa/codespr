@@ -54,8 +54,7 @@ const Stats = lazy(() => import('../../components/Stats/Stats'));
 const Mq = lazy(() => import('../../components/Mq/Mq'));
 const Footer = lazy(() => import('../../components/footer/Footer'));
 
-const BACKEND_URL =
-  process.env.BACKEND_URL || 'https://idebackend-kmhn.onrender.com';
+const BACKEND_URL = process.env.REACT_APP_API_URL;
 
 // Language Icon Mapping
 const languageIcons = {

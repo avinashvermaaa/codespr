@@ -31,7 +31,7 @@ import { monokai } from '@uiw/codemirror-theme-monokai';
 import './CompilerPage.css';
 import Chatbot from '../../components/Chatbot/Chatbot'; // OpenAi Chatgpt integrate
 
-const BACKEND_URL = 'https://idebackend-kmhn.onrender.com';
+const BACKEND_URL = process.env.REACT_APP_API_URL;
 
 const languageModes = {
   cpp: cpp(),
