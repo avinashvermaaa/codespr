@@ -47,7 +47,6 @@ import {
 
 import './HomePage.css';
 import Navbar from '../../components/Navbar/Navbar';
-import LaserFlow from '../../components/Laserflow/LaserFlow';
 import LazySection from '../../components/LazySection/LazySection';
 
 const Stats = lazy(() => import('../../components/Stats/Stats'));
@@ -287,12 +286,6 @@ function HomePage() {
           </button>
         ))}
       </div>
-
-      <LaserFlow
-        horizontalBeamOffset={0.435}
-        verticalBeamOffset={0.2}
-        color="#c0b0b9ff"
-      />
 
       <div className="category-box">
         {filteredLanguages.map((item, idx) => (
